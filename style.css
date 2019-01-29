@@ -7,12 +7,19 @@
 
 body {
     font-family: 'Noto Serif SC', serif;
+    padding-left: 25%;
 }
 
-h1 {
+h1, head {
     font-family: 'Raleway', sans-serif;
+    padding-top: 10%;
+    padding-left: 15%;
 }
 
 h4 {
     font-family: 'Roboto', sans-serif;
+}
+
+li.done {
+    text-decoration: line-through;
 }
