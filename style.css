@@ -19,4 +19,9 @@ h4 {
 
 li.done {
     text-decoration: line-through;
+    color: red;
+}
+
+li {
+    color: blue;
 }
