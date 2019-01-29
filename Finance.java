@@ -21,7 +21,7 @@ public class Finance
 
   }
 
-  public calcMaintCostFacility()
+  public int calcMaintCostFacility()
   {
 
 
@@ -30,7 +30,7 @@ public class Finance
   public int calcDowntimeFacility()
   {
 
-    
+
   }
 
 

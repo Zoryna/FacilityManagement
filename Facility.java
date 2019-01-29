@@ -7,20 +7,7 @@
 public class Facility
 {
   String name, address, description;
-  int number, capacity, cost;
-
-
-  public int addNewFacility()
-  {
-
-
-  }
-
-  public int removeFacility()
-  {
-
-
-  }
+  int number, capacity, cost, problemRate;
 
 
   public String addDetail()
@@ -29,11 +16,6 @@ public class Facility
 
   }
 
-  public int listFacilities()
-  {
-
-
-  }
 
   public String getFacilityInfo()
   {

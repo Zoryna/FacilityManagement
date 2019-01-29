@@ -8,13 +8,7 @@
 public class Control
 {
   int interval;
-
-
-  public boolean intervalUse() {
-
-
-
-  }
+  
 
   public boolean assignToUse()
   {
