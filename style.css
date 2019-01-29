@@ -1,0 +1,18 @@
+/*
+    Google Fonts:
+    Big titles: font-family: 'Major Mono Display', monospace;
+    Secondary titles: font-family: 'Roboto', sans-serif;
+    Regular text: font-family: 'Noto Serif SC', serif;
+*/
+
+body {
+    font-family: 'Noto Serif SC', serif;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+}
