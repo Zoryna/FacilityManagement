@@ -1,38 +1,25 @@
-/*
-
-*/
-
-
-
 public class Management
 {
-  //List usage
-  //List facilities
+    //List usage
+    //List facilities
 
+    public List actualUsage()
+    {
 
-  public List actualUsage()
-  {
+    }
 
+    public int problemRateForFaciltiy()
+    {
 
-  }
+    }
 
-  public int problemRateForFaciltiy()
-  {
+    public void requestAvailableCapacity()
+    {
 
+    }
 
-  }
-
-  public List faciltiies()
-  {
-
-
-  }
-
-
-
-
-
-
-
-
+    public List listFacilities()
+    {
+        
+    }
 }

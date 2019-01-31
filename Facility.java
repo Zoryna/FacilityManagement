@@ -1,11 +1,12 @@
-/*
-  class that has the details of the facility
-*/
-
 public class Facility
 {
     private String name, address, description;
     private int refNumber, capacity, cost, problemRate;
+
+    Facility(String name, int refNumber){
+        this.name = name;
+        this.refNumber = refNumber;
+    }
 
     // Setters
     public void setName(String name){
@@ -65,18 +66,8 @@ public class Facility
         return problemRate;
     }
 
-    public void addDetail() // What is this? Detail of what? Seems redundant
-    {
-
-    }
-
-    public void getFacilityInfo() // Same thing, description should cover it
-    {
-
-    }
-
-    public void requestAvailableCapacity() // This could be in Control, or in Management
-    {
-
+    public Facility getFacilityObj(){
+        Facility fac = new Facility(name, refNumber);
+        return fac;
     }
 }
