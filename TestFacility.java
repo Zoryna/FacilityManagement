@@ -18,5 +18,6 @@ public class TestFacility{
         System.out.println("getCapacity: " + fac.getCapacity());
         System.out.println("getCost: " + fac.getCost());
         System.out.println("getProblemRate: " + fac.getProblemRate());
+        fac.getFacilityInfo();
     }
 }
