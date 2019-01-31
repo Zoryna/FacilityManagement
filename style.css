@@ -16,3 +16,12 @@ h1 {
 h4 {
     font-family: 'Roboto', sans-serif;
 }
+
+li.done {
+    text-decoration: line-through;
+    color: red;
+}
+
+li {
+    color: blue;
+}
