@@ -13,7 +13,7 @@ public class Facility
     }
 
     public void setAddress(String address){
-        this.name = address;
+        this.address = address;
     }
 
     public void setDescription(String description){

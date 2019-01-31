@@ -9,7 +9,7 @@ public class TestFacility{
         fac.setRefNumber(0001);
         fac.setCapacity(0);
         fac.setCost(100);
-        fac.setProblemRate(0);
+        fac.setProblemRate(5);
 
         System.out.println("getName: " + fac.getName());
         System.out.println("getAddress: " + fac.getAddress());
