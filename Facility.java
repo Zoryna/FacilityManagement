@@ -79,9 +79,4 @@ public class Facility
         System.out.println("Cost: " + cost + ".");
         System.out.println("Problem Rate: " + problemRate + ".");
     }
-
-    public void requestAvailableCapacity() // This could be in Control, or in Management
-    {
-
-    }
 }
