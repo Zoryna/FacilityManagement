@@ -3,6 +3,11 @@ public class Facility
     private String name, address, description;
     private int refNumber, capacity, cost, problemRate;
 
+    Facility(String name, int refNumber){
+        this.name = name;
+        this.refNumber = refNumber;
+    }
+
     // Setters
     public void setName(String name){
         this.name = name;
@@ -61,22 +66,8 @@ public class Facility
         return problemRate;
     }
 
-    public void getFacilityInfo(){
-        /*
-            This function could return an object Facility with ALL the variables
-            of the object. Right now, the object is created empty (that is, no
-            variables are parsed into the function when it is created, so it can't).
-            We can change how the object is created, but for that we need a decision
-            making in what variables are important, since making a function with six
-            variables from the get go is probably a bad idea.
-        */
-
-        System.out.println("Name: " + name + ".");
-        System.out.println("Address: " + address + ".");
-        System.out.println("Description: " + description + ".");
-        System.out.println("RefNumber: " + refNumber + ".");
-        System.out.println("Capacity: " + capacity + ".");
-        System.out.println("Cost: " + cost + ".");
-        System.out.println("Problem Rate: " + problemRate + ".");
+    public Facility getFacilityObj(){
+        Facility fac = new Facility(name, refNumber);
+        return fac;
     }
 }
