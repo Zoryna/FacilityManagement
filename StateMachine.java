@@ -1,31 +1,27 @@
 public class StateMachine {
 
-    private State state;
+    public State state = State.RESTING;
 
     enum State {
         WORKING, RESTING, MAINTENANCE
     }
 
-    StateMachine(){
-        this.state = State.RESTING;
-    }
-
-    public State getState() {
+    public State getFacilityState(){
         return state;
     }
 
-    public State toWorking() {
-        this.state = State.WORKING;
-        return state;
+    public State toWorking(Facility fac) {
+        fac.state = State.WORKING;
+        return fac.getFacilityState();
     }
 
-    public State toResting() {
-        this.state = State.RESTING;
-        return state;
+    public State toResting(Facility fac) {
+        fac.state = State.RESTING;
+        return fac.getFacilityState();
     }
 
-    public State toMaintenance() {
-        this.state = State.MAINTENANCE;
-        return state;
+    public State toMaintenance(Facility fac) {
+        fac.state = State.MAINTENANCE;
+        return fac.getFacilityState();
     }
 }

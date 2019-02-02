@@ -1,5 +1,5 @@
-public class Facility
-{
+public class Facility extends StateMachine {
+
     private String name, address, description;
     private int refNumber, capacity, cost, problemRate;
 
