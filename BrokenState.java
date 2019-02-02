@@ -1,8 +1,8 @@
-public class BrokenState {
+public class BrokenState extends StateMachine{
 
-    private final String state = "BROKEN";
+    private final State state = 
 
-    private final String getBrokenState(){
+    private final State getBrokenState(){
         return state;
     }
 }

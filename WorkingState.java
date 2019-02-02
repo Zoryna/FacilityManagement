@@ -1,8 +1,8 @@
-public class WorkingState {
+public class WorkingState extends StateMachine {
 
-    private final String state = "WORKING";
+    public final String state = "WORKING";
 
-    private final String getWorkingState(){
+    public final String getWorkingState(){
         return state;
     }
 }

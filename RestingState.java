@@ -1,8 +1,6 @@
-public class RestingState {
+public class RestingState extends StateMachine {
 
-    private final String state = "RESTING";
-
-    private final String getRestingState(){
+    public final String getRestingState(){
         return state;
     }
 }
