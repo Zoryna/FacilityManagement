@@ -1,11 +1,3 @@
-public class State {
-    private State state;
+public interface State {
 
-    public void set(State state) {
-        this.state = state;
-    }
-
-    public State get() {
-        return state;
-    }
 }
