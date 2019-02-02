@@ -16,7 +16,6 @@ public class Facility
     public void setAddress(String address){
         this.address = address;
     }
-
     public void setDescription(String description){
         this.description = description;
     }
