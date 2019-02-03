@@ -8,8 +8,6 @@ public class WriteFile {
 
     public void saveFacilityInfo(Facility fac){
 
-        int functions = 7; // This number comes from the number of informations we have in a facility. There's probably a less rigid solution than this.
-
         try {
             oStream = new PrintWriter(fileName);
         }
@@ -18,22 +16,29 @@ public class WriteFile {
             System.exit(0);
         }
 
-        for (int i = 0; i < functions; i++){
-            String name = fac.getName();
-            oStream.println(i + ": " + name + ".");
-            String address = fac.getAddress();
-            oStream.println(i + ": " + address + ".");
-            String description = fac.getDescription();
-            oStream.println(i + ": " + description + ".");
-            int refNumber = fac.getRefNumber();
-            oStream.println(i + ": " + refNumber + ".");
-            int capacity = fac.getCapacity();
-            oStream.println(i + ": " + capacity + ".");
-            int cost = fac.getCost();
-            oStream.println(i + ": " + cost + ".");
-            int problemRate = fac.getProblemRate();
-            oStream.println(i + ": " + problemRate + ".");
-        }
+        // This thing can probably be improved with some data structure to get the functions, maybe a loop with a switch statement.
+        int i = 0;
+        String name = fac.getName();
+        oStream.println(i + ": " + name + ".");
+        i++;
+        String address = fac.getAddress();
+        oStream.println(i + ": " + address + ".");
+        i++;
+        String description = fac.getDescription();
+        oStream.println(i + ": " + description + ".");
+        i++;
+        int refNumber = fac.getRefNumber();
+        oStream.println(i + ": " + refNumber + ".");
+        i++;
+        int capacity = fac.getCapacity();
+        oStream.println(i + ": " + capacity + ".");
+        i++;
+        double cost = fac.getCost();
+        oStream.println(i + ": " + cost + ".");
+        i++;
+        int problemRate = fac.getProblemRate();
+        oStream.println(i + ": " + problemRate + ".");
+
 
         oStream.close();
         System.out.println("File has been saved.");
@@ -42,6 +47,11 @@ public class WriteFile {
     public static void main(String[] args){
         WriteFile wf = new WriteFile();
         Facility fac = new Facility("Airlock #0", 0);
+        fac.setAddress("Acidalia Planitia");
+        fac.setDescription("Controls airlock #0");
+        fac.setCapacity(1000);
+        fac.setCost(6.73);
+        fac.setProblemRate(2);
         wf.saveFacilityInfo(fac);
     }
 }

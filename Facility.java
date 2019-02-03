@@ -1,7 +1,8 @@
 public class Facility extends StateMachine {
 
     private String name, address, description;
-    private int refNumber, capacity, cost, problemRate;
+    private int refNumber, capacity, problemRate;
+    private double cost;
 
     Facility(String name, int refNumber){
         this.name = name;
@@ -28,7 +29,7 @@ public class Facility extends StateMachine {
         this.capacity = capacity;
     }
 
-    public void setCost(int cost){
+    public void setCost(double cost){
         this.cost = cost;
     }
 
@@ -57,7 +58,7 @@ public class Facility extends StateMachine {
         return capacity;
     }
 
-    public int getCost(){
+    public double getCost(){
         return cost;
     }
 
