@@ -3,7 +3,7 @@ import java.io.*;
 
 public class TextInputDemo{
     public static void main(String[] args){
-        String fileName = "out.txt";
+        String fileName = "facilityinfo.txt";
         Scanner inputStream = null;
         System.out.println("The file " + fileName + " \ncontains the following lines:\n");
 
@@ -14,7 +14,7 @@ public class TextInputDemo{
             System.out.println("Error opening the file " + fileName);
         }
 
-        while(inputStream.hasNextLine()){
+        while(inputStream.hasNextLine()) {
             String line = inputStream.nextLine();
             System.out.println(line);
         }

@@ -39,7 +39,6 @@ public class WriteFile {
         int problemRate = fac.getProblemRate();
         oStream.println(i + ": " + problemRate + ".");
 
-
         oStream.close();
         System.out.println("File has been saved.");
     }
