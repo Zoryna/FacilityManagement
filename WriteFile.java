@@ -1,11 +1,15 @@
-import java.io.*;
-import java.util.*;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 
 public class WriteFile {
     private String fileName = "facilityinfo.txt";
     PrintWriter oStream = null;
 
+
     public void saveFacilityInfo(Facility fac){
+
+        int functions = 7; // This number comes from the number of informations we have in a facility. There's probably a less rigid solution than this.
+
         try {
             oStream = new PrintWriter(fileName);
         }
@@ -14,8 +18,23 @@ public class WriteFile {
             System.exit(0);
         }
 
-        String name = fac.getName();
-        oStream.println("0: " + name + ".");
+        for (int i = 0; i < functions; i++){
+            String name = fac.getName();
+            oStream.println(i + ": " + name + ".");
+            String address = fac.getAddress();
+            oStream.println(i + ": " + address + ".");
+            String description = fac.getDescription();
+            oStream.println(i + ": " + description + ".");
+            int refNumber = fac.getRefNumber();
+            oStream.println(i + ": " + refNumber + ".");
+            int capacity = fac.getCapacity();
+            oStream.println(i + ": " + capacity + ".");
+            int cost = fac.getCost();
+            oStream.println(i + ": " + cost + ".");
+            int problemRate = fac.getProblemRate();
+            oStream.println(i + ": " + problemRate + ".");
+        }
+
         oStream.close();
         System.out.println("File has been saved.");
     }
