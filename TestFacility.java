@@ -1,17 +1,75 @@
+/*
+    a Concrete Subject for the Observer pattern
+ */
+
 import java.util.*;
 
-public class TestFacility{
-    public static void main (String[] args){
+public class TestFacility implements Inspection
+{
         Facility fac = new Facility("Airlocks #0", 0);
-        //fac.setName("Airlocks #1"); -> tested later to test the object return
+        fac.setName("Airlocks #1");
         fac.setAddress("Acidalia Planitia");
         fac.setDescription("The airlocks function is to control air pressure from locations");
-        // fac.setRefNumber(0001); -> tested later to test the object return
+        fac.setRefNumber(0001);
         fac.setCapacity(0);
         fac.setCost(100);
         fac.setProblemRate(5);
 
-        System.out.println("getName: " + fac.getName());
+        //testing
+        public List listInpsections
+        {
+            List<String> theInspections = new List<String>(Arrays.asList{
+                "1. WORKING",
+                "2. WORKING"
+            });
+
+            return theInspections;
+        }
+
+        public String listFacilityIssues()
+        {
+            String issues;
+            issues="No issues"
+
+            return issues;
+        }
+
+        public boolean makeMaintenanceRequest()
+        {
+           boolean needMaintenance;
+           needMaintenance=true;
+
+           return true;
+        }
+
+
+
+        //testing states
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*System.out.println("getName: " + fac.getName());
         System.out.println("getAddress: " + fac.getAddress());
         System.out.println("getDescription: " + fac.getDescription());
         System.out.println("getRefNumber: " + fac.getRefNumber());
@@ -23,5 +81,5 @@ public class TestFacility{
         fac.setRefNumber(1);
         System.out.println("getName: " + fac.getName());
         System.out.println("getRefNumber: " + fac.getRefNumber());
-    }
+        */
 }

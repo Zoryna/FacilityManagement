@@ -1,13 +1,36 @@
+/*
+    the Subject for the Observer pattern
+ */
+
+
+import java.util.List;
+
 public class Facility extends StateMachine {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
     private double cost;
 
+
     Facility(String name, int refNumber){
         this.name = name;
         this.refNumber = refNumber;
     }
+
+    //state
+
+
+
+
+
+
+    //list of Observers that notify the Observer
+    private List<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
+
+
+
+
+
 
     // Setters
     public void setName(String name){
