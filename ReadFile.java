@@ -32,10 +32,4 @@ public class ReadFile {
         }
         iStream.close();
     }
-
-    public static void main(String[] args){
-        ReadFile rf = new ReadFile();
-        rf.setFileName("facilityinfo.txt");
-        rf.readFile();
-    }
 }

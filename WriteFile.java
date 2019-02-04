@@ -2,14 +2,21 @@ import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 
 public class WriteFile {
-    private String fileName = "facilityinfo.txt";
+    public String fileName;
     PrintWriter oStream = null;
 
+    public void setFileName(String fileName){
+        this.fileName = fileName;
+    }
+
+    public String getFileName(){
+        return fileName;
+    }
 
     public void saveFacilityInfo(Facility fac){
 
         try {
-            oStream = new PrintWriter(fileName);
+            oStream = new PrintWriter(getFileName());
         }
         catch (FileNotFoundException e) {
             System.out.println("Error saving the file " + fileName + ". I can't provide more information because I'm a computer. Beep Boop.");
@@ -41,16 +48,5 @@ public class WriteFile {
 
         oStream.close();
         System.out.println("File has been saved.");
-    }
-
-    public static void main(String[] args){
-        WriteFile wf = new WriteFile();
-        Facility fac = new Facility("Airlock #0", 0);
-        fac.setAddress("Acidalia Planitia");
-        fac.setDescription("Controls airlock #0");
-        fac.setCapacity(1000);
-        fac.setCost(6.73);
-        fac.setProblemRate(2);
-        wf.saveFacilityInfo(fac);
     }
 }
