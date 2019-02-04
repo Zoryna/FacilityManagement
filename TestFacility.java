@@ -1,5 +1,6 @@
 /*
     a Concrete Subject for the Observer pattern
+    facility that is working
  */
 
 import java.util.*;
@@ -16,12 +17,11 @@ public class TestFacility implements Inspection
         fac.setProblemRate(5);
 
         //testing
-        public List listInpsections
+        public List listInspections()
         {
-            List<String> theInspections = new List<String>(Arrays.asList{
-                "1. WORKING",
-                "2. WORKING"
-            });
+            List<String> theInspections = new List<String>();
+            theInspections.add("WORKING");
+            theInspections.add("WORKING");
 
             return theInspections;
         }
@@ -29,17 +29,28 @@ public class TestFacility implements Inspection
         public String listFacilityIssues()
         {
             String issues;
-            issues="No issues"
+            isses="No issues";
 
             return issues;
         }
 
-        public boolean makeMaintenanceRequest()
+        public boolean makeMaintenanceRequest(List theInspections)
         {
-           boolean needMaintenance;
-           needMaintenance=true;
+            boolean makeRequest;
+            this.theInspections = theInspections;
 
-           return true;
+            if (theInspections.contains("BROKEN"))
+            {
+                fac.setState(MAINTENANCE);
+                return true;
+            }
+
+            else if (theInspections.contains("WORKING"))
+            {
+                fac.setState(WORKING);
+                return false;
+            }
+
         }
 
 
