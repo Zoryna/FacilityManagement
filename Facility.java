@@ -3,7 +3,7 @@
  */
 
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Facility extends StateMachine {
 
@@ -18,13 +18,12 @@ public class Facility extends StateMachine {
     }
 
     //state
-    private
-    public void setState(State state) {this.state = state};
+    //public void setState(State state) {this.state = state};
 
 
 
     //list of Observers that notify the Observer
-    private List<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
+    private ArrayList<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
 
 
 

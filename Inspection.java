@@ -5,17 +5,21 @@
   Inspection-->Maintenance
 */
 
+import java.util.*;
+import java.util.ArrayList;
 
 
 public interface Inspection
 {
-  public List listInspections();
+  public void setDetails();
+
+  public ArrayList listInspections();
 
   public String listFacilityIssues();
 
-  public boolean makeMaintenanceRequest();
+  //public boolean makeMaintenanceRequest();
 
 
-  public void update(); //used by Subject to update the Observer
+  //public void update(); //used by Subject to update the Observer
 
 }
