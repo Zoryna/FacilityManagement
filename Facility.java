@@ -1,11 +1,13 @@
-/*
-  class that has the details of the facility
-*/
+public class Facility extends StateMachine {
 
-public class Facility
-{
     private String name, address, description;
-    private int refNumber, capacity, cost, problemRate;
+    private int refNumber, capacity, problemRate;
+    private double cost;
+
+    Facility(String name, int refNumber){
+        this.name = name;
+        this.refNumber = refNumber;
+    }
 
     // Setters
     public void setName(String name){
@@ -15,7 +17,6 @@ public class Facility
     public void setAddress(String address){
         this.address = address;
     }
-
     public void setDescription(String description){
         this.description = description;
     }
@@ -28,7 +29,7 @@ public class Facility
         this.capacity = capacity;
     }
 
-    public void setCost(int cost){
+    public void setCost(double cost){
         this.cost = cost;
     }
 
@@ -57,7 +58,7 @@ public class Facility
         return capacity;
     }
 
-    public int getCost(){
+    public double getCost(){
         return cost;
     }
 
@@ -65,18 +66,8 @@ public class Facility
         return problemRate;
     }
 
-    public void addDetail() // What is this? Detail of what? Seems redundant
-    {
-
-    }
-
-    public void getFacilityInfo() // Same thing, description should cover it
-    {
-
-    }
-
-    public void requestAvailableCapacity() // This could be in Control, or in Management
-    {
-
+    public Facility getFacilityObj(){
+        Facility fac = new Facility(name, refNumber);
+        return fac;
     }
 }
