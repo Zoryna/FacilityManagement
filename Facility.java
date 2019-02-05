@@ -1,11 +1,32 @@
 /*
-  class that has the details of the facility
-*/
+    the Subject for the Observer pattern
+ */
 
-public class Facility
-{
+
+import java.util.ArrayList;
+
+public class Facility extends StateMachine {
+
     private String name, address, description;
-    private int refNumber, capacity, cost, problemRate;
+    private int refNumber, capacity, problemRate;
+    private double cost;
+
+
+    Facility(String name, int refNumber){
+        this.name = name;
+        this.refNumber = refNumber;
+    }
+
+    //state
+    //public void setState(State state) {this.state = state};
+
+
+
+    //list of Observers that notify the Observer
+    private ArrayList<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
+
+
+
 
     // Setters
     public void setName(String name){
@@ -15,7 +36,6 @@ public class Facility
     public void setAddress(String address){
         this.address = address;
     }
-
     public void setDescription(String description){
         this.description = description;
     }
@@ -28,7 +48,7 @@ public class Facility
         this.capacity = capacity;
     }
 
-    public void setCost(int cost){
+    public void setCost(double cost){
         this.cost = cost;
     }
 
@@ -57,7 +77,7 @@ public class Facility
         return capacity;
     }
 
-    public int getCost(){
+    public double getCost(){
         return cost;
     }
 
@@ -65,18 +85,8 @@ public class Facility
         return problemRate;
     }
 
-    public void addDetail() // What is this? Detail of what? Seems redundant
-    {
-
-    }
-
-    public void getFacilityInfo() // Same thing, description should cover it
-    {
-
-    }
-
-    public void requestAvailableCapacity() // This could be in Control, or in Management
-    {
-
+    public Facility getFacilityObj(){
+        Facility fac = new Facility(name, refNumber);
+        return fac;
     }
 }
