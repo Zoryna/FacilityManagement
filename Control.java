@@ -1,49 +1,19 @@
 /*
-  class that determines if a facility is available and assigns them
-  also schedules if facility needs maintenance
+    class that determines if a facility is available and assigns them
+    also schedules if facility needs maintenance
 */
 
+public class Control extends StateMachine {
 
+    public void assignToUse(Facility fac){
+        setStateWorking(fac);
+    }
 
-public class Control
-{
-  int interval;
-  
+    public void vacateFacility(Facility fac){
+        setStateResting(fac);
+    }
 
-  public boolean assignToUse()
-  {
-
-
-
-  }
-
-  public boolean vacateFacility()
-  {
-
-
-
-  }
-
-  public boolean scheduleMaintenance()
-  {
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void scheduleMaintenance(Facility fac){
+        setStateMaintenance(fac);
+    }
 }
