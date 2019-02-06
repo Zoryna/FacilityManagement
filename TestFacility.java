@@ -6,7 +6,7 @@
 import java.util.*;
 import java.util.ArrayList;
 
-public class TestFacility implements Inspection
+public class TestFacility
 {
 
         public void setDetails()

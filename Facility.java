@@ -17,15 +17,9 @@ public class Facility extends StateMachine {
         this.refNumber = refNumber;
     }
 
-    //state
-    //public void setState(State state) {this.state = state};
-
-
 
     //list of Observers that notify the Observer
-    private ArrayList<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
-
-
+    //private ArrayList<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
 
 
     // Setters

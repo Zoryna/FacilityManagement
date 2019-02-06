@@ -8,19 +8,58 @@
 public class Control
 {
     int interval;
+    StateMachine state;
+    Facility facility;
 
-    public boolean assignToUse()
+    public boolean assignToUse(Facility facility, StateMachine state)
     {
-        // This function changes the facility to State.WORKING
+        //This function changes the facility to State.WORKING
+
+        this.facility = facility;
+        this.state = state.toWorking(facility);
+
+        if (facility.getFacilityState() == state.toWorking(facility))
+        {
+            return true;
+            System.out.println("Assigned to working");
+        }
+        else
+            return false;
+
     }
 
-    public boolean vacateFacility()
+    public boolean vacateFacility(Facility facility, StateMachine state)
     {
-        // Assign a facility to RESTING state
+        //Assign a facility to RESTING state
+
+        this.facility = facility;
+        this.state = state.toResting(facility);
+
+        if (facility.getFacilityState() == state.toResting(facility))
+        {
+            return true;
+            System.out.println("Assigned to resting");
+        }
+        else
+            return false;
+
     }
 
-    public boolean scheduleMaintenance()
+    public boolean scheduleMaintenance(Facility facility, StateMachine state)
     {
-        // Assign a facility to MAINTENANCE
+        //Assign a facility to MAINTENANCE
+
+        this.facility = facility;
+        this.state = state.toMaintenance(facility);
+
+        if (facility.getFacilityState() == state.toMaintenance(facility))
+        {
+            return true;
+            System.out.println("Assigned to maintenance");
+        }
+
+        else
+            return false;
+
     }
 }
