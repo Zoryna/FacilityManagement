@@ -8,34 +8,47 @@
 public class Control
 {
     int interval;
-    StateMachine state;
-    Facility facility;
+    StateMachine sm;
+    State state;
+    Facility facility; //all faciltiies start at RESTING
 
-    public boolean assignToUse(Facility facility, StateMachine state)
+
+    public boolean assignToUse(Facility facility)
     {
-        //This function changes the facility to State.WORKING
+        //This function changes the facility to State.WORKING (they're functioning)
 
         this.facility = facility;
-        this.state = state.toWorking(facility);
+        sm.toWorking(facility);
 
-        if (facility.getFacilityState() == state.toWorking(facility))
+        System.out.println("The state of the facility is: " + facility.getFacilityState());
+
+
+
+
+        /*if (facility.getFacilityState() == state.toWorking(facility)) //comparing state with state, if current state is working
         {
             return true;
             System.out.println("Assigned to working");
         }
         else
             return false;
+        */
 
+        return true; //testing
     }
 
-    public boolean vacateFacility(Facility facility, StateMachine state)
+    /*public boolean vacateFacility(Facility facility)
     {
         //Assign a facility to RESTING state
 
         this.facility = facility;
-        this.state = state.toResting(facility);
+        this.sm = sm;
 
-        if (facility.getFacilityState() == state.toResting(facility))
+
+
+
+
+        if (facility.getFacilityState() == state.toResting(facility)) //comparing state with state, if current state is resting
         {
             return true;
             System.out.println("Assigned to resting");
@@ -43,16 +56,21 @@ public class Control
         else
             return false;
 
+
     }
 
-    public boolean scheduleMaintenance(Facility facility, StateMachine state)
+    public boolean scheduleMaintenance(Facility facility)
     {
-        //Assign a facility to MAINTENANCE
+        //Assign a facility to MAINTENANCE (they need maintenanc)
 
         this.facility = facility;
-        this.state = state.toMaintenance(facility);
+        this.sm = sm;
 
-        if (facility.getFacilityState() == state.toMaintenance(facility))
+
+
+
+
+        if (facility.getFacilityState() == state.toMaintenance(facility)) //comparing state with state, if current state needs maintenance
         {
             return true;
             System.out.println("Assigned to maintenance");
@@ -61,5 +79,7 @@ public class Control
         else
             return false;
 
-    }
+
+
+    } */
 }

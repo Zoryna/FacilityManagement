@@ -18,7 +18,7 @@ public class TestControlDriver
 
 
         System.out.println("Initial state of fac 0: " + fac0.getFacilityState());
-        System.out.println("Assign to use: " + stateMach.assignToUse(fac0));
+        System.out.println("Assign to use: " + stateMach.assignToUse(fac0)); //fix
         System.out.println("Current state of fac 0: " + fac0.getFacilityState());
 
 
