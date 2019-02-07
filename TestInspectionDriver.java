@@ -9,7 +9,7 @@ public class TestInspectionDriver
 
         Control c = new Control();
         Inspection ins = new Inspection();
-        StateMachine sm = new StateMachine();
+        //Maintenance maint = new Maintenance();
 
         Facility fac0 = new Facility ("Airlocks #0", 0);
         Facility fac1 = new Facility ("Airlocks #1", 1);
@@ -39,8 +39,20 @@ public class TestInspectionDriver
         System.out.println("Testing maintenance request, returns true if not at working state: ");
         ins.makeMaintenanceRequest(fac2);
 
+        /*
+        //another maintenane request for fac 2
+        System.out.println("This is system fac2");
+        System.out.println("Current is: " + fac2.getState());
+        c.scheduleMaintenance(fac2); //schedule maintenance, needs maintenance
+        System.out.println("State is now: " + fac2.getState());
+        System.out.println("Testing maintenance request, test if there is more than one request: ");
+        ins.makeMaintenanceRequest(fac2);
+        */
 
 
+
+
+        //testing maintenance
 
 
 

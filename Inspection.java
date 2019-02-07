@@ -28,9 +28,14 @@ public class Inspection extends StateMachine
             - return something that the Maintenance class can do with it
         */
 
+        //int maintRequests = 0;
+
         if (facility.state != State.WORKING) //if the state is already WORKING then it doesn't need maintenance
         {
+            maintRequests++;
             System.out.println("This facility needs maintenance");
+            //System.out.println("The amount of maintenance requests: " + maintRequests);
+
             return true;
         }
         else

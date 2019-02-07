@@ -4,7 +4,7 @@
   Inspection-->Maintenance
 */
 
-
+import java.ArrayList;
 
 public class Maintenance
 {
@@ -12,20 +12,17 @@ public class Maintenance
   //List Maintenace
 
 
-  public List listMaintenanceRequest()
+  public ArrayList listMaintenanceRequest(Facility facility) //list of maintenance requests
   {
 
 
   }
 
-  public List listMaintenace()
+  public ArrayList listMaintenace(Facility facility)
   {
 
 
   }
-
-
-
 
 
 
