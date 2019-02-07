@@ -10,18 +10,19 @@ public class StateMachine {
         return state;
     }
 
-    public State toWorking(Facility fac) {
+    public void setStateWorking(Facility fac){
         fac.state = State.WORKING;
-        return fac.getFacilityState();
     }
 
-    public State toResting(Facility fac) {
+    public void setStateResting(Facility fac){
         fac.state = State.RESTING;
-        return fac.getFacilityState();
     }
 
-    public State toMaintenance(Facility fac) {
+    public void setStateMaintenance(Facility fac){
         fac.state = State.MAINTENANCE;
-        return fac.getFacilityState();
+    }
+
+    public State getState() {
+        return state;
     }
 }
