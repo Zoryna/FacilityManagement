@@ -3,22 +3,23 @@
     2. Talks to the interested parties about what's going on (Is the Facility working? Is it at Maintenance? Is it resting? Should it be resting?)
 */
 
-public class Inspection
+public class Inspection extends StateMachine
 {
-    public void listFacilityIssues()
+
+    /*public void listFacilityIssues()
     {
         /* Our facilities just do one thing now, they do work or they do not, so at this moment,
          this isn't needed, unless you wanna assign facilities to a Queue when they have
          the MAINTENANCE state.
-        */
 
 
 
 
 
-    }
 
-    public void makeMaintenanceRequest()
+    } */
+
+    public boolean makeMaintenanceRequest(Facility facility) //if return true then make request
     {
         /* Connect to Maintenance, obviously
 
@@ -27,19 +28,24 @@ public class Inspection
             - return something that the Maintenance class can do with it
         */
 
-
-
-
-
-
-
+        if (facility.state != State.WORKING) //if the state is already WORKING then it doesn't need maintenance
+        {
+            System.out.println("This facility needs maintenance");
+            return true;
+        }
+        else
+            return false;
     }
 
-    public void listInspections()
+
+
+    /*public void listInspections()
     {
         /* Kind of the same thing, what could be done here is to call the dates of the
         inspections done and use the WriteFile (or w/e it's called) to save the inspections
          that have been done
-         */
-    }
+
+
+
+    } */
 }
