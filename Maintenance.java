@@ -4,25 +4,47 @@
   Inspection-->Maintenance
 */
 
-import java.ArrayList;
+import java.util.ArrayList;
 
-public class Maintenance
+public class Maintenance extends StateMachine
 {
   //list Request
   //List Maintenace
 
+  private Facility facility;
+  //private int requestNumber ;
 
-  public ArrayList listMaintenanceRequest(Facility facility) //list of maintenance requests
+
+  Maintenance(Facility facility)
+  {
+    this.facility = facility;
+    //this.requestNumber = requestNumber;
+  }
+
+
+    //setters
+    public void setFacility(Facility facility){ this.facility = facility; }
+
+    //public void setRequestNumber(int requestNumber){ this.requestNumber = requestNumber; }
+
+    //getters
+    public Facility getFacility(){ return facility; }
+
+    //public int getRequestNumber(){ return requestNumber; }
+
+
+
+  /*public Maintenance listMaintenanceRequest(Facility facility) //list of maintenance requests
   {
 
 
-  }
+  }*/
 
-  public ArrayList listMaintenace(Facility facility)
+  /*public ArrayList listMaintenace(Facility facility)
   {
 
 
-  }
+  } */
 
 
 

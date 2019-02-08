@@ -18,9 +18,6 @@ public class Facility extends StateMachine {
     }
 
 
-    //list of Observers that notify the Observer
-    //private ArrayList<Inspection> observers = new ArrayList<Inspection>(); //Inspection is Observer class
-
 
     // Setters
     public void setName(String name){
@@ -30,6 +27,7 @@ public class Facility extends StateMachine {
     public void setAddress(String address){
         this.address = address;
     }
+
     public void setDescription(String description){
         this.description = description;
     }
