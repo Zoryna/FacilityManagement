@@ -6,7 +6,7 @@
 public class Inspection extends StateMachine
 {
 
-    Facility facility;
+    private Facility facility;
 
     /*public void listFacilityIssues()
     {
@@ -23,7 +23,6 @@ public class Inspection extends StateMachine
 
     public Maintenance makeMaintenanceRequest (Facility facility) //checks the state of the facility, then returns a Maintenance object for tht facility
     {
-
         /* Connect to Maintenance, obviously
 
             - You will need a Driver with many facilities with different states, just create a scenario of it
@@ -32,11 +31,12 @@ public class Inspection extends StateMachine
         */
 
         this.facility = facility;
-        Maintenance aMaintenance = new Maintenance(facility);
+        Maintenance aMaintenance = new Maintenance();
 
         if ((facility.state == State.RESTING) || (facility.state == State.WORKING) || (facility.state == State.MAINTENANCE))
         {
             System.out.println("This facility requests maintenance :(");
+            System.out.println("This is facility: " + facility);
 
             //need to do more tests if the same facility actually makes new Maintenance objects
             //or if it successfully returns a Maintenance object
@@ -44,23 +44,14 @@ public class Inspection extends StateMachine
         }
         else
             return null;
-
-
-
-
     }
 
-    public boolean testBroken (Facility facility) //if return true then make request
+    public boolean testBroken (Facility facility)
     {
 
-        //int maintRequests = 0;
-
-        if (facility.state != State.WORKING) //if the state is already WORKING then it doesn't need maintenance
+        if (facility.state != State.WORKING)
         {
-            //maintRequests++;
             System.out.println("This facility is BROKEN :(");
-            //System.out.println("The amount of maintenance requests: " + maintRequests);
-
             return true;
         }
         else

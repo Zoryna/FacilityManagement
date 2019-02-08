@@ -9,7 +9,7 @@ public class TestInspectionDriver
 
         Control c = new Control();
         Inspection ins = new Inspection();
-        //Maintenance maint = new Maintenance();
+        Maintenance maint = new Maintenance();
 
         Facility fac0 = new Facility ("Airlocks #0", 0);
         Facility fac1 = new Facility ("Airlocks #1", 1);
@@ -45,16 +45,21 @@ public class TestInspectionDriver
         //testing maintenance
         System.out.println("Testing maintenance request:");
 
-        //maintenance requests for fac0, which is currently WORKINGS state
-        ins.makeMaintenanceRequest(fac0);
-        ins.makeMaintenanceRequest(fac0); //need to test if method returns a new Maintenance object
+        //maintenance requests for fac0, which is currently WORKING state
+        ins.makeMaintenanceRequest(fac0); //returns a Maintenance object
+        ins.makeMaintenanceRequest(fac0); //returns a Maintenance object
+        maint.listMaintenanceRequest(fac0, ins);
+
+
+
 
 
         //maintenance requsets for fac1, which is currently in MAINTENANCE state
         ins.makeMaintenanceRequest(fac1);
+        maint.listMaintenanceRequest(fac1, ins);
 
         //maintenance requests for fac2, which is currently in RESTING state
-        ins.makeMaintenanceRequest(fac2);
+        //ins.makeMaintenanceRequest(fac2);
 
 
 
