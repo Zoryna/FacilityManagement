@@ -46,17 +46,19 @@ public class TestInspectionDriver
         System.out.println("Testing maintenance request:");
 
         //maintenance requests for fac0, which is currently WORKING state
-        ins.makeMaintenanceRequest(fac0); //returns a Maintenance object
-        ins.makeMaintenanceRequest(fac0); //returns a Maintenance object
-        maint.listMaintenanceRequest(fac0, ins);
+        ins.makeMaintenanceRequest(fac0, 1); //request 1
+        ins.makeMaintenanceRequest(fac0, 2);
+        maint.listMaintenanceRequest(fac0, ins, 1);
+        maint.listMaintenanceRequest(fac0, ins, 2);
 
 
 
 
 
         //maintenance requsets for fac1, which is currently in MAINTENANCE state
-        ins.makeMaintenanceRequest(fac1);
-        maint.listMaintenanceRequest(fac1, ins);
+        ins.makeMaintenanceRequest(fac1, 1);
+        maint.listMaintenanceRequest(fac1, ins, 1);
+
 
         //maintenance requests for fac2, which is currently in RESTING state
         //ins.makeMaintenanceRequest(fac2);

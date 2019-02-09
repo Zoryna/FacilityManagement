@@ -12,23 +12,23 @@ public class Maintenance extends StateMachine
   //List Maintenace
 
   private Facility facility;
-  private Inspection insp;
+  private Inspection ins;
+  private int reqNum;
 
-  public void listMaintenanceRequest(Facility facility, Inspection insp) //list of maintenance requests
+  public void listMaintenanceRequest(Facility facility, Inspection ins, int reqNum) //shows the request, which says that there needs to be maintenance
   {
     this.facility = facility;
-    this.insp = insp;
-    ArrayList<Maintenance> maintRequests = new ArrayList<Maintenance>(); //list of Maintenance objects, list that stores the Maintenance objects that are requests
+    this.ins = ins;
+    this.reqNum = reqNum;
 
-
-
-
+    System.out.println("This is supposed to be the request: " + ins.makeMaintenanceRequest(facility, reqNum));
+    System.out.println("This is the facility: " + facility + " and the request number: " + reqNum);
 
   }
 
 
 
-  /*public ArrayList listMaintenace(Facility facility) //list of the maintenance that needs to be done
+  /*public void listMaintenace(Facility facility) //list of the maintenance that needs to be done
   {
 
 

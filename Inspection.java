@@ -7,6 +7,7 @@ public class Inspection extends StateMachine
 {
 
     private Facility facility;
+    private int reqNum;
 
     /*public void listFacilityIssues()
     {
@@ -21,7 +22,7 @@ public class Inspection extends StateMachine
 
     } */
 
-    public Maintenance makeMaintenanceRequest (Facility facility) //checks the state of the facility, then returns a Maintenance object for tht facility
+    public String makeMaintenanceRequest (Facility facility, int reqNum) //checks the state of the facility, then returns a String saying that there needs to be maintenance
     {
         /* Connect to Maintenance, obviously
 
@@ -31,16 +32,12 @@ public class Inspection extends StateMachine
         */
 
         this.facility = facility;
-        Maintenance aMaintenance = new Maintenance();
+        this.reqNum = reqNum; //maintenance request number
+        String request = "Need maintenance";
 
         if ((facility.state == State.RESTING) || (facility.state == State.WORKING) || (facility.state == State.MAINTENANCE))
         {
-            System.out.println("This facility requests maintenance :(");
-            System.out.println("This is facility: " + facility);
-
-            //need to do more tests if the same facility actually makes new Maintenance objects
-            //or if it successfully returns a Maintenance object
-            return aMaintenance;
+            return request;
         }
         else
             return null;
