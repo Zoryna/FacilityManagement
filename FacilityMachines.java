@@ -10,34 +10,33 @@ public class FacilityMachines extends Facility{
         super(name, refNumber);
     }
 
-    public void setOxygenator(boolean oxygenator){
+    public void Oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
     }
 
-    public void setNuclearReactor(boolean nuclearReactor){
+    public void NuclearReactor(boolean nuclearReactor){
         this.nuclearReactor = nuclearReactor;
     }
 
-    public void setInnerAirlocks(boolean innerAirlocks){
+    public void InnerAirlocks(boolean innerAirlocks){
         this.innerAirlocks = innerAirlocks;
     }
 
-    public void setExternalAirlocks(boolean externalAirlocks){
+    public void ExternalAirlocks(boolean externalAirlocks){
         this.externalAirlocks = externalAirlocks;
     }
 
-    public void setSolarPanels(boolean solarPanels){
+    public void SolarPanels(boolean solarPanels){
         this.solarPanels = solarPanels;
     }
 
-    public void setComms(boolean comms){
+    public void Comms(boolean comms){
         this.comms = comms;
     }
 
-    public void setWaterMaking(boolean waterMaking){
+    public void WaterMaking(boolean waterMaking){
         this.waterMaking = waterMaking;
     }
-
 
     public void checkMachines(){
         int[] ar = new int[machines];
@@ -48,6 +47,4 @@ public class FacilityMachines extends Facility{
         System.out.println("Comms: " + comms);
         System.out.println("Water Making: " + waterMaking);
     }
-
-
 }

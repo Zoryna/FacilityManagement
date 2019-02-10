@@ -3,12 +3,12 @@ public class TestFacilityMachines {
         FacilityMachines fm = new FacilityMachines();
         boolean state = true;
         boolean falseState = false;
-        fm.setOxygenator(falseState);
-        fm.setInnerAirlocks(state);
-        fm.setExternalAirlocks(falseState);
-        fm.setSolarPanels(state);
-        fm.setComms(falseState);
-        fm.setWaterMaking(state);
+        fm.Oxygenator(falseState);
+        fm.InnerAirlocks(state);
+        fm.ExternalAirlocks(falseState);
+        fm.SolarPanels(state);
+        fm.Comms(falseState);
+        fm.WaterMaking(state);
         fm.checkMachines();
     }
 }
