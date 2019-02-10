@@ -2,7 +2,8 @@ import java.util.Random;
 
 public class Randomizer {
     Random r = new Random();
-    private double d = 0;
+    private double d = 0; // Stores the setRandom() so it can be compared without mistakes
+    private double percentage = 0.05;
 
     public void setRandom(){
         d = r.nextDouble();
@@ -14,18 +15,11 @@ public class Randomizer {
 
     // Allow us to be cheeky for once in function naming, come on
     public boolean wingardiumLeviosa(){
-        // Checks for half 1% percent probability
-        if (d < 0.005)
+        // Half 1% percent probability at 0.005 for harder to break
+        // 5% percent probability for better demonstration purposes, or higher
+        if (d < percentage)
             return true;
         else
             return false;
-    }
-
-    public static void main (String[] args){
-        Randomizer r = new Randomizer();
-        for(int i = 0; i < 300; i++){
-            r.setRandom();
-            System.out.println("Value was: " + r.getRandom() + " which is " + r.wingardiumLeviosa());
-        }
     }
 }
