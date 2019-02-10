@@ -1,7 +1,9 @@
 public class Facility extends StateMachine {
 
-    private String name, address, description;
-    private int refNumber, capacity, problemRate;
+    public static String name;
+    public static int refNumber;
+    private String address, description;
+    private int capacity, problemRate;
     private double cost;
 
     Facility(String name, int refNumber){
