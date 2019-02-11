@@ -2,7 +2,7 @@ import java.util.*;
 
 public class FacilityMachines extends Facility {
 
-    private boolean oxygenator, innerAirlocks, externalAirlocks, transLine,
+    private boolean oxygenator, innerAirlocks, externalAirlocks,
     comms, nuclearReactor, waterMaking;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
     private final int numberOfMachines = 7;
@@ -41,7 +41,11 @@ public class FacilityMachines extends Facility {
         this.waterMaking = waterMaking;
     }
 
-    // Not a great use of SRP here, I know
+    /*
+        Not a great use of SRP here, I know, but we never discussed a way for
+        people using the interface to be able to add services, and that being
+        streamlined automatically, so here is why it is like this.
+    */
     public void getFacilityStatus(){
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
