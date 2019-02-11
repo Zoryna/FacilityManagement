@@ -10,10 +10,10 @@ public class Randomizer {
     }
 
     public double getRandom(){
-        return d;
+        return d; // ( ͡° ͜ʖ ͡°)
     }
 
-    // Allow us to be cheeky for once in function naming, come on
+    // Just for the sake of cheeky function naming for once
     public boolean wingardiumLeviosa(){
         // Half 1% percent probability at 0.005 for harder to break
         // 5% percent probability for better demonstration purposes, or higher

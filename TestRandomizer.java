@@ -1,5 +1,5 @@
-public class TestRandomizer{
-    public static void main(String[] args){
+public class TestRandomizer {
+    public static void main(String[] args) {
         Randomizer r = new Randomizer();
         int numberOfTests = 300;
         double percentageBeingTested = 0.05;

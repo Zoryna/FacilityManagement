@@ -6,9 +6,10 @@ public class TestFacilityMachines {
         fm.Oxygenator(falseState);
         fm.InnerAirlocks(state);
         fm.ExternalAirlocks(falseState);
-        fm.SolarPanels(state);
+        fm.NuclearReactor(state);
         fm.Comms(falseState);
         fm.WaterMaking(state);
         fm.checkMachines();
+        fm.getFacilityStatus();
     }
 }
