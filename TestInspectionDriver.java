@@ -50,19 +50,19 @@ public class TestInspectionDriver
         ins.makeMaintenanceRequest(fac0, 2);
         maint.listMaintenanceRequest(fac0, ins, 1);
         maint.listMaintenanceRequest(fac0, ins, 2);
-        ins.fixedTheFacility(fac0, c);
+        maint.fixedTheFacility(fac0, c);
 
 
         //maintenance requsets for fac1, which is currently in MAINTENANCE state
         ins.makeMaintenanceRequest(fac1, 1);
         maint.listMaintenanceRequest(fac1, ins, 1);
-        ins.fixedTheFacility(fac1, c); //this should change to resting
+        maint.fixedTheFacility(fac1, c); //this should change to resting
 
 
         //maintenance requests for fac2, which is currently in RESTING state
         ins.makeMaintenanceRequest(fac2, 1);
         maint.listMaintenanceRequest(fac2, ins, 1);
-        ins.fixedTheFacility(fac2, c);
+        maint.fixedTheFacility(fac2, c);
 
 
 

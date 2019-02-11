@@ -51,25 +51,6 @@ public class Inspection extends StateMachine
             return false;
     }
 
-    public Facility fixedTheFacility (Facility facility, Control c) //changes the faciity state from broken (maintenance) to resting
-    {
-        if (facility.state == State.MAINTENANCE)
-        {
-            System.out.println("This state is broken, it is going to change to RESTING");
-            c.vacateFacility(facility);
-            System.out.println("The state is now " + facility.getState());
-            return facility;
-        }
-        else
-            return facility;
-
-
-
-
-
-    }
-
-
 
     /*public void listInspections()
     {
