@@ -6,9 +6,6 @@
 public class Inspection extends StateMachine
 {
 
-    private Facility facility;
-    private int reqNum;
-
     /*public void listFacilityIssues()
     {
         /* Our facilities just do one thing now, they do work or they do not, so at this moment,
@@ -31,11 +28,9 @@ public class Inspection extends StateMachine
             - return something that the Maintenance class can do with it
         */
 
-        this.facility = facility;
-        this.reqNum = reqNum; //maintenance request number
         String request = "Need maintenance";
 
-        if ((facility.state == State.RESTING) || (facility.state == State.WORKING) || (facility.state == State.MAINTENANCE))
+        if ((facility.state == State.RESTING) || (facility.state == State.WORKING))
         {
             return request;
         }
@@ -43,6 +38,7 @@ public class Inspection extends StateMachine
             return null;
     }
 
+    //3 states: resting, broken, working
     public boolean testBroken (Facility facility)
     {
 
@@ -53,6 +49,24 @@ public class Inspection extends StateMachine
         }
         else
             return false;
+    }
+
+    public Facility fixedTheFacility (Facility facility, Control c) //changes the faciity state from broken (maintenance) to resting
+    {
+        if (facility.state == State.MAINTENANCE)
+        {
+            System.out.println("This state is broken, it is going to change to RESTING");
+            c.vacateFacility(facility);
+            System.out.println("The state is now " + facility.getState());
+            return facility;
+        }
+        else
+            return facility;
+
+
+
+
+
     }
 
 
