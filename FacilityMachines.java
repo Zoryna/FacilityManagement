@@ -46,6 +46,7 @@ public class FacilityMachines extends Facility {
         people using the interface to be able to add services, and that being
         streamlined automatically, so here is why it is like this.
     */
+
     public void getFacilityStatus(){
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
