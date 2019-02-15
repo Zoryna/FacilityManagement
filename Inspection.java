@@ -3,23 +3,39 @@
     2. Talks to the interested parties about what's going on (Is the Facility working? Is it at Maintenance? Is it resting? Should it be resting?)
 */
 
+import java.util.ArrayList;
+
 public class Inspection extends StateMachine
 {
 
-    /*public void listFacilityIssues()
+    public boolean checkMachines(FacilityMachines fm) //if at least one is broken, change state to broken
+    {
+
+        if (map.containsValue(false))
+        {
+            System.out.println("One of the machines are broken");
+            return false; //returns this when at least 1 is broken, which means facility needs maintenance
+        }
+        else
+            return true; //when all 7 machines are working
+    }
+
+    public void listFacilityIssues(FacilityMachines fm, int reqNumber)
     {
         /* Our facilities just do one thing now, they do work or they do not, so at this moment,
          this isn't needed, unless you wanna assign facilities to a Queue when they have
          the MAINTENANCE state.
+        */
+
+        //list what is not working in the facility
+
+        fm.getFacilityStatus();
 
 
 
+    }
 
-
-
-    } */
-
-    public String makeMaintenanceRequest (Facility facility, int reqNum) //checks the state of the facility, then returns a String saying that there needs to be maintenance
+    public String makeMaintenanceRequest (FacilityMachines fm, int reqNum) //checks the state of the facility, then returns a String saying that there needs to be maintenance
     {
         /* Connect to Maintenance, obviously
 
@@ -28,9 +44,9 @@ public class Inspection extends StateMachine
             - return something that the Maintenance class can do with it
         */
 
-        String request = "Need maintenance";
+        String request = "This facility needs maintenance";
 
-        if ((facility.state == State.RESTING) || (facility.state == State.WORKING))
+        if ((fm.state == State.RESTING) || (fm.state == State.MAINTENANCE))
         {
             return request;
         }
@@ -38,19 +54,18 @@ public class Inspection extends StateMachine
             return null;
     }
 
-    //3 states: resting, broken, working
-    public boolean testBroken (Facility facility)
+    //3 states: resting, maintenance, working
+    public boolean isBroken (FacilityMachines fm)
     {
-
-        if (facility.state != State.WORKING)
+        if (fm.state != State.WORKING)
         {
             System.out.println("This facility is BROKEN :(");
             return true;
         }
         else
             return false;
-    }
 
+    }
 
     /*public void listInspections()
     {

@@ -9,7 +9,7 @@ public class TestFacilityMachines {
         fm.NuclearReactor(state);
         fm.Comms(falseState);
         fm.WaterMaking(state);
-        fm.checkMachines();
+        //fm.checkMachines();
         fm.getFacilityStatus();
     }
 }

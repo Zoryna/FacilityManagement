@@ -17,36 +17,36 @@ public class FacilityMachines extends Facility {
         this.oxygenator = oxygenator;
     }
 
-    public void NuclearReactor(boolean nuclearReactor){
-        this.nuclearReactor = nuclearReactor;
+    public boolean NuclearReactor(boolean nuclearReactor){
+        return this.nuclearReactor = nuclearReactor;
     }
 
-    public void InnerAirlocks(boolean innerAirlocks){
-        this.innerAirlocks = innerAirlocks;
+    public boolean InnerAirlocks(boolean innerAirlocks){
+        return this.innerAirlocks = innerAirlocks;
     }
 
-    public void ExternalAirlocks(boolean externalAirlocks){
-        this.externalAirlocks = externalAirlocks;
+    public boolean ExternalAirlocks(boolean externalAirlocks){
+        return this.externalAirlocks = externalAirlocks;
     }
 
-    public void nuclearReactor(boolean nuclearReactor){
-        this.nuclearReactor = nuclearReactor;
+    public boolean nuclearReactor(boolean nuclearReactor){
+        return this.nuclearReactor = nuclearReactor;
     }
 
-    public void Comms(boolean comms){
-        this.comms = comms;
+    public boolean Comms(boolean comms){
+        return this.comms = comms;
     }
 
-    public void WaterMaking(boolean waterMaking){
-        this.waterMaking = waterMaking;
+    public boolean WaterMaking(boolean waterMaking){
+        return this.waterMaking = waterMaking;
     }
 
     /*
-        Not a great use of SRP here, I know, but we never discussed a way for
+        Not a great use of SRP (single responsibility principle) here, I know, but we never discussed a way for
         people using the interface to be able to add services, and that being
         streamlined automatically, so here is why it is like this.
     */
-    public void getFacilityStatus(){
+    public void getFacilityStatus(){ //parts of a facility, check if they are working
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
         map.put("External Airlocks", externalAirlocks);
