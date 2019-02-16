@@ -8,18 +8,6 @@ import java.util.ArrayList;
 public class Inspection extends StateMachine
 {
 
-    public boolean checkMachines(FacilityMachines fm) //if at least one is broken, change state to broken
-    {
-
-        if (map.containsValue(false))
-        {
-            System.out.println("One of the machines are broken");
-            return false; //returns this when at least 1 is broken, which means facility needs maintenance
-        }
-        else
-            return true; //when all 7 machines are working
-    }
-
     public void listFacilityIssues(FacilityMachines fm, int reqNumber)
     {
         /* Our facilities just do one thing now, they do work or they do not, so at this moment,
@@ -28,7 +16,6 @@ public class Inspection extends StateMachine
         */
 
         //list what is not working in the facility
-
         fm.getFacilityStatus();
 
 

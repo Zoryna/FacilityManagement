@@ -5,7 +5,7 @@ public class FacilityMachines extends Facility {
     private boolean oxygenator, innerAirlocks, externalAirlocks,
     comms, nuclearReactor, waterMaking;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
-    private final int numberOfMachines = 7;
+    private final int numberOfMachines = 6;
     // Store a Hashmap with the keys as the variables, and return it.
     // Maybe extending the StateMachine is needed
 
@@ -13,12 +13,8 @@ public class FacilityMachines extends Facility {
         super(name, refNumber);
     }
 
-    public void Oxygenator(boolean oxygenator){
-        this.oxygenator = oxygenator;
-    }
-
-    public boolean NuclearReactor(boolean nuclearReactor){
-        return this.nuclearReactor = nuclearReactor;
+    public boolean Oxygenator(boolean oxygenator){
+        return this.oxygenator = oxygenator;
     }
 
     public boolean InnerAirlocks(boolean innerAirlocks){
@@ -29,7 +25,7 @@ public class FacilityMachines extends Facility {
         return this.externalAirlocks = externalAirlocks;
     }
 
-    public boolean nuclearReactor(boolean nuclearReactor){
+    public boolean NuclearReactor(boolean nuclearReactor){
         return this.nuclearReactor = nuclearReactor;
     }
 
@@ -46,7 +42,7 @@ public class FacilityMachines extends Facility {
         people using the interface to be able to add services, and that being
         streamlined automatically, so here is why it is like this.
     */
-    public void getFacilityStatus(){ //parts of a facility, check if they are working
+    public Map getFacilityStatus(){ //parts of a facility, check if they are working
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
         map.put("External Airlocks", externalAirlocks);
@@ -57,5 +53,11 @@ public class FacilityMachines extends Facility {
         for (Map.Entry<String, Boolean> i: map.entrySet()){
             System.out.println(i.getKey() + ": " + i.getValue());
         }
+        return map;
     }
+
+    /*(public void checkMachines(FacilityMachines fm) //if at least one is broken, change state to broken
+    {
+
+    } */
 }
