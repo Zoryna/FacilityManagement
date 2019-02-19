@@ -6,11 +6,9 @@
 
 public interface FacilityAI {
     public void decisionTree(); // How/When/Which decisions are made
-    public void getFacility(Facility fac); // Select a Facility to apply this
     public Facility getFacility(); // Return the Facility
-    
-    /*  Decision Tree
 
+    /*
         If it's >= 8 AM, then send it to Maintenance
 
         If Oxygenator OR innerAirlocks OR externalAirlocks == false
@@ -20,5 +18,4 @@ public interface FacilityAI {
             State.Maintenance is needed
 
     */
-
 }
