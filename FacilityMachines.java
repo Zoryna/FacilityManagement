@@ -2,7 +2,7 @@ import java.util.*;
 
 public class FacilityMachines extends Facility {
 
-    private boolean oxygenator, innerAirlocks, externalAirlocks,
+    public boolean oxygenator, innerAirlocks, externalAirlocks,
     comms, nuclearReactor, waterMaking;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
     private final int numberOfMachines = 6;
@@ -51,13 +51,23 @@ public class FacilityMachines extends Facility {
         map.put("WaterMaking", waterMaking);
 
         for (Map.Entry<String, Boolean> i: map.entrySet()){
-            System.out.println(i.getKey() + ": " + i.getValue());
+
         }
         return map;
     }
 
-    /*(public void checkMachines(FacilityMachines fm) //if at least one is broken, change state to broken
+    public int checkMachines(Map theMap)
     {
+        int issues = 0;
 
-    } */
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            if (map.containsValue(false))
+            {
+                issues++;
+            }
+        }
+        System.out.println("The amount of issues are: " + issues);
+
+        return issues;
+    }
 }

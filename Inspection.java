@@ -3,26 +3,30 @@
     2. Talks to the interested parties about what's going on (Is the Facility working? Is it at Maintenance? Is it resting? Should it be resting?)
 */
 
+import java.util.*;
 import java.util.ArrayList;
 
 public class Inspection extends StateMachine
 {
 
-    public void listFacilityIssues(FacilityMachines fm, int reqNumber)
+    public void listFacilityIssues(FacilityMachines fm) //counts the number of machines broken
     {
-        /* Our facilities just do one thing now, they do work or they do not, so at this moment,
-         this isn't needed, unless you wanna assign facilities to a Queue when they have
-         the MAINTENANCE state.
-        */
+        /*int issues = 0;
 
-        //list what is not working in the facility
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            if (map.containsValue(false))
+            {
+                issues++;
+            }
+        }
+        System.out.println("The amount of issues are: " + issues);
+
+        return issues; */
+
         fm.getFacilityStatus();
-
-
-
     }
 
-    public String makeMaintenanceRequest (FacilityMachines fm, int reqNum) //checks the state of the facility, then returns a String saying that there needs to be maintenance
+    public String makeMaintenanceRequest (FacilityMachines fm, int reqNumber) //checks the state of the facility, then returns a String saying that there needs to be maintenance
     {
         /* Connect to Maintenance, obviously
 
@@ -33,6 +37,11 @@ public class Inspection extends StateMachine
 
         String request = "This facility needs maintenance";
 
+        /*if (numIssues > 0)
+            return request;
+        else
+            return null; */
+
         if ((fm.state == State.RESTING) || (fm.state == State.MAINTENANCE))
         {
             return request;
@@ -42,8 +51,17 @@ public class Inspection extends StateMachine
     }
 
     //3 states: resting, maintenance, working
-    public boolean isBroken (FacilityMachines fm)
+    public boolean isBroken (FacilityMachines fm) //checks the state
     {
+        /*if (numIssues > 0)
+        {
+            System.out.println("This facility is BROKEN :(");
+            return true;
+        }
+
+        else
+            return false; */
+
         if (fm.state != State.WORKING)
         {
             System.out.println("This facility is BROKEN :(");

@@ -7,7 +7,6 @@ public class TestInspectionDriver
     public static void main (String[] args)
     {
         Randomizer r = new Randomizer(); //creates random instances of a machine breaking
-        r.setRandom();
         Control c = new Control(); //assigns availability
         Inspection ins = new Inspection(); //checks if facilities are working/if need maintenance
         Maintenance maint = new Maintenance(); //lists maintenance, changes state to resting
@@ -23,97 +22,118 @@ public class TestInspectionDriver
         System.out.println("This is system: " + fac0.getName());
         System.out.println("The current state is: " + fac0.getState()); //at resting state
 
-        //testing the facility machines, probably a better way to do this
+        //testing the facility machines and randomizer
 
         //Oxygenator
+        r.setRandom();
         r.wingardiumLeviosa(fac0);
         if (r.wingardiumLeviosa(fac0) == false)
         {
             System.out.println(r.getRandom() + " Oxygenator is broken");
             fac0.Oxygenator(false);
-            c.scheduleMaintenance(fac0);
         }
         else
         {
-            System.out.println(r.getRandom() + " All machines are functioning");
             fac0.Oxygenator(true);
         }
 
 
         //InnerAirlocks
+        r.setRandom();
         r.wingardiumLeviosa(fac0);
         if (r.wingardiumLeviosa(fac0) == false)
         {
             System.out.println(r.getRandom() + " InnerAirlocks is broken");
             fac0.InnerAirlocks(false);
-            c.scheduleMaintenance(fac0);
         }
         else
         {
-            System.out.println(r.getRandom() + " All machines are functioning");
             fac0.InnerAirlocks(true);
         }
 
 
         //ExternalAirlocks
+        r.setRandom();
         r.wingardiumLeviosa(fac0);
         if (r.wingardiumLeviosa(fac0) == false)
         {
             System.out.println(r.getRandom() + " ExternalAirlocks is broken");
             fac0.ExternalAirlocks(false);
-            c.scheduleMaintenance(fac0);
         }
         else
         {
-            System.out.println(r.getRandom() + " All machines are functioning");
             fac0.ExternalAirlocks(true);
         }
 
 
         //NuclearReactor
+        r.setRandom();
         r.wingardiumLeviosa(fac0);
         if (r.wingardiumLeviosa(fac0) == false)
         {
             System.out.println(r.getRandom() + " NuclearReactor is broken");
             fac0.NuclearReactor(false);
-            c.scheduleMaintenance(fac0);
         }
         else
         {
-            System.out.println(r.getRandom() + " All machines are functioning");
             fac0.NuclearReactor(true);
         }
 
 
         //Comms
+        r.setRandom();
         r.wingardiumLeviosa(fac0);
         if (r.wingardiumLeviosa(fac0) == false)
         {
             System.out.println(r.getRandom() + " Comms is broken");
             fac0.Comms(false);
-            c.scheduleMaintenance(fac0);
         }
         else
         {
-            System.out.println(r.getRandom() + " All machines are functioning");
             fac0.Comms(true);
         }
 
 
 
         //WaterMaking
+        r.setRandom();
         r.wingardiumLeviosa(fac0);
         if (r.wingardiumLeviosa(fac0) == false)
         {
             System.out.println(r.getRandom() + " WaterMaking is broken");
             fac0.WaterMaking(false);
-            c.scheduleMaintenance(fac0);
         }
         else
         {
-            System.out.println(r.getRandom() + " All machines are functioning");
             fac0.WaterMaking(true);
         }
+
+
+
+        System.out.println("Testing listFacilityIssues from Inspection");
+        //ins.listFacilityIssues(fac0, 1);
+        if (fac0.getFacilityStatus().containsValue(false))
+        {
+            System.out.println("Some of the machines aren't working");
+            c.scheduleMaintenance(fac0);
+            System.out.println("The current state is: " + fac0.getState());
+        }
+        else
+        {
+            System.out.println("All the machines are working");
+            c.assignToUse(fac0);
+            System.out.println("The state is: " + fac0.getState());
+        }
+
+        System.out.println("Testing Inspection");
+        System.out.println("Testing listFacilityIssues");
+        ins.listFacilityIssues(fac0); //fix
+        System.out.println("Testing makeMaintenanceRequest");
+        ins.makeMaintenanceRequest(fac0, 1); //fix
+        System.out.println("Testing isBroken");
+        ins.isBroken(fac0);
+
+
 
 
 
