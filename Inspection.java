@@ -9,21 +9,10 @@ import java.util.ArrayList;
 public class Inspection extends StateMachine
 {
 
-    public void listFacilityIssues(FacilityMachines fm) //counts the number of machines broken
+    public void listFacilityIssues(FacilityMachines fm) //lists what is broken
     {
-        /*int issues = 0;
-
-        for (Map.Entry<String, Boolean> i: map.entrySet()){
-            if (map.containsValue(false))
-            {
-                issues++;
-            }
-        }
-        System.out.println("The amount of issues are: " + issues);
-
-        return issues; */
-
-        fm.getFacilityStatus();
+        //fm.getFacilityStatus(fm.getMap());
+        fm.showBrokenMachines(fm.getMap());
     }
 
     public String makeMaintenanceRequest (FacilityMachines fm, int reqNumber) //checks the state of the facility, then returns a String saying that there needs to be maintenance
@@ -44,6 +33,7 @@ public class Inspection extends StateMachine
 
         if ((fm.state == State.RESTING) || (fm.state == State.MAINTENANCE))
         {
+            System.out.println("Needs maintenance");
             return request;
         }
         else

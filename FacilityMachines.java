@@ -37,12 +37,9 @@ public class FacilityMachines extends Facility {
         return this.waterMaking = waterMaking;
     }
 
-    /*
-        Not a great use of SRP (single responsibility principle) here, I know, but we never discussed a way for
-        people using the interface to be able to add services, and that being
-        streamlined automatically, so here is why it is like this.
-    */
-    public Map getFacilityStatus(){ //parts of a facility, check if they are working
+
+    public Map getMap() //just returns the map
+    {
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
         map.put("External Airlocks", externalAirlocks);
@@ -50,18 +47,31 @@ public class FacilityMachines extends Facility {
         map.put("Comms", comms);
         map.put("WaterMaking", waterMaking);
 
-        for (Map.Entry<String, Boolean> i: map.entrySet()){
-
-        }
         return map;
     }
 
-    public int checkMachines(Map theMap)
+    public void getFacilityStatus(Map theMap) //shows the status of each machine
+    {
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
+    }
+
+    public void showBrokenMachines(Map theMap) //shows what is broken
+    {
+        for (Map.Entry<String, Boolean> i: map.entrySet())
+        {
+            if (map.containsValue(false)) //print out machines that are broken
+                System.out.println(i.getKey() + " needs to be fixed"); //fix this
+        }
+    }
+
+    public int checkMachines(Map theMap) //counts the amount of broken machines
     {
         int issues = 0;
 
         for (Map.Entry<String, Boolean> i: map.entrySet()){
-            if (map.containsValue(false))
+            if (map.containsValue(false)) //fix this
             {
                 issues++;
             }

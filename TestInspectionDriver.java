@@ -34,6 +34,7 @@ public class TestInspectionDriver
         }
         else
         {
+            System.out.println("Oxygenator is working");
             fac0.Oxygenator(true);
         }
 
@@ -48,6 +49,7 @@ public class TestInspectionDriver
         }
         else
         {
+            System.out.println("InnerAirlocks is working");
             fac0.InnerAirlocks(true);
         }
 
@@ -62,6 +64,7 @@ public class TestInspectionDriver
         }
         else
         {
+            System.out.println("ExternalAirlocks is working");
             fac0.ExternalAirlocks(true);
         }
 
@@ -76,6 +79,7 @@ public class TestInspectionDriver
         }
         else
         {
+            System.out.println("NuclearReactor is working");
             fac0.NuclearReactor(true);
         }
 
@@ -90,9 +94,9 @@ public class TestInspectionDriver
         }
         else
         {
+            System.out.println("Comms is working");
             fac0.Comms(true);
         }
-
 
 
         //WaterMaking
@@ -105,18 +109,17 @@ public class TestInspectionDriver
         }
         else
         {
+            System.out.println("WaterMaking is working");
             fac0.WaterMaking(true);
         }
 
 
 
-        System.out.println("Testing listFacilityIssues from Inspection");
-        //ins.listFacilityIssues(fac0, 1);
-        if (fac0.getFacilityStatus().containsValue(false))
+        if (fac0.getMap().containsValue(false))
         {
             System.out.println("Some of the machines aren't working");
             c.scheduleMaintenance(fac0);
-            System.out.println("The current state is: " + fac0.getState());
+            System.out.println("The state is: " + fac0.getState());
         }
         else
         {
@@ -126,12 +129,23 @@ public class TestInspectionDriver
         }
 
         System.out.println("Testing Inspection");
-        System.out.println("Testing listFacilityIssues");
-        ins.listFacilityIssues(fac0); //fix
-        System.out.println("Testing makeMaintenanceRequest");
-        ins.makeMaintenanceRequest(fac0, 1); //fix
-        System.out.println("Testing isBroken");
-        ins.isBroken(fac0);
+
+        if (fac0.checkMachines(fac0.getMap()) > 0) //has broken machines
+        {
+            ins.isBroken(fac0); //check to see if it's broken
+            ins.listFacilityIssues(fac0);
+            ins.makeMaintenanceRequest(fac0, 1);
+            System.out.println("The state is: " + fac0.getState());
+
+        }
+        else
+            System.out.println("This facility is working :)");
+
+
+        System.out.println("Testing maintenance");
+        maint.listMaintenanceRequest(fac0, ins, 1);
+        maint.listMaintenance(fac0, ins, 1);
+
 
 
 

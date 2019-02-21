@@ -21,11 +21,10 @@ public class Maintenance extends StateMachine
     // Maintenance request 2 (and when it was sent?)
 
     System.out.println("This is supposed to be the request: " + ins.makeMaintenanceRequest(fm, reqNum));
-    System.out.println("This is the facility: " + fm + " and the request number: " + reqNum);
-
+    System.out.println("This is the facility: " + fm.getName() + " and the request number: " + reqNum);
   }
 
-  /*public void listMaintenace(FacilityMachines fm) //list of the maintenance that needs to be done
+  public void listMaintenance(FacilityMachines fm, Inspection ins, int reqNum) //list of the maintenance that needs to be done
   {
     //list the maintenance requests from each facility
     //list whats broken in each facility
@@ -37,9 +36,8 @@ public class Maintenance extends StateMachine
     //Innter Airlocks: need maintenance
     //External airlocks: need maintenance
 
-
-
-  } */
+    fm.showBrokenMachines(fm.getMap());
+  }
 
   public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state from broken (maintenance) to resting
   {
