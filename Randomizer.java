@@ -3,7 +3,7 @@ import java.util.Random;
 public class Randomizer {
     Random r = new Random();
     private double d = 0; // Stores the setRandom() so it can be compared without mistakes
-    private double percentage = 0.05;
+    private double percentage = 0.5;
 
     public void setRandom(){
         d = r.nextDouble();

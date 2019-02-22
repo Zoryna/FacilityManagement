@@ -9,7 +9,7 @@ public class TestInspectionDriver
         Randomizer r = new Randomizer(); //creates random instances of a machine breaking
         Control c = new Control(); //assigns availability
         Inspection ins = new Inspection(); //checks if facilities are working/if need maintenance
-        Maintenance maint = new Maintenance(); //lists maintenance, changes state to resting
+        Maintenance maint = new Maintenance(); //lists maintenance/what needs to be done
 
         FacilityMachines fac0 = new FacilityMachines();
         FacilityMachines fac1 = new FacilityMachines();
@@ -22,7 +22,8 @@ public class TestInspectionDriver
         System.out.println("This is system: " + fac0.getName());
         System.out.println("The current state is: " + fac0.getState()); //at resting state
 
-        //testing the facility machines and randomizer
+
+        //breaking the machines in the facilities
 
         //Oxygenator
         r.setRandom();
@@ -34,7 +35,7 @@ public class TestInspectionDriver
         }
         else
         {
-            System.out.println("Oxygenator is working");
+            System.out.println(r.getRandom() + " Oxygenator is working");
             fac0.Oxygenator(true);
         }
 
@@ -49,7 +50,7 @@ public class TestInspectionDriver
         }
         else
         {
-            System.out.println("InnerAirlocks is working");
+            System.out.println(r.getRandom() + "InnerAirlocks is working");
             fac0.InnerAirlocks(true);
         }
 
@@ -64,7 +65,7 @@ public class TestInspectionDriver
         }
         else
         {
-            System.out.println("ExternalAirlocks is working");
+            System.out.println(r.getRandom() + "ExternalAirlocks is working");
             fac0.ExternalAirlocks(true);
         }
 
@@ -79,7 +80,7 @@ public class TestInspectionDriver
         }
         else
         {
-            System.out.println("NuclearReactor is working");
+            System.out.println(r.getRandom() + "NuclearReactor is working");
             fac0.NuclearReactor(true);
         }
 
@@ -94,7 +95,7 @@ public class TestInspectionDriver
         }
         else
         {
-            System.out.println("Comms is working");
+            System.out.println(r.getRandom() + "Comms is working");
             fac0.Comms(true);
         }
 
@@ -109,11 +110,12 @@ public class TestInspectionDriver
         }
         else
         {
-            System.out.println("WaterMaking is working");
+            System.out.println(r.getRandom() + "WaterMaking is working");
             fac0.WaterMaking(true);
         }
 
 
+        //changes the state of the facility if at least one machine is broken
 
         if (fac0.getMap().containsValue(false))
         {
@@ -128,12 +130,17 @@ public class TestInspectionDriver
             System.out.println("The state is: " + fac0.getState());
         }
 
+        //making the maintenance request becuase of broken machines
         System.out.println("Testing Inspection");
 
         if (fac0.checkMachines(fac0.getMap()) > 0) //has broken machines
         {
             ins.isBroken(fac0); //check to see if it's broken
-            ins.listFacilityIssues(fac0);
+
+            System.out.println("The next function is listFacilityIssues");
+            ins.listFacilityIssues(fac0 ,1);
+            System.out.println("The end of listFacilityIssues");
+
             ins.makeMaintenanceRequest(fac0, 1);
             System.out.println("The state is: " + fac0.getState());
 
@@ -141,10 +148,10 @@ public class TestInspectionDriver
         else
             System.out.println("This facility is working :)");
 
-
-        System.out.println("Testing maintenance");
+        //checking the maintenance/what needs to be fixed
+        /*System.out.println("Testing maintenance");
         maint.listMaintenanceRequest(fac0, ins, 1);
-        maint.listMaintenance(fac0, ins, 1);
+        maint.listMaintenance(fac0, ins, 1); */
 
 
 
