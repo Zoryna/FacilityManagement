@@ -6,10 +6,6 @@ public class StateMachine {
         WORKING, RESTING, MAINTENANCE, BROKEN
     }
 
-    public State getFacilityState(){
-        return state;
-    }
-
     public void setStateWorking(Facility fac){
         fac.state = State.WORKING;
     }
@@ -20,6 +16,10 @@ public class StateMachine {
 
     public void setStateMaintenance(Facility fac){
         fac.state = State.MAINTENANCE;
+    }
+
+    public void setStateBroken(Facility fac){
+        fac.state = State.BROKEN;
     }
 
     public State getState(){

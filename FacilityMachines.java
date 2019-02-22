@@ -13,31 +13,27 @@ public class FacilityMachines extends Facility {
         super(name, refNumber);
     }
 
-    public void Oxygenator(boolean oxygenator){
+    public void oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
-    }
-
-    public void NuclearReactor(boolean nuclearReactor){
-        this.nuclearReactor = nuclearReactor;
-    }
-
-    public void InnerAirlocks(boolean innerAirlocks){
-        this.innerAirlocks = innerAirlocks;
-    }
-
-    public void ExternalAirlocks(boolean externalAirlocks){
-        this.externalAirlocks = externalAirlocks;
     }
 
     public void nuclearReactor(boolean nuclearReactor){
         this.nuclearReactor = nuclearReactor;
     }
 
-    public void Comms(boolean comms){
+    public void innerAirlocks(boolean innerAirlocks){
+        this.innerAirlocks = innerAirlocks;
+    }
+
+    public void externalAirlocks(boolean externalAirlocks){
+        this.externalAirlocks = externalAirlocks;
+    }
+
+    public void comms(boolean comms){
         this.comms = comms;
     }
 
-    public void WaterMaking(boolean waterMaking){
+    public void waterMaking(boolean waterMaking){
         this.waterMaking = waterMaking;
     }
 
@@ -46,6 +42,15 @@ public class FacilityMachines extends Facility {
         people using the interface to be able to add services, and that being
         streamlined automatically, so here is why it is like this.
     */
+
+    public void startMachines(){
+        oxygenator(true);
+        nuclearReactor(true);
+        innerAirlocks(true);
+        externalAirlocks(true);
+        comms(true);
+        waterMaking(true);
+    }
 
     public void getFacilityStatus(){
         map.put("Oxygenator", oxygenator);
