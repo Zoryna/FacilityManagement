@@ -14,7 +14,7 @@ public class Randomizer {
     }
 
     // Just for the sake of cheeky function naming for once
-    public boolean wingardiumLeviosa(){
+    public boolean wingardiumLeviosa(FacilityMachines fm){
         // Half 1% percent probability at 0.005 for harder to break
         // 5% percent probability for better demonstration purposes, or higher
         if (d < percentage)

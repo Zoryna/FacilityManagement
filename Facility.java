@@ -1,3 +1,10 @@
+/*
+    the Subject for the Observer pattern
+ */
+
+
+import java.util.ArrayList;
+
 public class Facility extends StateMachine {
 
     public static String name;
@@ -6,10 +13,13 @@ public class Facility extends StateMachine {
     private int capacity, problemRate;
     private double cost;
 
+
     Facility(String name, int refNumber){
         this.name = name;
         this.refNumber = refNumber;
     }
+
+
 
     // Setters
     public void setName(String name){
@@ -19,6 +29,7 @@ public class Facility extends StateMachine {
     public void setAddress(String address){
         this.address = address;
     }
+
     public void setDescription(String description){
         this.description = description;
     }
