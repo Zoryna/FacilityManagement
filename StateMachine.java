@@ -22,7 +22,7 @@ public class StateMachine {
         fac.state = State.MAINTENANCE;
     }
 
-    public State getState() {
+    public State getState(){
         return state;
     }
 }

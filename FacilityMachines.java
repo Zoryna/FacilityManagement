@@ -46,6 +46,7 @@ public class FacilityMachines extends Facility {
         people using the interface to be able to add services, and that being
         streamlined automatically, so here is why it is like this.
     */
+
     public void getFacilityStatus(){
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
@@ -57,15 +58,5 @@ public class FacilityMachines extends Facility {
         for (Map.Entry<String, Boolean> i: map.entrySet()){
             System.out.println(i.getKey() + ": " + i.getValue());
         }
-    }
-
-    public void checkMachines(){
-        int[] ar = new int[numberOfMachines];
-        System.out.println("Oxygenator: " + oxygenator);
-        System.out.println("Inner Airlocks: " + innerAirlocks);
-        System.out.println("External Airlocks: " + externalAirlocks);
-        System.out.println("Nuclear Reactor: " + nuclearReactor);
-        System.out.println("Comms: " + comms);
-        System.out.println("Water Making: " + waterMaking);
     }
 }
