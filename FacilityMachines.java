@@ -38,13 +38,7 @@ public class FacilityMachines extends Facility {
     }
 
 
-    /*
-        Not a great use of SRP here, I know, but we never discussed a way for
-        people using the interface to be able to add services, and that being
-        streamlined automatically, so here is why it is like this.
-    */
-
-    public void getFacilityStatus(){
+    public Map getMap(){
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
         map.put("External Airlocks", externalAirlocks);
@@ -62,31 +56,63 @@ public class FacilityMachines extends Facility {
         }
     }
 
-    public void showBrokenMachines(Map theMap) //only shows what is broken
-    {
-        for (Map.Entry<String, Boolean> i: map.entrySet())
-        {
-            if (map.containsValue(false)) //print out machines that are broken
-            {
-                System.out.println(i.getKey() + " needs to be fixed"); //fix this
-            }
-
-        }
-    }
-
     public int checkMachines(Map theMap) //counts the amount of broken machines
     {
         int issues = 0;
 
-        for (Map.Entry<String, Boolean> i: map.entrySet()){
-            if (map.containsValue(false)) //fix this
-            {
-                //System.out.println(i.getKey() + " and the issues are: " + issues);
-                issues++;
-            }
-        }
-        System.out.println("The amount of issues are: " + issues);
+        if(map.get("Oxygenator") == false)
+            issues++;
 
+        if(map.get("Inner Airlocks") == false)
+            issues++;
+
+        if(map.get("External Airlocks") == false)
+            issues++;
+
+        if(map.get("Nuclear Reactor") == false)
+            issues++;
+
+        if(map.get("Comms") == false)
+            issues++;
+
+        if(map.get("WaterMaking") == false)
+            issues++;
+
+
+        System.out.println("The amount of issues is: " + issues);
         return issues;
+    }
+
+    public Map theBrokenMachines(Map theMap) //takes broken machines and puts into new map and returns new map
+    {
+        Map<String, Boolean> newMap = new HashMap<String, Boolean>();
+
+        if (map.get("Oxygenator") == false)
+            newMap.put("Oxygenator", oxygenator);
+
+        if (map.get("Inner Airlocks") == false)
+            newMap.put("Inner Airlocks", innerAirlocks);
+
+        if (map.get("External Airlocks") == false)
+            newMap.put("External Airlocks", externalAirlocks);
+
+
+        if (map.get("Nuclear Reactor") == false)
+            newMap.put("Nuclear Reactor", nuclearReactor);
+
+        if (map.get("Comms") == false)
+            newMap.put("Comms", comms);
+
+        if (map.get("WaterMaking") == false)
+            newMap.put("WaterMaking", waterMaking);
+
+
+        //for testing
+        for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
+
+
+        return newMap;
     }
 }

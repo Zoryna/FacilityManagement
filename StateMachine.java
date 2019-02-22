@@ -22,6 +22,8 @@ public class StateMachine {
         fac.state = State.MAINTENANCE;
     }
 
+    public void setStateBroken(Facility fac) { fac.state = State.BROKEN;}
+
     public State getState(){
         return state;
     }

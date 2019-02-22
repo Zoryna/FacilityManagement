@@ -8,38 +8,33 @@ import java.util.ArrayList;
 
 public class Inspection extends StateMachine
 {
-
-    public void listFacilityIssues(FacilityMachines fm, int reqNumber) //lists what is broken, similar to listMaintenance
+    public void listFacilityIssues(FacilityMachines fm, int reqNumber) //only contains what's broken
     {
-        fm.showBrokenMachines(fm.getMap()); //fix
+        fm.theBrokenMachines(fm.getMap());
+    }
+
+    public boolean isBroken (FacilityMachines fm) //checks if the state is broken
+    {
+        if (fm.state == State.BROKEN)
+        {
+            System.out.println("This facility is BROKEN");
+            return true;
+        }
+        else
+            return false;
     }
 
     public String makeMaintenanceRequest (FacilityMachines fm, int reqNumber) //checks the state of the facility, then returns a String saying that there needs to be maintenance
     {
+        String request = "Maintenance";
 
-        String request = "This facility needs maintenance";
-
-        if ((fm.state == State.RESTING) || (fm.state == State.MAINTENANCE))
+        if ((fm.state == State.BROKEN))
         {
             System.out.println("Needs maintenance");
             return request;
         }
         else
             return null;
-    }
-
-    //3 states: resting, maintenance (broken), working
-    public boolean isBroken (FacilityMachines fm) //checks the state
-    {
-
-        if (fm.state != State.WORKING)
-        {
-            System.out.println("This facility is BROKEN :(");
-            return true;
-        }
-        else
-            return false;
-
     }
 
     /*public void listInspections()

@@ -14,15 +14,15 @@ public class Maintenance extends StateMachine
     System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fm, reqNum));
   }
 
-  public void listMaintenance(FacilityMachines fm, Inspection ins, int reqNum) //list of the maintenance that needs to be done, similar to listFacilityIssues
+  public void listMaintenance(FacilityMachines fm, Inspection ins, int reqNum) //changes broken machines to working (true)
   {
     System.out.println(fm.getName() + " Maintenance report:");
     fm.showBrokenMachines(fm.getMap()); //fix
   }
 
-  public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state from broken (maintenance) to resting
+  public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state to resting
   {
-    if (fm.state == State.MAINTENANCE)
+    if ((fm.state == State.MAINTENANCE) || fm.state == State.BROKEN)
     {
       System.out.println("This state is broken, it is going to change to RESTING");
       c.vacateFacility(fm);
