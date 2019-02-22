@@ -5,7 +5,7 @@
 */
 
 public interface FacilityAI {
-    public void decisionTree(); // How/When/Which decisions are made
+    public void AI(); // How/When/Which decisions are made
     public Facility getFacility(); // Return the Facility
 
     /*

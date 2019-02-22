@@ -1,25 +1,27 @@
-public abstract class FacilityBehavior implements FacilityAI {
+public class FacilityBehavior implements FacilityAI {
 
     TimeController tc = new TimeController();
     Control c = new Control();
-    private static final int START = 8;
-    private static final int REST = 18;
-    private static Facility FAC;
+    private final int START = 8;
+    private final int REST = 18;
+    private static Facility fac;
 
-    FacilityBehavior(Facility FAC){
-        this.FAC = FAC;
+    public void setFacilityBehavior(Facility fac){
+        this.fac = fac;
     }
 
-    private void AI() {
-        if (tc.getHours() >= START) {
-            c.assignToUse(FAC);
+    public void AI() {
+        tc.setHours(START);
+        if (tc.getHours() >= START && tc.getHours() < REST) {
+            c.assignToUse(fac);
         }
-        else if (tc.getHours() >= REST){
-            c.vacateFacility(FAC);
+        else if (tc.getHours() >= REST) {
+            c.vacateFacility(fac);
         }
     }
 
+    @Override
     public Facility getFacility() {
-        return FAC;
+        return fac;
     }
 }

@@ -2,7 +2,7 @@ public class TimeController {
 
     private static int HOURS, MINUTES, SECONDS;
 
-    public void setHours(int hours){
+    public void setHours(int HOURS){
         this.HOURS = HOURS;
     }
 
