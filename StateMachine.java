@@ -3,7 +3,7 @@ public class StateMachine {
     public State state = State.RESTING;
 
     enum State {
-        WORKING, RESTING, MAINTENANCE,
+        WORKING, RESTING, MAINTENANCE, BROKEN
     }
 
     public State getFacilityState(){
