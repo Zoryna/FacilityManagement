@@ -1,28 +1,28 @@
 public class TimeController {
 
-    private static int HOURS, MINUTES, SECONDS;
+    private static int hours, minutes, seconds;
 
-    public void setHours(int HOURS){
-        this.HOURS = HOURS;
+    public void setHours(int hours){
+        this.hours = hours;
     }
 
-    public void setMinutes(int MINUTES){
-        this.MINUTES = MINUTES;
+    public void setMinutes(int minutes){
+        this.minutes = minutes;
     }
 
-    public void setSeconds(int SECONDS){
-        this.SECONDS = SECONDS;
+    public void setSeconds(int seconds){
+        this.seconds = seconds;
     }
 
     public int getHours(){
-        return HOURS;
+        return hours;
     }
 
     public int getMinutes(){
-        return MINUTES;
+        return minutes;
     }
 
     public int getSeconds(){
-        return SECONDS;
+        return seconds;
     }
 }
