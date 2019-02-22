@@ -9,27 +9,15 @@ import java.util.ArrayList;
 public class Inspection extends StateMachine
 {
 
-    public void listFacilityIssues(FacilityMachines fm) //lists what is broken
+    public void listFacilityIssues(FacilityMachines fm, int reqNumber) //lists what is broken, similar to listMaintenance
     {
-        //fm.getFacilityStatus(fm.getMap());
-        fm.showBrokenMachines(fm.getMap());
+        fm.showBrokenMachines(fm.getMap()); //fix
     }
 
     public String makeMaintenanceRequest (FacilityMachines fm, int reqNumber) //checks the state of the facility, then returns a String saying that there needs to be maintenance
     {
-        /* Connect to Maintenance, obviously
-
-            - You will need a Driver with many facilities with different states, just create a scenario of it
-            - Write a Inspection function that checks the facility state, select the ones that are RESTING
-            - return something that the Maintenance class can do with it
-        */
 
         String request = "This facility needs maintenance";
-
-        /*if (numIssues > 0)
-            return request;
-        else
-            return null; */
 
         if ((fm.state == State.RESTING) || (fm.state == State.MAINTENANCE))
         {
@@ -40,17 +28,9 @@ public class Inspection extends StateMachine
             return null;
     }
 
-    //3 states: resting, maintenance, working
+    //3 states: resting, maintenance (broken), working
     public boolean isBroken (FacilityMachines fm) //checks the state
     {
-        /*if (numIssues > 0)
-        {
-            System.out.println("This facility is BROKEN :(");
-            return true;
-        }
-
-        else
-            return false; */
 
         if (fm.state != State.WORKING)
         {

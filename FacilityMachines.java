@@ -62,12 +62,15 @@ public class FacilityMachines extends Facility {
         }
     }
 
-    public void showBrokenMachines(Map theMap) //shows what is broken
+    public void showBrokenMachines(Map theMap) //only shows what is broken
     {
         for (Map.Entry<String, Boolean> i: map.entrySet())
         {
             if (map.containsValue(false)) //print out machines that are broken
+            {
                 System.out.println(i.getKey() + " needs to be fixed"); //fix this
+            }
+
         }
     }
 
@@ -78,6 +81,7 @@ public class FacilityMachines extends Facility {
         for (Map.Entry<String, Boolean> i: map.entrySet()){
             if (map.containsValue(false)) //fix this
             {
+                //System.out.println(i.getKey() + " and the issues are: " + issues);
                 issues++;
             }
         }

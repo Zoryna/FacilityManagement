@@ -8,35 +8,16 @@ import java.util.ArrayList;
 
 public class Maintenance extends StateMachine
 {
-  //list Request
-  //List Maintenace
-
-
-  public void listMaintenanceRequest(FacilityMachines fm, Inspection ins, int reqNum) //shows the request, which says that there needs to be maintenance
+  public void listMaintenanceRequest(FacilityMachines fm, Inspection ins, int reqNum) //shows the request, which says what needs to be fixed from that inspection
   {
-    //connect with the maintenance request (that says it needs maintenance) and connect it woth facilility machines,
-    //which assigns what parts are working
-    //shows all the maintenance requests
-    //ex: Maintenance request 1 (and when it was sent?)
-    // Maintenance request 2 (and when it was sent?)
-
-    System.out.println("This is supposed to be the request: " + ins.makeMaintenanceRequest(fm, reqNum));
-    System.out.println("This is the facility: " + fm.getName() + " and the request number: " + reqNum);
+    System.out.println("This is facility: " + fm.getName() + " and the request number: " + reqNum);
+    System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fm, reqNum));
   }
 
-  public void listMaintenance(FacilityMachines fm, Inspection ins, int reqNum) //list of the maintenance that needs to be done
+  public void listMaintenance(FacilityMachines fm, Inspection ins, int reqNum) //list of the maintenance that needs to be done, similar to listFacilityIssues
   {
-    //list the maintenance requests from each facility
-    //list whats broken in each facility
-
-    //connect with facility machines
-    //ex: Airlocks 1
-    //From Maintenance Request 1
-    //Oxygenator: need maintenance
-    //Innter Airlocks: need maintenance
-    //External airlocks: need maintenance
-
-    fm.showBrokenMachines(fm.getMap());
+    System.out.println(fm.getName() + " Maintenance report:");
+    fm.showBrokenMachines(fm.getMap()); //fix
   }
 
   public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state from broken (maintenance) to resting
