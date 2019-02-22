@@ -1,42 +1,28 @@
 /*
 
 */
-
-
-
 public class Finance
 {
-  int interval, ratePerHour;
+    int interval, ratePerHour, usageRate, maintenanceCost, calcDowntimeFacility,
+    calcMaintCostFacility;
 
+    public int calcUsageRate()
+    {
+        return calcUsageRate;
+    }
 
-  public int calcUsageRate()
-  {
+    public int maintenanceCost()
+    {
+        return maintenanceCost;
+    }
 
+    public int calcMaintCostFacility()
+    {
+        return calcMaintCostFacility;
+    }
 
-  }
-
-  public int maintenanceCost()
-  {
-
-
-  }
-
-  public int calcMaintCostFacility()
-  {
-
-
-  }
-
-  public int calcDowntimeFacility()
-  {
-
-
-  }
-
-
-
-
-
-
-
+    public int calcDowntimeFacility()
+    {
+        return calcDowntimeFacility;
+    }
 }
