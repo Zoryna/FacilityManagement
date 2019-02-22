@@ -6,8 +6,6 @@ public class FacilityMachines extends Facility {
     comms, nuclearReactor, waterMaking;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
     private final int numberOfMachines = 7;
-    // Store a Hashmap with the keys as the variables, and return it.
-    // Maybe extending the StateMachine is needed
 
     FacilityMachines() {
         super(name, refNumber);
@@ -37,20 +35,20 @@ public class FacilityMachines extends Facility {
         this.waterMaking = waterMaking;
     }
 
-    /*
-        Not a great use of SRP here, I know, but we never discussed a way for
-        people using the interface to be able to add services, and that being
-        streamlined automatically, so here is why it is like this.
-    */
-
     public void startMachines(){
         oxygenator(true);
         nuclearReactor(true);
         innerAirlocks(true);
         externalAirlocks(true);
         comms(true);
-        waterMaking(true);
+        waterMaking(true)
     }
+
+    /*
+        Not a great use of SRP here, I know, but the team never discussed the
+        necessity for people using it to be able to add services, and that being
+        streamlined automatically, so here is why it is like this.
+    */
 
     public void getFacilityStatus(){
         map.put("Oxygenator", oxygenator);
