@@ -37,7 +37,7 @@ public class FacilityMachines extends Facility {
         return this.waterMaking = waterMaking;
     }
 
-
+    //move these later
     public Map getMap(){
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);

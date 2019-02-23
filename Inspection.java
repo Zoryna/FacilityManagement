@@ -4,11 +4,10 @@
 */
 
 import java.util.*;
-import java.util.ArrayList;
 
 public class Inspection extends StateMachine
 {
-    public void listFacilityIssues(FacilityMachines fm, int reqNumber) //only contains what's broken
+    public void listFacilityIssues(FacilityMachines fm, int reqNumber) //only shows what's broken
     {
         fm.theBrokenMachines(fm.getMap());
     }
@@ -26,7 +25,8 @@ public class Inspection extends StateMachine
 
     public String makeMaintenanceRequest (FacilityMachines fm, int reqNumber) //checks the state of the facility, then returns a String saying that there needs to be maintenance
     {
-        String request = "Maintenance";
+        String request = "Needs maintenance";
+        String nah = "Does not need maintenance";
 
         if ((fm.state == State.BROKEN))
         {
@@ -34,7 +34,7 @@ public class Inspection extends StateMachine
             return request;
         }
         else
-            return null;
+            return nah;
     }
 
     /*public void listInspections()

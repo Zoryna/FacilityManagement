@@ -1,23 +1,31 @@
 /*
-  controller of all the facilities in management
+  controller
   class that responds to the requests from Inspection
   Inspection-->Maintenance
 */
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Maintenance extends StateMachine
 {
+
   public void listMaintenanceRequest(FacilityMachines fm, Inspection ins, int reqNum) //shows the request, which says what needs to be fixed from that inspection
   {
-    System.out.println("This is facility: " + fm.getName() + " and the request number: " + reqNum);
+    System.out.println("This is facility " + fm.getName() + " and the request number: " + reqNum);
     System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fm, reqNum));
+
+    //Shows what is broken in this maintenance request
+    ins.listFacilityIssues(fm, reqNum);
   }
 
-  public void listMaintenance(FacilityMachines fm, Inspection ins, int reqNum) //changes broken machines to working (true)
+  public void fixMachines(FacilityMachines fm, Map<String, Boolean> m, Inspection ins, int reqNum) //changes broken machines to working (true)
   {
-    System.out.println(fm.getName() + " Maintenance report:");
-    fm.showBrokenMachines(fm.getMap()); //fix
+    m.replaceAll((key, value) -> true);
+    System.out.println("Testing if all the values are true");
+
+    for (Map.Entry<String, Boolean> i : m.entrySet()) {
+      System.out.println(i.getKey() + ": " + i.getValue());
+    }
   }
 
   public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state to resting
