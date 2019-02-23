@@ -1,15 +1,22 @@
 public class TestFacilityMachines {
     public static void main (String[] args){
         FacilityMachines fm = new FacilityMachines();
-        boolean state = true;
-        boolean falseState = false;
-        fm.Oxygenator(falseState);
-        fm.InnerAirlocks(state);
-        fm.ExternalAirlocks(falseState);
-        fm.NuclearReactor(state);
-        fm.Comms(falseState);
-        fm.WaterMaking(state);
-        //fm.checkMachines();
+
+        fm.startMachines();
+        fm.getMap();
         fm.getFacilityStatus();
+
+        System.out.println("Changing some machines into false");
+        fm.oxygenator(true);
+        fm.innerAirlocks(true);
+        fm.externalAirlocks(true);
+        fm.nuclearReactor(false);
+        fm.comms(false);
+        fm.waterMaking(false);
+
+        fm.getFacilityStatus(fm.getTheMap());
+        fm.checkMachines(fm.getTheMap());
+        fm.theBrokenMachines(fm.getTheMap());
+
     }
 }
