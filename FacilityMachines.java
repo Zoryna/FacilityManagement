@@ -2,7 +2,7 @@ import java.util.*;
 
 public class FacilityMachines extends Facility {
 
-    public boolean oxygenator, innerAirlocks, externalAirlocks,
+    private boolean oxygenator, innerAirlocks, externalAirlocks,
     comms, nuclearReactor, waterMaking;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
     private final int numberOfMachines = 6;
@@ -13,32 +13,52 @@ public class FacilityMachines extends Facility {
         super(name, refNumber);
     }
 
-    public boolean Oxygenator(boolean oxygenator){
-        return this.oxygenator = oxygenator;
+    public void oxygenator(boolean oxygenator){
+        this.oxygenator = oxygenator;
     }
 
-    public boolean InnerAirlocks(boolean innerAirlocks){
-        return this.innerAirlocks = innerAirlocks;
+    public void nuclearReactor(boolean nuclearReactor){
+        this.nuclearReactor = nuclearReactor;
     }
 
-    public boolean ExternalAirlocks(boolean externalAirlocks){
-        return this.externalAirlocks = externalAirlocks;
+    public void innerAirlocks(boolean innerAirlocks){
+        this.innerAirlocks = innerAirlocks;
     }
 
-    public boolean NuclearReactor(boolean nuclearReactor){
-        return this.nuclearReactor = nuclearReactor;
+    public void externalAirlocks(boolean externalAirlocks){
+        this.externalAirlocks = externalAirlocks;
     }
 
-    public boolean Comms(boolean comms){
-        return this.comms = comms;
+    public void comms(boolean comms){
+        this.comms = comms;
     }
 
-    public boolean WaterMaking(boolean waterMaking){
-        return this.waterMaking = waterMaking;
+    public void waterMaking(boolean waterMaking){
+        this.waterMaking = waterMaking;
     }
 
-    //move these later
-    public Map getMap(){
+    public void startMachines(){
+        // Set machines to work
+        oxygenator(true);
+        nuclearReactor(true);
+        innerAirlocks(true);
+        externalAirlocks(true);
+        comms(true);
+        waterMaking(true);
+
+        map.put("Oxygenator", oxygenator);
+        map.put("Inner Airlocks", innerAirlocks);
+        map.put("External Airlocks", externalAirlocks);
+        map.put("Nuclear Reactor", nuclearReactor);
+        map.put("Comms", comms);
+        map.put("WaterMaking", waterMaking);
+    }
+
+    public Map<String, Boolean> getMap(){
+        return map;
+    }
+
+    public Map<String, Boolean> getTheMap(){
         map.put("Oxygenator", oxygenator);
         map.put("Inner Airlocks", innerAirlocks);
         map.put("External Airlocks", externalAirlocks);
@@ -47,6 +67,12 @@ public class FacilityMachines extends Facility {
         map.put("WaterMaking", waterMaking);
 
         return map;
+    }
+
+    public void getFacilityStatus(){
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
     }
 
     public void getFacilityStatus(Map theMap) //shows the status of each machine

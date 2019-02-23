@@ -11,15 +11,15 @@ public class TestInspectionDriver
         System.out.println("This is facility " + fac0.getName());
         System.out.println("The current state is: " + fac0.getState()); //at resting state
 
-        fac0.Oxygenator(true);
-        fac0.InnerAirlocks(false);
-        fac0.ExternalAirlocks(true);
-        fac0.NuclearReactor(false);
-        fac0.Comms(true);
-        fac0.WaterMaking(false);
+        fac0.oxygenator(true);
+        fac0.innerAirlocks(false);
+        fac0.externalAirlocks(true);
+        fac0.nuclearReactor(false);
+        fac0.comms(true);
+        fac0.waterMaking(false);
 
 
-        if ((fac0.checkMachines(fac0.getMap())) > 0) //if at least 1 is not working
+        if ((fac0.checkMachines(fac0.getTheMap())) > 0) //if at least 1 is not working
         {
             sm.setStateBroken(fac0);
             if(ins.isBroken(fac0) == true)

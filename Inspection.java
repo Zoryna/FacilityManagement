@@ -9,7 +9,7 @@ public class Inspection extends StateMachine
 {
     public void listFacilityIssues(FacilityMachines fm, int reqNumber) //only shows what's broken
     {
-        fm.theBrokenMachines(fm.getMap());
+        fm.theBrokenMachines(fm.getTheMap());
     }
 
     public boolean isBroken (FacilityMachines fm) //checks if the state is broken
