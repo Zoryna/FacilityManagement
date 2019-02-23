@@ -8,5 +8,7 @@ public class TestStateMachine {
         System.out.println("Test changing to Work: " + fac00.getState());
         sm.setStateMaintenance(fac00);
         System.out.println("Test changing to Maintenance: " + fac00.getState());
+        sm.setStateBroken(fac00);
+        System.out.println("Test changing to Broken: " + fac00.getState());
     }
 }

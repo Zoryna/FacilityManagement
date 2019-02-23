@@ -3,10 +3,8 @@ import java.util.*;
 public class TestFacility{
     public static void main (String[] args){
         Facility fac = new Facility("Airlocks #0", 0);
-        //fac.setName("Airlocks #1"); -> tested later to test the object return
         fac.setAddress("Acidalia Planitia");
-        fac.setDescription("The airlocks function is to control air pressure from locations");
-        // fac.setRefNumber(0001); -> tested later to test the object return
+        fac.setDescription("Controls the opening/closing of airlocks");
         fac.setCapacity(0);
         fac.setCost(100);
         fac.setProblemRate(5);
