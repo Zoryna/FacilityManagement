@@ -79,7 +79,7 @@ public class FacilityMachines extends Facility {
             issues++;
 
 
-        System.out.println("The amount of issues is: " + issues);
+        System.out.println("The amount of broken machines is: " + issues);
         return issues;
     }
 

@@ -36,14 +36,4 @@ public class Inspection extends StateMachine
         else
             return nah;
     }
-
-    /*public void listInspections()
-    {
-        /* Kind of the same thing, what could be done here is to call the dates of the
-        inspections done and use the WriteFile (or w/e it's called) to save the inspections
-         that have been done
-
-
-
-    } */
 }
