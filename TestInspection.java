@@ -1,4 +1,4 @@
-public class TestInspectionDriver
+public class TestInspection
 {
     public static void main (String[] args)
     {
