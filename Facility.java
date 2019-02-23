@@ -19,6 +19,7 @@ public class Facility extends StateMachine {
     public void setAddress(String address){
         this.address = address;
     }
+
     public void setDescription(String description){
         this.description = description;
     }

@@ -39,7 +39,7 @@ public class WriteFile {
         // Reads getters from Facility
         int i = 0;
         String name = fac.getName();
-        oStream.println(i + "Name: " + name + ".");
+        oStream.println(i + ": " + name + ".");
         i++;
         int refNumber = fac.getRefNumber();
         oStream.println(i + ": " + refNumber + ".");
@@ -66,6 +66,28 @@ public class WriteFile {
             boolean b = j.getValue();
             oStream.println(i + ": " + s + " = " + b + ". ");
             i++;
+        }
+
+        switch(fac.getState()){
+            case RESTING:
+                String resting = "RESTING";
+                oStream.println(i + ": " + "State - " + resting + ".");
+            break;
+
+            case BROKEN:
+                String broken = "BROKEN";
+                oStream.println(i + ": " + "State - " + broken + ".");
+            break;
+
+            case WORKING:
+                String working = "WORKING";
+                oStream.println(i + ": " + "State - " + working + ".");
+            break;
+
+            case MAINTENANCE:
+                String maintenance = "MAINTENANCE";
+                oStream.println(i + ": " + "State - " + maintenance + ".");
+            break;
         }
 
         oStream.close();

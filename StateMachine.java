@@ -25,4 +25,8 @@ public class StateMachine {
     public State getState(){
         return state;
     }
+
+    public State getState(Facility fac){
+        return state;
+    }
 }
