@@ -3,11 +3,7 @@ public class StateMachine {
     public State state = State.RESTING;
 
     enum State {
-        WORKING, RESTING, MAINTENANCE,
-    }
-
-    public State getFacilityState(){
-        return state;
+        WORKING, RESTING, MAINTENANCE, BROKEN
     }
 
     public void setStateWorking(Facility fac){
@@ -20,6 +16,10 @@ public class StateMachine {
 
     public void setStateMaintenance(Facility fac){
         fac.state = State.MAINTENANCE;
+    }
+
+    public void setStateBroken(Facility fac){
+        fac.state = State.BROKEN;
     }
 
     public State getState(){

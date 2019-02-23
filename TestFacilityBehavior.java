@@ -12,5 +12,8 @@ public class TestFacilityBehavior {
         }
 
         System.out.println(fac.getState());
+        fac.setStateBroken(fac);
+        System.out.println(fac.getState());
+        System.out.println(fb.isItBroken(fac));
     }
 }
