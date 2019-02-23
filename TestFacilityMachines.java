@@ -21,5 +21,7 @@ public class TestFacilityMachines {
         fm.getFacilityStatus();
         fm.startMachines();
         fm.getFacilityStatus();
+
+        System.out.println(fm.getMap());
     }
 }

@@ -1,10 +1,11 @@
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
 
 public class FacilityMachines extends Facility {
 
     private boolean oxygenator, innerAirlocks, externalAirlocks,
     comms, nuclearReactor, waterMaking;
-    private Map<String, Boolean> map = new HashMap<String, Boolean>();
+    private static Map<String, Boolean> map = new HashMap<String, Boolean>();
     private final int numberOfMachines = 7;
 
     FacilityMachines() {
@@ -36,12 +37,20 @@ public class FacilityMachines extends Facility {
     }
 
     public void startMachines(){
+        // Set machines to work
         oxygenator(true);
         nuclearReactor(true);
         innerAirlocks(true);
         externalAirlocks(true);
         comms(true);
-        waterMaking(true)
+        waterMaking(true);
+
+        map.put("Oxygenator", oxygenator);
+        map.put("Inner Airlocks", innerAirlocks);
+        map.put("External Airlocks", externalAirlocks);
+        map.put("Nuclear Reactor", nuclearReactor);
+        map.put("Comms", comms);
+        map.put("WaterMaking", waterMaking);
     }
 
     /*
@@ -51,15 +60,12 @@ public class FacilityMachines extends Facility {
     */
 
     public void getFacilityStatus(){
-        map.put("Oxygenator", oxygenator);
-        map.put("Inner Airlocks", innerAirlocks);
-        map.put("External Airlocks", externalAirlocks);
-        map.put("Nuclear Reactor", nuclearReactor);
-        map.put("Comms", comms);
-        map.put("WaterMaking", waterMaking);
-
         for (Map.Entry<String, Boolean> i: map.entrySet()){
             System.out.println(i.getKey() + ": " + i.getValue());
         }
+    }
+
+    public Map<String, Boolean> getMap(){
+        return map;
     }
 }
