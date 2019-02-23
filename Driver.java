@@ -5,11 +5,11 @@ import marsmission.management.*;
 
 public class Driver {
     public static void main(String[] args){
-        Facility fac0 = new Facility("", 0);
-        Facility fac1 = new Facility("", 1);
-        Facility fac2 = new Facility("", 2);
-        Facility fac3 = new Facility("", 3);
-        Facility fac4 = new Facility("", 4);
+        Facility fac0 = new Facility("Apollo", 0);
+        Facility fac1 = new Facility("Nyx", 1);
+        Facility fac2 = new Facility("Erebos", 2);
+        Facility fac3 = new Facility("Athena", 3);
+        Facility fac4 = new Facility("Artemis", 4);
         StateMachine sm = new StateMachine();
         Control c = new Control();
         TimeController tc = new TimeController();
