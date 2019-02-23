@@ -7,7 +7,6 @@ public class WriteFile {
 
     public String fileName;
     FacilityMachines fm = new FacilityMachines();
-    StateMachine sm = new StateMachine();
     private Map<String, Boolean> m = new HashMap<String, Boolean>();
     PrintWriter oStream = null;
 
@@ -69,7 +68,7 @@ public class WriteFile {
             i++;
         }
 
-        switch(sm.getState(fac)){
+        switch(fac.getState()){
             case RESTING:
                 String resting = "RESTING";
                 oStream.println(i + ": " + "State - " + resting + ".");

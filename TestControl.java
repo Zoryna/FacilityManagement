@@ -9,5 +9,7 @@ public class TestControl{
         System.out.println(fac.getState());
         c.vacateFacility(fac);
         System.out.println(fac.getState());
+        c.shitIsBroken(fac);
+        System.out.println(fac.getState());
     }
 }

@@ -16,4 +16,8 @@ public class Control extends StateMachine {
     public void scheduleMaintenance(Facility fac){
         setStateMaintenance(fac);
     }
+
+    public void shitIsBroken(Facility fac){
+        setStateBroken(fac);
+    }
 }
