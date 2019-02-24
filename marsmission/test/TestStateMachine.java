@@ -5,7 +5,7 @@ import marsmission.habcontrol.StateMachine;
 public class TestStateMachine {
     public static void main(String[] args){
         StateMachine sm = new StateMachine();
-        Facility fac00 = new Facility("Airlocks #0", 0);
+        Facility fac00 = new Facility();
 
         System.out.println("Test initial state: " + fac00.getState());
         sm.setStateWorking(fac00);

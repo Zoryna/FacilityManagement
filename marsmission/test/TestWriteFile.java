@@ -3,12 +3,12 @@ import java.io.*;
 import java.util.*;
 import marsmission.habcontrol.Control;
 import marsmission.dataaccess.WriteFile;
-import marsmission.habcontrol.FacilityMachines;
+import marsmission.habcontrol.Facility;
 
 public class TestWriteFile {
     public static void main(String[] args){
         WriteFile wf = new WriteFile();
-        FacilityMachines fm = new FacilityMachines();
+        Facility fm = new Facility();
         Control c = new Control();
 
         // Staging Object to be saved
@@ -21,10 +21,9 @@ public class TestWriteFile {
         fm.setProblemRate(2);
         fm.startMachines();
         c.shitIsBroken(fm);
-        System.out.println(fm.getState());
 
         // Reading up WriteFile to write file
-        wf.setFileName("FacilitySaved.txt"); // File is outputed on the root folder
+        wf.setFileName("Saved.txt"); // File is output on the root folder
         wf.saveFacilityInfo(fm); // Check this
     }
 }
