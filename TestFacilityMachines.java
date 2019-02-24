@@ -3,7 +3,6 @@ public class TestFacilityMachines {
         FacilityMachines fm = new FacilityMachines();
 
         fm.startMachines();
-        fm.getMap();
         fm.getFacilityStatus();
 
         System.out.println("Changing some machines into false");
@@ -14,7 +13,7 @@ public class TestFacilityMachines {
         fm.comms(false);
         fm.waterMaking(false);
 
-        fm.getFacilityStatus();
+        fm.getFacilityStatus(fm.getTheMap());
         fm.checkMachines(fm.getTheMap());
         fm.theBrokenMachines(fm.getTheMap());
 
@@ -22,7 +21,6 @@ public class TestFacilityMachines {
 
         System.out.println("This is the second facility");
         fm2.startMachines();
-        fm2.getMap();
         fm2.getFacilityStatus();
 
         System.out.println("Changing some machines into false");
@@ -33,7 +31,7 @@ public class TestFacilityMachines {
         fm2.comms(false);
         fm2.waterMaking(true);
 
-        fm2.getFacilityStatus();
+        fm2.getFacilityStatus(fm2.getTheMap());
         fm2.checkMachines(fm2.getTheMap());
         fm2.theBrokenMachines(fm2.getTheMap());
 

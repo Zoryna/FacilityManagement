@@ -75,6 +75,12 @@ public class FacilityMachines extends Facility {
         }
     }
 
+    public void getFacilityStatus(Map theMap){
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
+    }
+
     public int checkMachines(Map theMap) //counts the amount of broken machines
     {
         int issues = 0;
