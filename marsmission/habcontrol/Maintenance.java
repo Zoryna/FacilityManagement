@@ -9,12 +9,13 @@ public class Maintenance extends StateMachine {
         System.out.println("This is facility " + fac.getName());
         ins.makeMaintenanceRequest(fac);
 
-        //Shows what is broken in this maintenance request
+        // Shows what is broken in this maintenance request
         ins.listFacilityIssues(fac, machines);
     }
 
+    // This doesn't need a Facility nor an Inspection 
     public void fixMachines(Facility fac, Map<String, Boolean> map, Inspection ins){ // changes broken machines to working (true)
-    
+
         map.replaceAll((key, value) -> true);
         System.out.println("Testing if all the values are true");
 
