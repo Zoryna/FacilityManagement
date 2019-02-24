@@ -14,6 +14,11 @@ public class Driver {
         Facility athena = new Facility();
         Facility artemis = new Facility();
         Facility[] ar = new Facility[5];
+        apollo.setName("Apollo");
+        nyx.setName("Nyx");
+        erebos.setName("Erebos");
+        athena.setName("Athena");
+        artemis.setName("Artemis");
         ar[0] = apollo;
         ar[1] = nyx;
         ar[2] = erebos;
@@ -29,8 +34,6 @@ public class Driver {
         for (int i = 0; i < ar.length; i++){
             System.out.println(ar[i].getName() + " is " + ar[i].getState());
         }
-
-        // Putting all the machines facility to work
 
         for (int i = 0; i < ar.length; i++){
             // Show Machines for every facility

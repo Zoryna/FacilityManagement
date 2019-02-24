@@ -101,8 +101,20 @@ public class Facility extends StateMachine implements SuperFacility {
         machines[3] = externalAirlocks;
         machines[4] = comms;
         machines[5] = waterMaking;
-
         return machines;
+    }
+
+    // Set machines to false
+    public void breakMachines(){
+        oxygenator(false);
+        nuclearReactor(false);
+        innerAirlocks(false);
+        externalAirlocks(false);
+        comms(false);
+        waterMaking(false);
+
+        map.clear();
+        initializeMap(map);
     }
 
     public void startMachines(){
@@ -114,8 +126,10 @@ public class Facility extends StateMachine implements SuperFacility {
         externalAirlocks(true);
         comms(true);
         waterMaking(true);
-    }
 
+        map.clear();
+        initializeMap(map);
+    }
 
     public void initializeMap(Map<String, Boolean> map){
         this.map.put("Oxygenator", oxygenator);
