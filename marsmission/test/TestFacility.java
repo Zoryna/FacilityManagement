@@ -5,8 +5,8 @@ import java.util.*;
 
 public class TestFacility{
     public static void main (String[] args){
-        Facility fac = new Facility("Airlocks #0", 0);
-        Facility fac0 = new Facility("Airlocks #2", 2);
+        Facility fac0 = new Facility("Airlocks #0", 0);
+        Facility fac1 = new Facility("Airlocks #2", 2);
 
         // Stages the first object
         fac.setAddress("Acidalia Planitia");

@@ -42,6 +42,7 @@ public class TestInspection
         if ((ins.checkMachines(fac.getMap())) > 0) //if at least 1 is not working
         {
             c.shitIsBroken(fac);
+            System.out.println("Facility " + fac.getName() + " is: " + fac.getState());
             if(ins.isBroken(fac) == true)
             {
                 ins.makeMaintenanceRequest(fac);
@@ -54,6 +55,8 @@ public class TestInspection
             System.out.println("The state is: " + fac.getState());
         }
 
-        fac.getFacilityStatus();
+        // Since Facility is BROKEN, call Control to schedule a maintenance
+        ins.makeMaintenanceRequest(fac);
+        fac.getState();
     }
 }

@@ -17,22 +17,18 @@ public class Inspection extends StateMachine {
             return false;
     }
 
-    public String makeMaintenanceRequest(Facility fac) {
-        String request = "Needs maintenance";
-        String nah = "Does not need maintenance";
+    public void makeMaintenanceRequest(Facility fac){
 
-        if (fac.state == State.BROKEN){
-            System.out.println("Needs maintenance");
-            return request;
-        } else {
-            return nah;
+        Control c = new Control();
+
+        if (fac.getState() == State.BROKEN){
+            c.scheduleMaintenance(fac);
         }
     }
 
     public int checkMachines(Map<String, Boolean> map){
 
         int issues = 0;
-
         if(map.get("Oxygenator") == false)
             issues++;
         if(map.get("Inner Airlocks") == false)
