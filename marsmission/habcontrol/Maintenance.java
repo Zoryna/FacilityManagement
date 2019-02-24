@@ -7,38 +7,37 @@ package marsmission.habcontrol;
 
 import java.util.*;
 
-public class Maintenance extends StateMachine
-{
+public class Maintenance extends StateMachine {
 
-  public void listMaintenanceRequest(FacilityMachines fm, Inspection ins, int reqNum) //shows the request, which says what needs to be fixed from that inspection
-  {
-    System.out.println("This is facility " + fm.getName() + " and the request number: " + reqNum);
-    System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fm, reqNum));
+    public void listMaintenanceRequest(Facility fac, Inspection ins, int reqNum) //shows the request, which says what needs to be fixed from that inspection
+    {
+        System.out.println("This is facility " + fac.getName() + " and the request number: " + reqNum);
+        System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fac));
 
     //Shows what is broken in this maintenance request
-    ins.listFacilityIssues(fm, reqNum);
-  }
-
-  public void fixMachines(FacilityMachines fm, Map<String, Boolean> m, Inspection ins, int reqNum) //changes broken machines to working (true)
-  {
-    m.replaceAll((key, value) -> true);
-    System.out.println("Testing if all the values are true");
-
-    for (Map.Entry<String, Boolean> i : m.entrySet()) {
-      System.out.println(i.getKey() + ": " + i.getValue());
+        ins.listFacilityIssues(fac);
     }
-  }
 
-  public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state to resting
-  {
-    if ((fm.state == State.MAINTENANCE) || fm.state == State.BROKEN)
+    public void fixMachines(Facility fac, Map<String, Boolean> map, Inspection ins) //changes broken machines to working (true)
     {
-      System.out.println("This state is broken, it is going to change to RESTING");
-      c.vacateFacility(fm);
-      System.out.println("The state is now " + fm.getState());
-      return fm;
+        map.replaceAll((key, value) -> true);
+        System.out.println("Testing if all the values are true");
+
+        for (Map.Entry<String, Boolean> i : map.entrySet()) {
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
     }
-    else
-      return fm;
-  }
+
+    public Facility fixedTheFacility (Facility fac, Control c){ //changes the faciity state to resting
+
+        if ( (fac.state == State.MAINTENANCE) || (fac.state == State.BROKEN) ){
+
+            System.out.println("This state is broken, it is going to change to RESTING");
+            c.vacateFacility(fac);
+            System.out.println("The state is now " + fac.getState());
+            return fac;
+        } else {
+            return fac;
+        }
+    }
 }
