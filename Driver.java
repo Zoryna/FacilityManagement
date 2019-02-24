@@ -8,11 +8,11 @@ public class Driver {
     public static void main(String[] args){
 
         // Staging Objects
-        Facility apollo = new Facility("Apollo", 0);
-        Facility nyx = new Facility("Nyx", 1);
-        Facility erebos = new Facility("Erebos", 2);
-        Facility athena = new Facility("Athena", 3);
-        Facility artemis = new Facility("Artemis", 4);
+        Facility apollo = new Facility();
+        Facility nyx = new Facility();
+        Facility erebos = new Facility();
+        Facility athena = new Facility();
+        Facility artemis = new Facility();
         Facility[] ar = new Facility[5];
         ar[0] = apollo;
         ar[1] = nyx;
@@ -31,7 +31,7 @@ public class Driver {
         }
 
         // Putting all the machines facility to work
-        FacilityMachines fm = FacilityMachines();
+
         for (int i = 0; i < ar.length; i++){
             // Show Machines for every facility
         }
