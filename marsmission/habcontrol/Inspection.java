@@ -1,19 +1,15 @@
-/*
-    1. Check on what needs to be inspected, probably Facilities only
-    2. Talks to the interested parties about what's going on (Is the Facility working? Is it at Maintenance? Is it resting? Should it be resting?)
-*/
 package marsmission.habcontrol;
 
 import java.util.*;
 
-public class Inspection extends StateMachine{
+public class Inspection extends StateMachine {
 
-    public void listFacilityIssues(Facility fac){ //only shows what's broken
+    public void listFacilityIssues(Facility fac, boolean[] machines){
 
-        // fac.returnBrokenMachines(fac.getMap());
+        returnBrokenMachines(fac.getMap(), machines);
     }
 
-    public boolean isBroken(Facility fac){ //checks if the state is broken
+    public boolean isBroken(Facility fac){
 
         if (fac.state == State.BROKEN)
             return true;
@@ -21,8 +17,7 @@ public class Inspection extends StateMachine{
             return false;
     }
 
-    public String makeMaintenanceRequest(Facility fac) {//checks the state of the facility, then returns a String saying that there needs to be maintenance
-
+    public String makeMaintenanceRequest(Facility fac) {
         String request = "Needs maintenance";
         String nah = "Does not need maintenance";
 
@@ -34,58 +29,46 @@ public class Inspection extends StateMachine{
         }
     }
 
-    public int checkMachines(Map<String, Boolean> map){ //counts the amount of broken machines
+    public int checkMachines(Map<String, Boolean> map){
 
         int issues = 0;
 
         if(map.get("Oxygenator") == false)
             issues++;
-
         if(map.get("Inner Airlocks") == false)
             issues++;
-
         if(map.get("External Airlocks") == false)
             issues++;
-
         if(map.get("Nuclear Reactor") == false)
             issues++;
-
         if(map.get("Comms") == false)
             issues++;
-
         if(map.get("WaterMaking") == false)
             issues++;
-
         return issues;
     }
 
-    /*
-    public Map returnBrokenMachines(Map<String, Boolean> map){ //takes broken machines and puts into new map and returns new map
+    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines){
 
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
         if (map.get("Oxygenator") == false)
-            newMap.put("Oxygenator", oxygenator);
-
+            newMap.put("Oxygenator", machines[0]);
         if (map.get("Inner Airlocks") == false)
-            newMap.put("Inner Airlocks", innerAirlocks);
-
+            newMap.put("Inner Airlocks", machines[1]);
         if (map.get("External Airlocks") == false)
-            newMap.put("External Airlocks", externalAirlocks);
-
+            newMap.put("External Airlocks", machines[2]);
         if (map.get("Nuclear Reactor") == false)
-            newMap.put("Nuclear Reactor", nuclearReactor);
-
+            newMap.put("Nuclear Reactor", machines[3]);
         if (map.get("Comms") == false)
-            newMap.put("Comms", comms);
-
+            newMap.put("Comms", machines[4]);
         if (map.get("WaterMaking") == false)
-            newMap.put("WaterMaking", waterMaking);
+            newMap.put("WaterMaking", machines[5]);
 
         //for testing
         for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
             System.out.println(i.getKey() + ": " + i.getValue());
         }
         return newMap;
-    } */
+    }
 }

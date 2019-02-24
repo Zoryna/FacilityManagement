@@ -7,7 +7,7 @@ public class FacilityBehavior extends StateMachine implements FacilityAI {
     // Inspection i = new Inspection();
     private final int START = 8;
     private final int REST = 18;
-    private static Facility fac;
+    private Facility fac;
 
     public void setFacilityBehavior(Facility fac){
         this.fac = fac;

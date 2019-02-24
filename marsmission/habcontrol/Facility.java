@@ -7,6 +7,7 @@ public class Facility extends StateMachine implements SuperFacility {
     public int refNumber, capacity, problemRate;
     private double cost;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
+    private boolean[] machines = new boolean[6];
     private boolean oxygenator, innerAirlocks, externalAirlocks,
     comms, nuclearReactor, waterMaking;
     private final int numberOfMachines = 6; // Number of Machines inside Facility
@@ -93,6 +94,17 @@ public class Facility extends StateMachine implements SuperFacility {
         this.waterMaking = waterMaking;
     }
 
+    public boolean[] getMachines(){
+        machines[0] = oxygenator;
+        machines[1] = nuclearReactor;
+        machines[2] = innerAirlocks;
+        machines[3] = externalAirlocks;
+        machines[4] = comms;
+        machines[5] = waterMaking;
+
+        return machines;
+    }
+
     public void startMachines(){
         // Set all of the booleans from this Facility to true;
         // This booleans are what we call "the machines from the Facility"
@@ -103,6 +115,7 @@ public class Facility extends StateMachine implements SuperFacility {
         comms(true);
         waterMaking(true);
     }
+
 
     public void initializeMap(Map<String, Boolean> map){
         this.map.put("Oxygenator", oxygenator);

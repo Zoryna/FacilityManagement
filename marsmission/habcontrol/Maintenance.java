@@ -9,13 +9,13 @@ import java.util.*;
 
 public class Maintenance extends StateMachine {
 
-    public void listMaintenanceRequest(Facility fac, Inspection ins, int reqNum) //shows the request, which says what needs to be fixed from that inspection
+    public void listMaintenanceRequest(Facility fac, Inspection ins, int reqNum, boolean[] machines) //shows the request, which says what needs to be fixed from that inspection
     {
         System.out.println("This is facility " + fac.getName() + " and the request number: " + reqNum);
         System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fac));
 
-    //Shows what is broken in this maintenance request
-        ins.listFacilityIssues(fac);
+        //Shows what is broken in this maintenance request
+        ins.listFacilityIssues(fac, machines);
     }
 
     public void fixMachines(Facility fac, Map<String, Boolean> map, Inspection ins) //changes broken machines to working (true)
