@@ -1,3 +1,0 @@
-0 Facility #0: MAINTENANCE
-1 Facility #1: WORKING
-2 Facility #2: WORKING
