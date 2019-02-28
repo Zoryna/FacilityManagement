@@ -1,41 +1,70 @@
-/*
-    1. Check on what needs to be inspected, probably Facilities only
-    2. Talks to the interested parties about what's going on (Is the Facility working? Is it at Maintenance? Is it resting? Should it be resting?)
-*/
 package marsmission.habcontrol;
 
 import java.util.*;
 
+public class Inspection extends StateMachine {
 
-public class Inspection extends StateMachine
-{
-    public void listFacilityIssues(FacilityMachines fm, int reqNumber) //only shows what's broken
-    {
-        fm.theBrokenMachines(fm.getTheMap());
+    public void listFacilityIssues(Facility fac, boolean[] machines){
+
+        returnBrokenMachines(fac.getMap(), machines);
     }
 
-    public boolean isBroken (FacilityMachines fm) //checks if the state is broken
-    {
-        if (fm.state == State.BROKEN)
-        {
-            System.out.println("This facility is BROKEN");
+    public boolean isBroken(Facility fac){
+
+        if (fac.state == State.BROKEN)
             return true;
-        }
         else
             return false;
     }
 
-    public String makeMaintenanceRequest (FacilityMachines fm, int reqNumber) //checks the state of the facility, then returns a String saying that there needs to be maintenance
-    {
-        String request = "Needs maintenance";
-        String nah = "Does not need maintenance";
+    public void makeMaintenanceRequest(Facility fac){
 
-        if ((fm.state == State.BROKEN))
-        {
-            System.out.println("Needs maintenance");
-            return request;
+        Control c = new Control();
+
+        if (fac.getState() == State.BROKEN){
+            c.scheduleMaintenance(fac);
         }
-        else
-            return nah;
+    }
+
+    public int checkMachines(Map<String, Boolean> map){
+
+        int issues = 0;
+        if(map.get("Oxygenator") == false)
+            issues++;
+        if(map.get("Inner Airlocks") == false)
+            issues++;
+        if(map.get("External Airlocks") == false)
+            issues++;
+        if(map.get("Nuclear Reactor") == false)
+            issues++;
+        if(map.get("Comms") == false)
+            issues++;
+        if(map.get("WaterMaking") == false)
+            issues++;
+        return issues;
+    }
+
+    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines){
+
+        Map<String, Boolean> newMap = new HashMap<String, Boolean>();
+
+        if (map.get("Oxygenator") == false)
+            newMap.put("Oxygenator", machines[0]);
+        if (map.get("Inner Airlocks") == false)
+            newMap.put("Inner Airlocks", machines[1]);
+        if (map.get("External Airlocks") == false)
+            newMap.put("External Airlocks", machines[2]);
+        if (map.get("Nuclear Reactor") == false)
+            newMap.put("Nuclear Reactor", machines[3]);
+        if (map.get("Comms") == false)
+            newMap.put("Comms", machines[4]);
+        if (map.get("WaterMaking") == false)
+            newMap.put("WaterMaking", machines[5]);
+
+        //for testing
+        for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
+        return newMap;
     }
 }

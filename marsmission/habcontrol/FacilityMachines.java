@@ -112,7 +112,7 @@ public class FacilityMachines extends Facility {
         return issues;
     }
 
-    public Map theBrokenMachines(Map theMap) //takes broken machines and puts into new map and returns new map
+    public Map<String, Boolean> (Map map) //takes broken machines and puts into new map and returns new map
     {
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 

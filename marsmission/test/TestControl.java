@@ -5,7 +5,7 @@ import marsmission.habcontrol.Facility;
 public class TestControl{
     public static void main(String[] args){
         Control c = new Control();
-        Facility fac = new Facility("Airlock #0", 0);
+        Facility fac = new Facility();
         System.out.println(fac.getState());
         c.assignToUse(fac);
         System.out.println(fac.getState());

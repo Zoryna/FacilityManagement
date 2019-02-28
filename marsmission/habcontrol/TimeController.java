@@ -2,7 +2,7 @@ package marsmission.habcontrol;
 
 public class TimeController {
 
-    private static int hours, minutes, seconds;
+    public static int hours, minutes, seconds;
 
     public void setHours(int hours){
         this.hours = hours;

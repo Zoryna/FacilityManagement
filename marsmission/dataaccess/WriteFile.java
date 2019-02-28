@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 public class WriteFile {
 
     public String fileName;
-    FacilityMachines fm = new FacilityMachines();
+    Facility fm = new Facility();
     private Map<String, Boolean> m = new HashMap<String, Boolean>();
     PrintWriter oStream = null;
 

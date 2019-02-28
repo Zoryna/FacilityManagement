@@ -3,12 +3,13 @@ package marsmission.habcontrol;
 public class FacilityBehavior extends StateMachine implements FacilityAI {
 
     // Inspection i = new Inspection();
-    private final int START = 8;
-    private final int REST = 18;
-    private static Facility fac;
+    private int START = tc.getHours();
+    private int REST = tc.getHours();
+    public Facility fac;
 
     public void setFacilityBehavior(Facility fac){
         this.fac = fac;
+        AI();
     }
 
     public void AI(TimeController tc, Control c){
@@ -21,6 +22,7 @@ public class FacilityBehavior extends StateMachine implements FacilityAI {
         }
     }
 
+    // To comply with the interface, later it should go out, it has no business here
     public Facility getFacility(){
         return fac;
     }
