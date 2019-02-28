@@ -39,7 +39,8 @@ public class FacilityMachines extends Facility {
         this.waterMaking = waterMaking;
     }
 
-    public void startMachines(){
+    public void startMachines(
+    ){
         // Set machines to work
         oxygenator(true);
         nuclearReactor(true);

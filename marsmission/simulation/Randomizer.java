@@ -7,11 +7,10 @@ package marsmission.simulation;
 import java.util.Random;
 
 public class Randomizer {
-    Random r = new Random();
     private double d = 0; // Stores the setRandom() so it can be compared without mistakes
     private double percentage = 0.05;
 
-    public void setRandom(){
+    public void setRandom(Random r){
         d = r.nextDouble();
     }
 
