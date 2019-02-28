@@ -8,9 +8,14 @@ import java.io.FileNotFoundException;
 public class WriteFile {
 
     public String fileName;
-    Facility fm = new Facility();
-    private Map<String, Boolean> m = new HashMap<String, Boolean>();
+    public Facility fac;
+    public Map<String, Boolean> map;
     PrintWriter oStream = null;
+
+    public WriteFile(Facility fac, Map<String,Boolean> map){
+        this.fac = fac;
+        this.map = map;
+    }
 
     public void setFileName(String fileName){
         this.fileName = fileName;
@@ -18,13 +23,6 @@ public class WriteFile {
 
     public String getFileName(){
         return fileName;
-    }
-
-    // Copies static map from FacilityMachines to WriteFile
-    public void copyMap() {
-        for (Map.Entry<String, Boolean> i: fm.getMap().entrySet()){
-            m.put(i.getKey(), i.getValue());
-        }
     }
 
     public void saveFacilityInfo(Facility fac){
@@ -66,8 +64,7 @@ public class WriteFile {
         oStream.println(i + ": " + problemRate + ".");
         i++;
 
-        copyMap();
-        for (Map.Entry<String, Boolean> j: m.entrySet()){
+        for (Map.Entry<String, Boolean> j: fac.getMap().entrySet()){
             String s = j.getKey();
             boolean b = j.getValue();
             oStream.println(i + ": " + s + " = " + b + ". ");

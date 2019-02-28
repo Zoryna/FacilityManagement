@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Facility extends StateMachine implements SuperFacility {
 
-    public String name, address, description;
-    public int refNumber, capacity, problemRate;
+    private String name, address, description;
+    private int refNumber, capacity, problemRate;
     private double cost;
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
     private boolean[] machines = new boolean[6];

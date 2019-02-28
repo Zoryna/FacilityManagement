@@ -1,8 +1,14 @@
 0: Airlock #0.
 1: 0.
 2: Acidalia Planitia.
-3: TOBEEEE FLYYYY HIIIIIGH.
+3: TOBEEEE FLYYYY HIIIIIGH Ase to chi to namida de hikaru tsubasa de  ima zenbu  zenbu okizatte.
 4: 1000.
 5: 2.71.
 6: 2.
-7: State - BROKEN.
+7: Comms = true. 
+8: Oxygenator = true. 
+9: Nuclear Reactor = true. 
+10: WaterMaking = true. 
+11: Inner Airlocks = true. 
+12: External Airlocks = true. 
+13: State - BROKEN.
