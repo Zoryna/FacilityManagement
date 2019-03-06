@@ -1,6 +1,6 @@
 package marsmission.test;
-import marsmission.habcontrol.Control;
-import marsmission.habcontrol.Facility;
+import marsmission.domain.Control;
+import marsmission.domain.Facility;
 
 public class TestControl{
     public static void main(String[] args){

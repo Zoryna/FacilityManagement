@@ -1,9 +1,9 @@
 package marsmission.test;
-import marsmission.habcontrol.StateMachine;
-import marsmission.habcontrol.Inspection;
-import marsmission.habcontrol.Maintenance;
-import marsmission.habcontrol.Facility;
-import marsmission.habcontrol.Control;
+import marsmission.domain.StateMachine;
+import marsmission.domain.Inspection;
+import marsmission.domain.Maintenance;
+import marsmission.domain.Facility;
+import marsmission.domain.Control;
 
 public class TestMaintenance
 {

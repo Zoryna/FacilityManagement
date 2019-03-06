@@ -1,5 +1,5 @@
 package marsmission.test;
-import marsmission.habcontrol.TimeController;
+import marsmission.domain.TimeController;
 
 public class TestTimeController {
     public static void main (String[] args){

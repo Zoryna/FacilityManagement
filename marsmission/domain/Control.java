@@ -1,4 +1,4 @@
-package marsmission.habcontrol;
+package marsmission.domain;
 
 public class Control extends StateMachine {
 

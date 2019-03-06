@@ -1,5 +1,5 @@
 package marsmission.test;
-import marsmission.habcontrol.Facility;
+import marsmission.domain.Facility;
 
 import java.util.*;
 
