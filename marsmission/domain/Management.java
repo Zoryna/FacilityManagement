@@ -3,7 +3,7 @@
     upcoming projects
 */
 
-package marsmission.management;
+package marsmission.domain;
 
 public class Management
 {

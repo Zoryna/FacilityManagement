@@ -1,9 +1,9 @@
 package marsmission.test;
 import java.io.*;
 import java.util.*;
-import marsmission.habcontrol.Control;
+import marsmission.domain.Control;
 import marsmission.dataaccess.WriteFile;
-import marsmission.habcontrol.Facility;
+import marsmission.domain.Facility;
 
 public class TestWriteFile {
     public static void main(String[] args){

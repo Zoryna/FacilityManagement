@@ -1,5 +1,5 @@
 package marsmission.test;
-import marsmission.simulation.Randomizer;
+import marsmission.domain.Randomizer;
 
 public class TestRandomizer {
     public static void main(String[] args) {

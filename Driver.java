@@ -1,7 +1,5 @@
-import marsmission.habcontrol.*;
+import marsmission.domain.*;
 import marsmission.dataaccess.*;
-import marsmission.simulation.*;
-import marsmission.management.*;
 import java.util.*;
 
 public class Driver {

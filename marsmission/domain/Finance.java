@@ -4,8 +4,7 @@
 */
 package marsmission.management;
 
-public class Finance
-{
+public class Finance {
     private static int interval, ratePerHour, usageRate, maintenanceCost, calcDowntimeFacility,
     calcMaintCostFacility, calcUsageRate;
 

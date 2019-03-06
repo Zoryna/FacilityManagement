@@ -1,6 +1,6 @@
 package marsmission.test;
-import marsmission.habcontrol.Facility;
-import marsmission.habcontrol.StateMachine;
+import marsmission.domain.Facility;
+import marsmission.domain.StateMachine;
 
 public class TestStateMachine {
     public static void main(String[] args){

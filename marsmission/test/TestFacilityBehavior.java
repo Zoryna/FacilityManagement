@@ -1,7 +1,7 @@
 package marsmission.test;
-import marsmission.habcontrol.Facility;
-import marsmission.habcontrol.FacilityBehavior;
-import marsmission.habcontrol.TimeController;
+import marsmission.domain.Facility;
+import marsmission.domain.FacilityBehavior;
+import marsmission.domain.TimeController;
 
 public class TestFacilityBehavior {
     public static void main(String[] args){

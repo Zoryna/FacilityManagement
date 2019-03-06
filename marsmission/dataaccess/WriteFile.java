@@ -1,5 +1,5 @@
 package marsmission.dataaccess;
-import marsmission.habcontrol.*;
+import marsmission.domain.*;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.PrintWriter;

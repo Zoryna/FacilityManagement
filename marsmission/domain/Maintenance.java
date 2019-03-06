@@ -1,4 +1,4 @@
-package marsmission.habcontrol;
+package marsmission.domain;
 
 import java.util.*;
 
@@ -13,7 +13,7 @@ public class Maintenance extends StateMachine {
         ins.listFacilityIssues(fac, machines);
     }
 
-    // This doesn't need a Facility nor an Inspection 
+    // This doesn't need a Facility nor an Inspection
     public void fixMachines(Facility fac, Map<String, Boolean> map, Inspection ins){ // changes broken machines to working (true)
 
         map.replaceAll((key, value) -> true);

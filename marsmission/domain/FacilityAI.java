@@ -4,7 +4,7 @@
     guide for it.
 */
 
-package marsmission.habcontrol;
+package marsmission.domain;
 
 public interface FacilityAI {
     public void AI(TimeController tc, Control c); // How/When/Which decisions are made

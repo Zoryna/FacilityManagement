@@ -1,4 +1,4 @@
-package marsmission.habcontrol;
+package marsmission.domain;
 
 import java.util.*;
 
