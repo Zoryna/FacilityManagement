@@ -1,43 +1,35 @@
-/*
-  controller
-  class that responds to the requests from Inspection
-  Inspection-->Maintenance
-*/
-
 import java.util.*;
 
-public class Maintenance extends StateMachine
-{
+public class Maintenance  {
 
-  public void listMaintenanceRequest(FacilityMachines fm, Inspection ins, int reqNum) //shows the request, which says what needs to be fixed from that inspection
-  {
-    System.out.println("This is facility " + fm.getName() + " and the request number: " + reqNum);
-    System.out.println("Maintenance request: " + ins.makeMaintenanceRequest(fm, reqNum));
+  public void listMaintenanceRequest(Facility fac, Inspection ins, boolean[] machines){ //shows the request, which says what needs to be fixed from that inspection
 
-    //Shows what is broken in this maintenance request
-    ins.listFacilityIssues(fm, reqNum);
+    System.out.println("This is facility " + fac.getName());
+    ins.makeMaintenanceRequest(fac);
+
+    // Shows what is broken in this maintenance request
+    ins.listFacilityIssues(fac, machines);
   }
 
-  public void fixMachines(FacilityMachines fm, Map<String, Boolean> m, Inspection ins, int reqNum) //changes broken machines to working (true)
-  {
-    m.replaceAll((key, value) -> true);
+  public void fixMachines(Map<String, Boolean> map){ // changes broken machines to working (true)
+
+    map.replaceAll((key, value) -> true);
     System.out.println("Testing if all the values are true");
 
-    for (Map.Entry<String, Boolean> i : m.entrySet()) {
+    for (Map.Entry<String, Boolean> i : map.entrySet()) {
       System.out.println(i.getKey() + ": " + i.getValue());
     }
   }
 
-  public Facility fixedTheFacility (FacilityMachines fm, Control c) //changes the faciity state to resting
-  {
-    if ((fm.state == State.MAINTENANCE) || fm.state == State.BROKEN)
-    {
+  public Facility fixFacility(Facility fac, Control c){ // changes the faciity state to resting
+
+    if ( (fac.state == State.MAINTENANCE) || (fac.state == State.BROKEN) ){
       System.out.println("This state is broken, it is going to change to RESTING");
-      c.vacateFacility(fm);
-      System.out.println("The state is now " + fm.getState());
-      return fm;
+      c.vacateFacility(fac);
+      System.out.println("The state is now " + fac.getState());
+      return fac;
+    } else {
+      return fac;
     }
-    else
-      return fm;
   }
 }

@@ -1,25 +1,10 @@
-/*
-    the Subject for the Observer pattern
- */
+import java.util.*;
 
+public class Facility extends StateMachine implements SuperFacility {
 
-import java.util.ArrayList;
-
-public class Facility extends StateMachine {
-
-    public static String name;
-    public static int refNumber;
-    private String address, description;
-    private int capacity, problemRate;
+    private String name, address, description;
+    private int refNumber, capacity, problemRate;
     private double cost;
-
-
-    Facility(String name, int refNumber){
-        this.name = name;
-        this.refNumber = refNumber;
-    }
-
-
 
     // Setters
     public void setName(String name){
@@ -79,8 +64,7 @@ public class Facility extends StateMachine {
         return problemRate;
     }
 
-    public Facility getFacilityObj(){
-        Facility fac = new Facility(name, refNumber);
-        return fac;
+    public State getState() {
+        return state;
     }
 }
