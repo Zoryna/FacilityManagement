@@ -2,26 +2,26 @@ package marsmission.domain;
 
 import java.util.*;
 
-public class Inspection extends StateMachine {
+public class Inspection  {
 
-    public void listFacilityIssues(Facility fac, boolean[] machines){
+    private Facility fac = new Facility();
+
+    public void listFacilityIssues(boolean[] machines){
 
         returnBrokenMachines(fac.getMap(), machines);
     }
 
-    public boolean isBroken(Facility fac){
+    public boolean isBroken(Control c){
 
-        if (fac.state == State.BROKEN)
+        if (fac.getState() == c.shitIsBroken(fac))
             return true;
         else
             return false;
     }
 
-    public void makeMaintenanceRequest(Facility fac){
+    public void makeMaintenanceRequest(Control c){
 
-        Control c = new Control();
-
-        if (fac.getState() == State.BROKEN){
+        if (fac.getState() == c.shitIsBroken(fac)){
             c.scheduleMaintenance(fac);
         }
     }

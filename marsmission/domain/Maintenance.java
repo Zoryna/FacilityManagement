@@ -2,7 +2,7 @@ package marsmission.domain;
 
 import java.util.*;
 
-public class Maintenance extends StateMachine {
+public class Maintenance  {
 
     public void listMaintenanceRequest(Facility fac, Inspection ins, boolean[] machines){ //shows the request, which says what needs to be fixed from that inspection
 
