@@ -1,14 +1,13 @@
-package marsmission.test;
+package marsmission.domain;
 import java.io.*;
 import java.util.*;
-import marsmission.domain.Control;
 import marsmission.dataaccess.WriteFile;
-import marsmission.domain.Facility;
 
 public class TestWriteFile {
     public static void main(String[] args){
         Facility fac = new Facility();
-        WriteFile wf = new WriteFile(fac, fac.getMap());
+        Machines m = new Machines(fac);
+        WriteFile wf = new WriteFile(fac, m.getMap());
         Control c = new Control();
 
         // Staging Object to be saved
@@ -19,7 +18,7 @@ public class TestWriteFile {
         fac.setCapacity(1000);
         fac.setCost(2.71);
         fac.setProblemRate(2);
-        fac.startMachines();
+        m.startMachines();
         c.shitIsBroken(fac);
 
         // Reading up WriteFile to write file

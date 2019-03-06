@@ -16,14 +16,4 @@ public interface SuperFacility {
     public int getCapacity();
     public double getCost();
     public int getProblemRate();
-    public void oxygenator(boolean oxygenator);
-    public void nuclearReactor(boolean nuclearReactor);
-    public void innerAirlocks(boolean innerAirlocks);
-    public void externalAirlocks(boolean externalAirlocks);
-    public void comms(boolean comms);
-    public void waterMaking(boolean waterMaking);
-    public void startMachines();
-    public Map getMap();
-    public void getFacilityStatus();
-    public void getFacilityStatus(Map<String, Boolean> map);
 }

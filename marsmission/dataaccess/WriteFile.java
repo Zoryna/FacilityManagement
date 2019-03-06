@@ -7,9 +7,10 @@ import java.io.FileNotFoundException;
 
 public class WriteFile {
 
-    public String fileName;
-    public Facility fac;
-    public Map<String, Boolean> map;
+    private String fileName;
+    private Facility fac;
+    private Map<String, Boolean> map;
+    private Machines m;
     PrintWriter oStream = null;
 
     public WriteFile(Facility fac, Map<String,Boolean> map){
@@ -64,7 +65,7 @@ public class WriteFile {
         oStream.println(i + ": " + problemRate + ".");
         i++;
 
-        for (Map.Entry<String, Boolean> j: fac.getMap().entrySet()){
+        for (Map.Entry<String, Boolean> j: m.getMap().entrySet()){
             String s = j.getKey();
             boolean b = j.getValue();
             oStream.println(i + ": " + s + " = " + b + ". ");

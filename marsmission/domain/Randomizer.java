@@ -9,8 +9,9 @@ import java.util.Random;
 public class Randomizer {
     private double d = 0; // Stores the setRandom() so it can be compared without mistakes
     private double percentage = 0.05;
+    private Random r;
 
-    public void setRandom(Random r){
+    public void setRandom(){
         d = r.nextDouble();
     }
 

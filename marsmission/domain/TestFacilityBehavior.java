@@ -1,16 +1,14 @@
-package marsmission.test;
-import marsmission.domain.Facility;
-import marsmission.domain.FacilityBehavior;
-import marsmission.domain.TimeController;
+package marsmission.domain;
 
 public class TestFacilityBehavior {
     public static void main(String[] args){
         Facility fac = new Facility();
         FacilityBehavior fb = new FacilityBehavior();
         TimeController tc = new TimeController();
+        Control c = new Control();
 
         fb.setFacilityBehavior(fac);
-        fb.AI();
+        fb.AI(tc, c);
 
         if (fb.getFacility() == fac){
             System.out.println("TRUE");

@@ -1,4 +1,4 @@
-package marsmission.test;
+package marsmission.domain;
 import marsmission.dataaccess.ReadFile;
 
 public class TestReadFile {

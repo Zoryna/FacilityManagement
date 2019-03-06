@@ -1,6 +1,4 @@
-package marsmission.test;
-import marsmission.domain.Facility;
-import marsmission.domain.StateMachine;
+package marsmission.domain;
 
 public class TestStateMachine {
     public static void main(String[] args){

@@ -1,5 +1,4 @@
-package marsmission.test;
-import marsmission.domain.Facility;
+package marsmission.domain;
 
 import java.util.*;
 
@@ -7,6 +6,7 @@ public class TestFacility{
     public static void main (String[] args){
         Facility fac0 = new Facility();
         Facility fac1 = new Facility();
+        Control c = new Control();
 
         // Stages the first object
         fac0.setName("Airlocks #0");
@@ -23,7 +23,6 @@ public class TestFacility{
             System.out.println("FALSE");
         }
 
-
         System.out.println("getName: " + fac0.getName());
         System.out.println("getAddress: " + fac0.getAddress());
         System.out.println("getDescription: " + fac0.getDescription());
@@ -35,5 +34,11 @@ public class TestFacility{
         fac1.setRefNumber(1);
         System.out.println("getName: " + fac1.getName());
         System.out.println("getRefNumber: " + fac1.getRefNumber());
+
+        c.assignToUse(fac0);
+        c.shitIsBroken(fac1);
+
+        System.out.println(fac0.getName() + ": " + fac0.getState());
+        System.out.println(fac1.getName() + ": " + fac1.getState());
     }
 }
