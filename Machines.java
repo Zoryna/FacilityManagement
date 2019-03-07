@@ -14,18 +14,6 @@ public class Machines extends Facility {
         this.fac = fac;
     }
 
-    public boolean getOxygenator(){
-        return oxygenator;
-    }
-
-    public boolean getNuclearReactor(){
-        return nuclearReactor;
-    }
-
-    public boolean getInnerAirlocks(){
-        return innerAirlocks;
-    }
-
     public void oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
     }
