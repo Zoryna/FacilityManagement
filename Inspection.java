@@ -17,9 +17,9 @@ public class Inspection {
 
 
 
-    public void listFacilityIssues(boolean[] machines){
+    public void listFacilityIssues(Map<String, Boolean> map, boolean[] machines){
 
-        returnBrokenMachines(mach.getMap(), machines);
+        returnBrokenMachines(map, machines);
     }
 
     public boolean isBroken(){
@@ -63,11 +63,11 @@ public class Inspection {
         //state of machines put into an array
         if (map.get("Oxygenator") == false)
             newMap.put("Oxygenator", machines[0]);
-        if (map.get("Inner Airlocks") == false)
+        if (map.get("Inner Airlocks") == false) //fix
             newMap.put("Inner Airlocks", machines[1]);
-        if (map.get("External Airlocks") == false)
+        if (map.get("External Airlocks") == false) //fix
             newMap.put("External Airlocks", machines[2]);
-        if (map.get("Nuclear Reactor") == false)
+        if (map.get("Nuclear Reactor") == false) //fix
             newMap.put("Nuclear Reactor", machines[3]);
         if (map.get("Comms") == false)
             newMap.put("Comms", machines[4]);
