@@ -14,7 +14,7 @@ public class Maintenance  {
   public void fixMachines(Map<String, Boolean> map){ // changes broken machines to working (true)
 
     map.replaceAll((key, value) -> true);
-    System.out.println("Testing if all the values are true");
+    System.out.println("Machines are now fixed");
 
     for (Map.Entry<String, Boolean> i : map.entrySet()) {
       System.out.println(i.getKey() + ": " + i.getValue());

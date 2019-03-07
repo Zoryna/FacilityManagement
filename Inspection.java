@@ -5,16 +5,16 @@ public class Inspection {
     private Facility fac;
     private Machines mach;
 
-    private Inspection (Facility fac){
+    /*public Inspection (Facility fac){
         this.fac = fac;
-    }
+    } */
 
     public void listFacilityIssues(boolean[] machines){
 
-        returnBrokenMachines(mach(fac).getMap(), machines); //fix
+        returnBrokenMachines(mach.getMap(), machines);
     }
 
-    public boolean isBroken(){
+    public boolean isBroken(fac){
 
         if (fac.getState().toString().equals("BROKEN"))
             return true;
@@ -22,14 +22,15 @@ public class Inspection {
             return false;
     }
 
-    public void makeMaintenanceRequest(Control c){
+    public boolean makeMaintenanceRequest(fac){ //returning true means needs maintenance
 
-        if (fac.getState().toString().equals("BROKEN")){
-            c.scheduleMaintenance(fac);
-        }
+        if (fac.getState().toString().equals("BROKEN"))
+            return true;
+        else
+            return false;
     }
 
-    public int checkMachines(Map<String, Boolean> map){
+    public int checkMachines(mach, Map<String, Boolean> map){
 
         int issues = 0;
         if(map.get("Oxygenator") == false)
@@ -47,10 +48,11 @@ public class Inspection {
         return issues;
     }
 
-    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines){
+    public Map<String, Boolean> returnBrokenMachines(mach, Map<String, Boolean> map, boolean[] machines){
 
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
+        //state of machines put into an array
         if (map.get("Oxygenator") == false)
             newMap.put("Oxygenator", machines[0]);
         if (map.get("Inner Airlocks") == false)

@@ -2,37 +2,41 @@ public class TestInspection
 {
     public static void main (String[] args)
     {
-        StateMachine sm = new StateMachine();
-        Inspection ins = new Inspection();
-        Control c = new Control();
-        FacilityMachines fac0 = new FacilityMachines();
+        Facility fac0 = new Facility();
+        Facility fac1 = new Facility();
 
-        fac0.setName("Airlocks #1");
+        Machines mach0 = new Machines(fac0);
+        Machines mach1 = new Machines(fac1);
+
+        Inspection ins = new Inspection();
+
+        fac0.setName("Fac0");
         System.out.println("This is facility " + fac0.getName());
         System.out.println("The current state is: " + fac0.getState()); //at resting state
 
-        fac0.oxygenator(true);
-        fac0.innerAirlocks(false);
-        fac0.externalAirlocks(true);
-        fac0.nuclearReactor(false);
-        fac0.comms(true);
-        fac0.waterMaking(false);
+        mach0.oxygenator(true);
+        mach0.innerAirlocks(false);
+        mach0.externalAirlocks(true);
+        mach0.nuclearReactor(false);
+        mach0.comms(true);
+        mach0.waterMaking(false);
 
 
-        if ((fac0.checkMachines(fac0.getTheMap())) > 0) //if at least 1 is not working
+        if ((ins.checkMachines(mach0.getMap())) > 0) //if at least 1 is not working
         {
-            sm.setStateBroken(fac0);
-            if(ins.isBroken(fac0) == true)
+            System.out.println("At least one of the machines is broken");
+            /*if(ins.isBroken() == true)
             {
-                ins.makeMaintenanceRequest(fac0, 1);
+                ins.makeMaintenanceRequest();
                 System.out.println("Listing the faciility issues");
-                ins.listFacilityIssues(fac0, 1);
-            }
+                ins.listFacilityIssues();
+            } */
         }
         else
         {
-            c.assignToUse(fac0);
-            System.out.println("The state is: " + fac0.getState());
+            System.out.println("All the machines are working");
         }
+
+
     }
 }
