@@ -5,16 +5,24 @@ public class Inspection {
     private Facility fac;
     private Machines mach;
 
-    /*public Inspection (Facility fac){
-        this.fac = fac;
-    } */
+    //setters
+    public void setFacility(Facility fac) { this.fac = fac; }
+
+    public void setMachines(Machines mach) { this.mach = mach;}
+
+    //getters
+    public Facility getFacility() {return fac;}
+
+    public Machines getMachines() {return mach;}
+
+
 
     public void listFacilityIssues(boolean[] machines){
 
         returnBrokenMachines(mach.getMap(), machines);
     }
 
-    public boolean isBroken(fac){
+    public boolean isBroken(){
 
         if (fac.getState().toString().equals("BROKEN"))
             return true;
@@ -22,7 +30,7 @@ public class Inspection {
             return false;
     }
 
-    public boolean makeMaintenanceRequest(fac){ //returning true means needs maintenance
+    public boolean makeMaintenanceRequest(){ //returning true means needs maintenance
 
         if (fac.getState().toString().equals("BROKEN"))
             return true;
@@ -30,7 +38,7 @@ public class Inspection {
             return false;
     }
 
-    public int checkMachines(mach, Map<String, Boolean> map){
+    public int checkMachines(Map<String, Boolean> map){
 
         int issues = 0;
         if(map.get("Oxygenator") == false)
@@ -48,7 +56,7 @@ public class Inspection {
         return issues;
     }
 
-    public Map<String, Boolean> returnBrokenMachines(mach, Map<String, Boolean> map, boolean[] machines){
+    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines){
 
         Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
