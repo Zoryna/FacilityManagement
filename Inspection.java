@@ -15,13 +15,6 @@ public class Inspection {
 
     public Machines getMachines() {return mach;}
 
-
-
-    public void listFacilityIssues(Map<String, Boolean> map, boolean[] machines){
-
-        returnBrokenMachines(map, machines);
-    }
-
     public boolean isBroken(){
 
         if (fac.getState().toString().equals("BROKEN"))

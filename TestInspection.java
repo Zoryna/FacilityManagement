@@ -2,42 +2,30 @@ public class TestInspection
 {
     public static void main (String[] args)
     {
-        Facility fac0 = new Facility();
-        Facility fac1 = new Facility();
+        Facility apollo = new Facility();
+        Facility nyx = new Facility();
 
-        Machines mach0 = new Machines(fac0);
-        Machines mach1 = new Machines(fac1);
+        Machines apolloMachines = new Machines(apollo);
+        Machines nyxMachines = new Machines(nyx);
 
-        Inspection ins = new Inspection();
-        StateMachine sm = new StateMachine();
+        Inspection in = new Inspection();
+        Control c = new Control();
 
-        fac0.setName("Fac0");
-        ins.setFacility(fac0);
-        System.out.println("This is facility:  " + fac0 + " and the name is " + fac0.getName() + " and the Inspection's facility is " + ins.getFacility()); //check if they have the same facilityy
-        System.out.println("The current state is: " + fac0.getState()); //at resting state
+        apollo.setName("Apollo");
+        in.setFacility(apollo);
+        apolloMachines.startMachines();
+        apolloMachines.getFacilityStatus();
+        apolloMachines.update();
+        apolloMachines.readMachines();
+        apolloMachines.oxygenator(false);
+        apolloMachines.update();
+        apolloMachines.getFacilityStatus();
 
-        mach0.startMachines();
+        /*
+        apolloMachines.getFacilityStatus();
+        apolloMachines.oxygenator(false);
+        System.out.println(apolloMachines.getOxygenator()); */
 
-        System.out.println("Changing some machines to false");
-        mach0.oxygenator(true);
-        mach0.innerAirlocks(false); //fix
-        mach0.externalAirlocks(true); //fix
-        mach0.nuclearReactor(false); //fix
-        mach0.comms(false);
-        mach0.waterMaking(false);
-
-        mach0.initializeMap(mach0.getMap());
-        //mach0.readMachines();
-
-        System.out.println("Show status again through getFacilityStatus");
-        mach0.getFacilityStatus(mach0.getMap()); //testing
-
-
-        System.out.println("Show which machines are not working");
-        ins.returnBrokenMachines(mach0.getMap(), mach0.getMachines()); //fix
-        System.out.println("Testing when putting listFacilites after");
-
-        ins.listFacilityIssues(mach0.getMap(), mach0.getMachines());
 
 
         /*if ((ins.checkMachines(mach0.getMap())) > 0) //if at least 1 is not working

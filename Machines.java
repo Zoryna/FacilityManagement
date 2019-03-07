@@ -14,6 +14,10 @@ public class Machines extends Facility {
         this.fac = fac;
     }
 
+    public boolean getOxygenator(){
+        return oxygenator;
+    }
+
     public void oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
     }
@@ -50,7 +54,9 @@ public class Machines extends Facility {
 
     public void readMachines(){
         System.out.println("This is the " + fac.getName() + " facility.");
-        getFacilityStatus();
+        for (int i = 0; i < machines.length; i++) {
+            System.out.println(i+": "+ machines[0]);
+        }
     }
 
     // Set machines to false
@@ -85,6 +91,17 @@ public class Machines extends Facility {
         comms(true);
         waterMaking(true);
 
+        map.clear();
+        initializeMap(map);
+    }
+
+    public void update(){
+        machines[0] = oxygenator;
+        machines[1] = nuclearReactor;
+        machines[2] = innerAirlocks;
+        machines[3] = externalAirlocks;
+        machines[4] = comms;
+        machines[5] = waterMaking;
         map.clear();
         initializeMap(map);
     }
