@@ -21,28 +21,7 @@ public class TestInspection
         apolloMachines.update();
         apolloMachines.getFacilityStatus();
 
-        /*
-        apolloMachines.getFacilityStatus();
-        apolloMachines.oxygenator(false);
-        System.out.println(apolloMachines.getOxygenator()); */
-
-
-
-        /*if ((ins.checkMachines(mach0.getMap())) > 0) //if at least 1 is not working
-        {
-            System.out.println("At least one of the machines is broken");
-        }
-        else
-        {
-            System.out.println("All the machines are working");
-        }
-
-        sm.setStateBroken(fac0);
-        if (ins.isBroken() == true)
-            System.out.println("This facility is broken");
-        else
-            System.out.println("This facility is not broken");
-      */
+        
 
 
 

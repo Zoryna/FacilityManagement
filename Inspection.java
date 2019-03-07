@@ -55,9 +55,9 @@ public class Inspection {
 
         //state of machines put into an array
         if (map.get("Oxygenator") == false)
-            newMap.put("Oxygenator", machines[0]);
+            newMap.put("Oxygenator", machines[1]); //switched
         if (map.get("Inner Airlocks") == false) //fix
-            newMap.put("Inner Airlocks", machines[1]);
+            newMap.put("Inner Airlocks", machines[0]);
         if (map.get("External Airlocks") == false) //fix
             newMap.put("External Airlocks", machines[2]);
         if (map.get("Nuclear Reactor") == false) //fix
@@ -68,6 +68,7 @@ public class Inspection {
             newMap.put("WaterMaking", machines[5]);
 
         //for testing
+
         for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
             System.out.println(i.getKey() + ": " + i.getValue());
         }
