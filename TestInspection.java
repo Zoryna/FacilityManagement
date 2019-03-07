@@ -21,16 +21,8 @@ public class TestInspection
         apolloMachines.update();
         apolloMachines.getFacilityStatus();
 
-        
-
-
-
-
-
-
-
-
-
-
+        for (int i = 0; i < apolloMachines.getMachines().length; i++){
+            System.out.println(i + ": " + apolloMachines.getMachines()[i]);
+        }
     }
 }

@@ -18,6 +18,14 @@ public class Machines extends Facility {
         return oxygenator;
     }
 
+    public boolean getNuclearReactor(){
+        return nuclearReactor;
+    }
+
+    public boolean getInnerAirlocks(){
+        return innerAirlocks;
+    }
+
     public void oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
     }
@@ -50,13 +58,6 @@ public class Machines extends Facility {
         machines[4] = comms;
         machines[5] = waterMaking;
         return machines;
-    }
-
-    public void readMachines(){
-        System.out.println("This is the " + fac.getName() + " facility.");
-        for (int i = 0; i < machines.length; i++) {
-            System.out.println(i+": "+ machines[0]);
-        }
     }
 
     // Set machines to false
