@@ -68,10 +68,10 @@ public class Inspection {
             newMap.put("WaterMaking", machines[5]);
 
         //for testing
-
         for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
-            System.out.println(i.getKey() + ": " + i.getValue());
+            System.out.println(i.getKey());
         }
+
         return newMap;
     }
 }
