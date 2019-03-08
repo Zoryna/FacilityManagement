@@ -25,16 +25,14 @@ public class Maintenance  {
     }
   }
 
-  /*public void fixMachines(Map<String, Boolean> map){ //changes broken machines to true
+  public void fixMachines(Map<String, Boolean> map, boolean[] machines){ //changes broken machines to true
 
-    map.replaceAll((key, value) -> true);
-    System.out.println("Machines are now fixed");
+    System.out.println("The machines are now all working");
+    Arrays.fill(machines, true); //has all the values in the array be true
+    mach.update();
 
-    /*for (Map.Entry<String, Boolean> i : map.entrySet()) {
-      System.out.println(i.getKey() + ": " + i.getValue());
-
-
-    } */
+    mach.getFacilityStatus();
+    }
 
   public Facility fixFacility(){ //changes the faciity state to resting
 

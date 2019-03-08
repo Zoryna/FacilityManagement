@@ -38,7 +38,8 @@ public class TestMaintenance
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
-        maint.fixFacility();
+        maint.fixFacility(); //changes facility state to resting
+        maint.fixMachines(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines()), apolloMach.getMachines()); //have false machines turn true
 
 
 
