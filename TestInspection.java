@@ -12,6 +12,7 @@ public class TestInspection
         Control c = new Control();
 
         apollo.setName("Apollo");
+        System.out.println("This is facility: " + apollo.getName());
         ins.setFacility(apollo); //so inspection knows which facility to inspect
 
         apolloMach.startMachines(); //all machines start as true
@@ -55,8 +56,8 @@ public class TestInspection
             System.out.println("This facility does not need maintenance");
 
 
-        System.out.println ("Testing nyx facility");
         nyx.setName("Nyx");
+        System.out.println("This is facility: " + nyx.getName());
         ins.setFacility(nyx); //so inspection knows which facility to inspect
 
         nyxMach.update();
