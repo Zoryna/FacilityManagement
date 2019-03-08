@@ -29,7 +29,7 @@ public class TestInspection
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
-        System.out.println("Here are the broken machines");
+        /*System.out.println("Here are the broken machines");
         ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines());
 
         if (ins.checkMachines(apolloMach.getMap()) > 1)
@@ -37,23 +37,23 @@ public class TestInspection
             System.out.println("At least one of the machines is broken");
         }
         else
-            System.out.println("None of the machines are broken");
+            System.out.println("None of the machines are broken"); */
 
 
         c.shitIsBroken(apollo);
-        if(ins.isBroken() == true)
+        /*if(ins.isBroken() == true)
         {
             System.out.println("The facility is broken");
         }
         else
-            System.out.println("The system is not broken");
+            System.out.println("The system is not broken"); */
 
-        if(ins.makeMaintenanceRequest() == true)
+        if(ins.makeMaintenanceRequest(1) > 0)
         {
-            System.out.println("This facility needs maintenance");
+            System.out.println("This facility will go through maintenance");
         }
         else
-            System.out.println("This facility does not need maintenance");
+            System.out.println("This facility will not go through maintenance");
 
 
         nyx.setName("Nyx");
@@ -76,7 +76,7 @@ public class TestInspection
         nyxMach.getFacilityStatus();
 
         //should only show broken machines
-        System.out.println("Here are the broken machines");
+        /*System.out.println("Here are the broken machines");
         ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines());
 
         if (ins.checkMachines(nyxMach.getMap()) > 1)
@@ -84,22 +84,22 @@ public class TestInspection
             System.out.println("At least one of the machines is broken");
         }
         else
-            System.out.println("None of the machines are broken");
+            System.out.println("None of the machines are broken"); */
 
 
         c.assignToUse(nyx);
-        if(ins.isBroken() == true)
+        /*if(ins.isBroken() == true)
         {
             System.out.println("The facility is broken");
         }
         else
-            System.out.println("The system is not broken");
+            System.out.println("The system is not broken"); */
 
-        if(ins.makeMaintenanceRequest() == true)
+        if(ins.makeMaintenanceRequest(1) > 0)
         {
-            System.out.println("This facility needs maintenance");
+            System.out.println("This facility will go through maintenance");
         }
         else
-            System.out.println("This facility does not need maintenance");
+            System.out.println("This facility will not go through maintenance");
     }
 }

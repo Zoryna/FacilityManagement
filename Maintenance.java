@@ -2,7 +2,10 @@ import java.util.*;
 
 public class Maintenance  {
 
-  public void listMaintenanceRequest(Facility fac, Inspection ins, boolean[] machines){ //shows the request, which says what needs to be fixed from that inspection
+  private Inspection ins;
+
+
+  public void listMaintenanceRequest(Inspection ins, boolean[] machines){ //shows the request, which says what needs to be fixed from that inspection
 
     System.out.println("This is facility " + fac.getName());
     ins.makeMaintenanceRequest(fac);
@@ -16,8 +19,10 @@ public class Maintenance  {
     map.replaceAll((key, value) -> true);
     System.out.println("Machines are now fixed");
 
-    for (Map.Entry<String, Boolean> i : map.entrySet()) {
-      System.out.println(i.getKey() + ": " + i.getValue());
+    /*for (Map.Entry<String, Boolean> i : map.entrySet()) {
+      System.out.println(i.getKey() + ": " + i.getValue()); */
+
+
     }
   }
 
