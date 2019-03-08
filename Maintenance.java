@@ -3,13 +3,16 @@ import java.util.*;
 public class Maintenance  {
 
   private Facility fac;
-  private Inspection ins;
   private Machines mach;
+  private Inspection ins;
+
+  //setter
+  public void setFacility(Facility fac) { this.fac = fac; }
+
+  //getter
+  public Facility getFacility() {return fac;}
 
   public void listMaintenanceRequest(int reqNum){ //shows the request, which says what needs to be fixed from that inspection
-
-    System.out.println("This is facility " + fac.getName());
-    ins.makeMaintenanceRequest(reqNum);
 
     //Shows what is broken in this maintenance request
     ins.returnBrokenMachines(mach.getMap(), mach.getMachines());
