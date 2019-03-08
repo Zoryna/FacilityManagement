@@ -18,7 +18,6 @@ public class Maintenance  {
 
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
 
-    //Shows what is broken in this maintenance request
     System.out.println("Here are the machines that will be fixed");
     for (Map.Entry<String, Boolean> i : map.entrySet()) {
       System.out.println(i.getKey());
@@ -28,10 +27,15 @@ public class Maintenance  {
   public void fixMachines(Map<String, Boolean> map, boolean[] machines){ //changes broken machines to true
 
     System.out.println("The machines are now all working");
-    Arrays.fill(machines, true); //has all the values in the array be true
-    mach.update();
 
-    mach.getFacilityStatus();
+    mach.update();
+    for (int i = 0; i < machines.length; i++) {
+      if (machines[i] == false){
+        machines[i] = true;
+        System.out.println(i + " " + machines[i]);
+      }
+    }
+
     }
 
   public Facility fixFacility(){ //changes the faciity state to resting
@@ -48,7 +52,5 @@ public class Maintenance  {
       return ins.getFacility();
     }
   }
-
-
 }
 
