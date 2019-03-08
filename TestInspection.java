@@ -18,6 +18,8 @@ public class TestInspection
         apolloMach.startMachines(); //all machines start as true
         apolloMach.getFacilityStatus(); //show status of all machines
 
+        System.out.println("---------------------------");
+
         apolloMach.oxygenator(false);
         apolloMach.innerAirlocks(false);
         apolloMach.externalAirlocks(false);
@@ -26,6 +28,7 @@ public class TestInspection
         apolloMach.waterMaking(false);
 
         apolloMach.update();
+        System.out.println("---------------------------");
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
@@ -48,7 +51,7 @@ public class TestInspection
         else
             System.out.println("The system is not broken"); */
 
-        if(ins.makeMaintenanceRequest(1) > 0)
+        if(ins.makeMaintenanceRequest() == true)
         {
             System.out.println("This facility will go through maintenance");
         }
@@ -65,6 +68,8 @@ public class TestInspection
         nyxMach.startMachines(); //all machines start as true
         nyxMach.getFacilityStatus(); //show status of all machines
 
+        System.out.println("---------------------------");
+
         nyxMach.oxygenator(true);
         nyxMach.innerAirlocks(true);
         nyxMach.externalAirlocks(true);
@@ -73,6 +78,7 @@ public class TestInspection
         nyxMach.waterMaking(true);
 
         nyxMach.update(); //updates machines so it's not all true anymore
+        System.out.println("---------------------------");
         nyxMach.getFacilityStatus();
 
         //should only show broken machines
@@ -95,7 +101,7 @@ public class TestInspection
         else
             System.out.println("The system is not broken"); */
 
-        if(ins.makeMaintenanceRequest(1) > 0)
+        if(ins.makeMaintenanceRequest() == true)
         {
             System.out.println("This facility will go through maintenance");
         }

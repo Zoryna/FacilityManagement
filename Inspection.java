@@ -23,19 +23,14 @@ public class Inspection {
             return false;
     }
 
-    public int makeMaintenanceRequest(int reqNum){
-        //has request number so can call number and
-        //could be later associated with the broken machines in a specific inspection
+    public boolean makeMaintenanceRequest(){
 
         if (fac.getState().toString().equals("BROKEN")){
-            System.out.println("This is maintenance request number " + reqNum);
-            return reqNum;
+            return true;
         }
-
-        else
-        {
+        else {
             System.out.println("This facility does not need maintenance");
-            return 0;
+            return false;
         }
 
     }

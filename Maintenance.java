@@ -7,12 +7,12 @@ public class Maintenance  {
   private Inspection ins;
 
   //setter
-  public void setFacility(Facility fac) { this.fac = fac; }
+  public void setInspection(Inspection ins) { this.ins = ins; }
 
   //getter
-  public Facility getFacility() {return fac;}
+  public Inspection getInspection() {return ins;}
 
-  public void listMaintenanceRequest(int reqNum){ //shows the request, which says what needs to be fixed from that inspection
+  public void listMaintenanceRequest(){ //shows the request, which says what needs to be fixed from that inspection
 
     //Shows what is broken in this maintenance request
     ins.returnBrokenMachines(mach.getMap(), mach.getMachines());

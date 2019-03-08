@@ -12,9 +12,11 @@ public class TestMaintenance
         apollo.setName("Apollo");
         ins.setFacility(apollo);
 
-        System.out.println("For Request 1");
+        System.out.println("For Apollo");
         apolloMach.startMachines(); //all machines start as true
         apolloMach.getFacilityStatus(); //show status of all machines
+
+        System.out.println("---------------------------");
 
         apolloMach.oxygenator(true);
         apolloMach.innerAirlocks(true);
@@ -24,33 +26,20 @@ public class TestMaintenance
         apolloMach.waterMaking(false);
 
         apolloMach.update();
+        System.out.println("---------------------------");
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
         System.out.println("Here are the broken machines");
         ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines());
+        System.out.println("---------------------------");
 
         c.shitIsBroken(apollo);
-        maint.setFacility(apollo);
+        maint.setInspection(ins);
 
-        ins.makeMaintenanceRequest(1);
-        maint.listMaintenanceRequest(ins.makeMaintenanceRequest(1)); //list the broken machines needing to be fixed
+        ins.makeMaintenanceRequest();
+        maint.listMaintenanceRequest(); //list the broken machines needing to be fixed
         maint.fixFacility(c);
-
-
-        /*System.out.println("For Request 2");
-        apolloMach.startMachines(); //all machines start as true
-        apolloMach.getFacilityStatus(); //show status of all machines
-
-        apolloMach.oxygenator(false);
-        apolloMach.innerAirlocks(false);
-        apolloMach.externalAirlocks(false);
-        apolloMach.nuclearReactor(true);
-        apolloMach.comms(true);
-        apolloMach.waterMaking(true);
-
-        apolloMach.update();
-        apolloMach.getFacilityStatus(); */
 
 
 
