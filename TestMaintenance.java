@@ -33,16 +33,14 @@ public class TestMaintenance
 
         System.out.println("---------------------------");
 
-        maint.setControl(c);
         c.shitIsBroken(apollo);
         ins.makeMaintenanceRequest();
-        maint.setMach(apolloMach);
         maint.setInspection(ins);
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
         apolloMach.update();
-        maint.fixMachines(apolloMach.getMap(),apolloMach.getMachines()); //have false machines turn true
+        maint.fixMachines(apolloMach.getMap()); //have false machines turn true
         maint.fixFacility(); //changes facility state to resting
 
 
@@ -69,16 +67,14 @@ public class TestMaintenance
 
         System.out.println("---------------------------");
 
-        maint.setControl(c);
         c.shitIsBroken(nyx);
         ins.makeMaintenanceRequest();
-        maint.setMach(nyxMach);
         maint.setInspection(ins);
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
         nyxMach.update();
-        maint.fixMachines(nyxMach.getMap(), nyxMach.getMachines()); //have false machines turn true
+        maint.fixMachines(nyxMach.getMap()); //have false machines turn true
         maint.fixFacility(); //changes facility state to resting
     }
 }
