@@ -22,9 +22,9 @@ public class TestMaintenance
         System.out.println("---------------------------");
 
         apolloMach.oxygenator(true);
+        apolloMach.nuclearReactor(false);
         apolloMach.innerAirlocks(true);
         apolloMach.externalAirlocks(true);
-        apolloMach.nuclearReactor(false);
         apolloMach.comms(false);
         apolloMach.waterMaking(false);
 
@@ -41,12 +41,12 @@ public class TestMaintenance
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
-        maint.fixFacility(); //changes facility state to resting
         apolloMach.update();
         maint.fixMachines(apolloMach.getMap(),apolloMach.getMachines()); //have false machines turn true
+        maint.fixFacility(); //changes facility state to resting
 
 
-        /*System.out.println("---------------------------");
+        System.out.println("---------------------------");
         System.out.println("---------------------------");
         nyx.setName("Nyx");
         ins.setFacility(nyx);
@@ -58,9 +58,9 @@ public class TestMaintenance
         System.out.println("---------------------------");
 
         nyxMach.oxygenator(false);
+        nyxMach.nuclearReactor(true);
         nyxMach.innerAirlocks(false);
         nyxMach.externalAirlocks(false);
-        nyxMach.nuclearReactor(true);
         nyxMach.comms(true);
         nyxMach.waterMaking(true);
 
@@ -77,12 +77,8 @@ public class TestMaintenance
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
-        maint.fixFacility(); //changes facility state to resting
         nyxMach.update();
-        maint.fixMachines(nyxMach.getMap(), nyxMach.getMachines()); //have false machines turn true */
-
-
-
-
+        maint.fixMachines(nyxMach.getMap(), nyxMach.getMachines()); //have false machines turn true
+        maint.fixFacility(); //changes facility state to resting
     }
 }

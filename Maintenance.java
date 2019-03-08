@@ -30,43 +30,41 @@ public class Maintenance  {
 
   public void fixMachines(Map<String, Boolean> map, boolean[] machines){ //changes broken machines to true
 
+    //updates the array
     System.out.println("The machines are now all working");
-    /*for (int i = 0; i < machines.length; i++) {
-      System.out.println(i + " " + machines[i]);
-      if (machines[i] == false){
+    for (int i = 0; i < machines.length; i++) {
+      if (machines[i] == false) {
         machines[i] = true;
-        System.out.println("After change: " + i + " " + machines[i]);
+        //System.out.println("After change, index: " + i + " " + machines[i]);
       }
-    } */
+    }
 
+    //updates the map
     if(map.get("Oxygenator") == false)
-      machines[0] = true;
-    if(map.get("Inner Airlocks") == false) //fix
-      machines[1] = true;
-    if(map.get("External Airlocks") == false)
-      machines[2] = true;
+      mach.oxygenator(true);
     if(map.get("Nuclear Reactor") == false)
-      machines[3] = true;
+      mach.nuclearReactor(true);
+    if(map.get("Inner Airlocks") == false)
+      mach.innerAirlocks(true);
+    if(map.get("External Airlocks") == false)
+      mach.externalAirlocks(true);
     if(map.get("Comms") == false)
-      machines[4] = true;
+      mach.comms(true);
     if(map.get("WaterMaking") == false)
-      machines[5] = true;
+      mach.waterMaking(true);
 
-    //testing
-    for (int i = 0; i < machines.length; i++)
-      System.out.println(i + " " + machines[i]);
 
-    /*for (Map.Entry<String, Boolean> i: map.entrySet()){
+    mach.update();
+    for (Map.Entry<String, Boolean> i: map.entrySet()){
       System.out.println(i.getKey() + ": " + i.getValue());
-    } */
-
+    }
   }
 
   public Facility fixFacility(){ //changes the faciity state to resting
 
     if (ins.getFacility().getState().toString().equals("BROKEN"))
     {
-      System.out.println("This state is broken, it is going to change to RESTING");
+      System.out.println("The current state is " + ins.getFacility().getState() + " it will to change to RESTING");
       c.vacateFacility(ins.getFacility());
       System.out.println("The state is now " + ins.getFacility().getState());
       return ins.getFacility();

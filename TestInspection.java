@@ -21,34 +21,35 @@ public class TestInspection
         System.out.println("---------------------------");
 
         apolloMach.oxygenator(false);
-        apolloMach.innerAirlocks(false);
-        apolloMach.externalAirlocks(false);
-        apolloMach.nuclearReactor(false);
-        apolloMach.comms(false);
+        apolloMach.nuclearReactor(true);
+        apolloMach.innerAirlocks(true);
+        apolloMach.externalAirlocks(true);
+        apolloMach.comms(true);
         apolloMach.waterMaking(false);
 
         apolloMach.update();
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
-        /*System.out.println("Here are the broken machines");
+        System.out.println("Here are the broken machines");
         ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines());
+        System.out.println("---------------------------");
 
         if (ins.checkMachines(apolloMach.getMap()) > 1)
         {
             System.out.println("At least one of the machines is broken");
         }
         else
-            System.out.println("None of the machines are broken"); */
+            System.out.println("None of the machines are broken");
 
 
         c.shitIsBroken(apollo);
-        /*if(ins.isBroken() == true)
+        if(ins.isBroken() == true)
         {
             System.out.println("The facility is broken");
         }
         else
-            System.out.println("The system is not broken"); */
+            System.out.println("The system is not broken");
 
         if(ins.makeMaintenanceRequest() == true)
         {
@@ -57,6 +58,8 @@ public class TestInspection
         else
             System.out.println("This facility will not go through maintenance");
 
+        System.out.println("---------------------------");
+        System.out.println("---------------------------");
 
         nyx.setName("Nyx");
         System.out.println("This is facility: " + nyx.getName());
@@ -70,9 +73,9 @@ public class TestInspection
         System.out.println("---------------------------");
 
         nyxMach.oxygenator(true);
+        nyxMach.nuclearReactor(true);
         nyxMach.innerAirlocks(true);
         nyxMach.externalAirlocks(true);
-        nyxMach.nuclearReactor(true);
         nyxMach.comms(true);
         nyxMach.waterMaking(true);
 
@@ -80,24 +83,25 @@ public class TestInspection
         nyxMach.getFacilityStatus();
 
         //should only show broken machines
-        /*System.out.println("Here are the broken machines");
+        System.out.println("Here are the broken machines");
         ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines());
+        System.out.println("---------------------------");
 
         if (ins.checkMachines(nyxMach.getMap()) > 1)
         {
             System.out.println("At least one of the machines is broken");
         }
         else
-            System.out.println("None of the machines are broken"); */
+            System.out.println("None of the machines are broken");
 
 
         c.assignToUse(nyx);
-        /*if(ins.isBroken() == true)
+        if(ins.isBroken() == true)
         {
             System.out.println("The facility is broken");
         }
         else
-            System.out.println("The system is not broken"); */
+            System.out.println("The system is not broken");
 
         if(ins.makeMaintenanceRequest() == true)
         {
