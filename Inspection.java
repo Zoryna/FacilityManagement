@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Inspection {
 
-    private Facility fac;
-    private Machines mach;
+    private static Facility fac;
+    private static Machines mach;
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
@@ -26,10 +26,11 @@ public class Inspection {
     public boolean makeMaintenanceRequest(){
 
         if (fac.getState().toString().equals("BROKEN")){
+            System.out.println("This facility needs maintenance"); //for testing
             return true;
         }
         else {
-            System.out.println("This facility does not need maintenance");
+            System.out.println("This facility does not need maintenance"); //for testing
             return false;
         }
 
@@ -72,9 +73,9 @@ public class Inspection {
             newMap.put("WaterMaking", machines[5]);
 
         //for testing
-        for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
+        /*for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
             System.out.println(i.getKey());
-        }
+        } */
 
         return newMap;
     }

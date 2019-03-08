@@ -28,17 +28,15 @@ public class TestMaintenance
         apolloMach.update();
         apolloMach.getFacilityStatus();
 
-        //should only show broken machines
-        System.out.println("Here are the broken machines");
-        ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines());
         System.out.println("---------------------------");
 
         c.shitIsBroken(apollo);
-        //maint.setInspection(ins);
+        ins.makeMaintenanceRequest();
+        maint.setMach(apolloMach);
+        maint.setInspection(ins);
 
-        //ins.makeMaintenanceRequest();
-        //maint.listMaintenanceRequest(); //list the broken machines needing to be fixed
-        //maint.fixFacility(c);
+        maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
+        maint.fixFacility();
 
 
 

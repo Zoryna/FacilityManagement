@@ -2,20 +2,25 @@ import java.util.*;
 
 public class Maintenance  {
 
-  private Facility fac;
   private Machines mach;
   private Inspection ins;
+  private Control c;
 
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
+  public void setMach(Machines ins) { this.mach = mach; }
 
   //getter
   public Inspection getInspection() {return ins;}
+  public Machines getMach() {return mach;}
 
-  public void listMaintenanceRequest(){ //shows the request, which says what needs to be fixed from that inspection
+  public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
 
     //Shows what is broken in this maintenance request
-    ins.returnBrokenMachines(mach.getMap(), mach.getMachines());
+    System.out.println("Here are the machines that will be fixed");
+    for (Map.Entry<String, Boolean> i : map.entrySet()) {
+      System.out.println(i.getKey());
+    }
   }
 
   /*public void fixMachines(Map<String, Boolean> map){ //changes broken machines to true
@@ -29,18 +34,18 @@ public class Maintenance  {
 
     } */
 
-  public Facility fixFacility(Control c){ //changes the faciity state to resting
+  public Facility fixFacility(){ //changes the faciity state to resting
 
-    if (fac.getState().toString().equals("BROKEN"))
+    if (ins.getFacility().getState().toString().equals("BROKEN"))
     {
       System.out.println("This state is broken, it is going to change to RESTING");
-      c.vacateFacility(fac);
-      System.out.println("The state is now " + fac.getState());
-      return fac;
+      c.vacateFacility(ins.getFacility());
+      System.out.println("The state is now " + ins.getFacility().getState());
+      return ins.getFacility();
     }
     else
     {
-      return fac;
+      return ins.getFacility();
     }
   }
 
