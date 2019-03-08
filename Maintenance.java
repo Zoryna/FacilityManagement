@@ -28,14 +28,15 @@ public class Maintenance  {
 
     System.out.println("The machines are now all working");
 
-    mach.update();
+
     for (int i = 0; i < machines.length; i++) {
       if (machines[i] == false){
         machines[i] = true;
         System.out.println(i + " " + machines[i]);
       }
     }
-
+    mach.update();
+    mach.getFacilityStatus();
     }
 
   public Facility fixFacility(){ //changes the faciity state to resting

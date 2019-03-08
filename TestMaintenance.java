@@ -41,8 +41,8 @@ public class TestMaintenance
         maint.fixFacility(); //changes facility state to resting
         maint.fixMachines(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines()), apolloMach.getMachines()); //have false machines turn true
 
-        System.out.println("---------------------------");
-        apolloMach.getFacilityStatus();
+        //System.out.println("---------------------------");
+
 
 
 
