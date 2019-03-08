@@ -28,7 +28,7 @@ public class Maintenance  {
     }
   }
 
-  public boolean[] fixMachines(boolean[] machines){ //changes broken machines to true
+  public void fixMachines(boolean[] machines){ //changes broken machines to true
 
     System.out.println("The machines are now all working");
 
@@ -38,7 +38,7 @@ public class Maintenance  {
         System.out.println(i + " " + machines[i]);
       }
     }
-    return machines;
+
     //mach.update();
     //mach.getFacilityStatus();
     }
