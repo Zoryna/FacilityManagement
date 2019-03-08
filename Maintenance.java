@@ -8,11 +8,13 @@ public class Maintenance  {
 
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
-  public void setMach(Machines ins) { this.mach = mach; }
+  public void setMach(Machines mach) { this.mach = mach; }
+  public void setControl(Control c) {this.c = c;}
 
   //getter
   public Inspection getInspection() {return ins;}
   public Machines getMach() {return mach;}
+  public Control getControl(){return c;}
 
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
 

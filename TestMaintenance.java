@@ -30,12 +30,14 @@ public class TestMaintenance
 
         System.out.println("---------------------------");
 
+        maint.setControl(c);
         c.shitIsBroken(apollo);
         ins.makeMaintenanceRequest();
         maint.setMach(apolloMach);
         maint.setInspection(ins);
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
+        System.out.println("---------------------------");
         maint.fixFacility();
 
 
