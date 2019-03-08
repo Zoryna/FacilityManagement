@@ -18,20 +18,20 @@ public class TestInspection
         apolloMach.getFacilityStatus(); //show status of all machines
 
         apolloMach.oxygenator(false);
-        apolloMach.innerAirlocks(true);
+        apolloMach.innerAirlocks(false);
         apolloMach.externalAirlocks(false);
         apolloMach.nuclearReactor(false);
-        apolloMach.comms(true);
+        apolloMach.comms(false);
         apolloMach.waterMaking(false);
 
-        apolloMach.update(); //updates machines so it's not all true anymore
+        apolloMach.update();
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
         System.out.println("Here are the broken machines");
         ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines());
 
-        /*if (ins.checkMachines(apolloMach.getMap()) > 1)
+        if (ins.checkMachines(apolloMach.getMap()) > 1)
         {
             System.out.println("At least one of the machines is broken");
         }
@@ -45,6 +45,60 @@ public class TestInspection
             System.out.println("The facility is broken");
         }
         else
-            System.out.println("The system is not broken"); */
+            System.out.println("The system is not broken");
+
+        if(ins.makeMaintenanceRequest() == true)
+        {
+            System.out.println("This facility needs maintenance");
+        }
+        else
+            System.out.println("This facility does not need maintenance");
+
+
+        System.out.println ("Testing nyx facility");
+        nyx.setName("Nyx");
+        ins.setFacility(nyx); //so inspection knows which facility to inspect
+
+        nyxMach.update();
+
+        nyxMach.startMachines(); //all machines start as true
+        nyxMach.getFacilityStatus(); //show status of all machines
+
+        nyxMach.oxygenator(true);
+        nyxMach.innerAirlocks(true);
+        nyxMach.externalAirlocks(true);
+        nyxMach.nuclearReactor(true);
+        nyxMach.comms(true);
+        nyxMach.waterMaking(true);
+
+        nyxMach.update(); //updates machines so it's not all true anymore
+        nyxMach.getFacilityStatus();
+
+        //should only show broken machines
+        System.out.println("Here are the broken machines");
+        ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines());
+
+        if (ins.checkMachines(nyxMach.getMap()) > 1)
+        {
+            System.out.println("At least one of the machines is broken");
+        }
+        else
+            System.out.println("None of the machines are broken");
+
+
+        c.assignToUse(nyx);
+        if(ins.isBroken() == true)
+        {
+            System.out.println("The facility is broken");
+        }
+        else
+            System.out.println("The system is not broken");
+
+        if(ins.makeMaintenanceRequest() == true)
+        {
+            System.out.println("This facility needs maintenance");
+        }
+        else
+            System.out.println("This facility does not need maintenance");
     }
 }

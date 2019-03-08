@@ -55,12 +55,12 @@ public class Inspection {
 
         //state of machines put into an array
         if (map.get("Oxygenator") == false)
-            newMap.put("Oxygenator", machines[1]); //switched
-        if (map.get("Inner Airlocks") == false) //fix
+            newMap.put("Oxygenator", machines[1]);
+        if (map.get("Inner Airlocks") == false)
             newMap.put("Inner Airlocks", machines[0]);
-        if (map.get("External Airlocks") == false) //fix
+        if (map.get("External Airlocks") == false)
             newMap.put("External Airlocks", machines[2]);
-        if (map.get("Nuclear Reactor") == false) //fix
+        if (map.get("Nuclear Reactor") == false)
             newMap.put("Nuclear Reactor", machines[3]);
         if (map.get("Comms") == false)
             newMap.put("Comms", machines[4]);
