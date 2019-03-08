@@ -28,20 +28,39 @@ public class Maintenance  {
     }
   }
 
-  public void fixMachines(boolean[] machines){ //changes broken machines to true
+  public void fixMachines(Map<String, Boolean> map, boolean[] machines){ //changes broken machines to true
 
     System.out.println("The machines are now all working");
-
-    for (int i = 0; i < machines.length; i++) {
+    /*for (int i = 0; i < machines.length; i++) {
+      System.out.println(i + " " + machines[i]);
       if (machines[i] == false){
         machines[i] = true;
-        System.out.println(i + " " + machines[i]);
+        System.out.println("After change: " + i + " " + machines[i]);
       }
-    }
+    } */
 
-    //mach.update();
-    //mach.getFacilityStatus();
-    }
+    if(map.get("Oxygenator") == false)
+      machines[0] = true;
+    if(map.get("Inner Airlocks") == false) //fix
+      machines[1] = true;
+    if(map.get("External Airlocks") == false)
+      machines[2] = true;
+    if(map.get("Nuclear Reactor") == false)
+      machines[3] = true;
+    if(map.get("Comms") == false)
+      machines[4] = true;
+    if(map.get("WaterMaking") == false)
+      machines[5] = true;
+
+    //testing
+    for (int i = 0; i < machines.length; i++)
+      System.out.println(i + " " + machines[i]);
+
+    /*for (Map.Entry<String, Boolean> i: map.entrySet()){
+      System.out.println(i.getKey() + ": " + i.getValue());
+    } */
+
+  }
 
   public Facility fixFacility(){ //changes the faciity state to resting
 

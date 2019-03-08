@@ -43,10 +43,10 @@ public class TestMaintenance
         System.out.println("---------------------------");
         maint.fixFacility(); //changes facility state to resting
         apolloMach.update();
-        maint.fixMachines(apolloMach.getMachines()); //have false machines turn true
+        maint.fixMachines(apolloMach.getMap(),apolloMach.getMachines()); //have false machines turn true
 
 
-        System.out.println("---------------------------");
+        /*System.out.println("---------------------------");
         System.out.println("---------------------------");
         nyx.setName("Nyx");
         ins.setFacility(nyx);
@@ -79,7 +79,7 @@ public class TestMaintenance
         System.out.println("---------------------------");
         maint.fixFacility(); //changes facility state to resting
         nyxMach.update();
-        maint.fixMachines(nyxMach.getMachines()); //have false machines turn true
+        maint.fixMachines(nyxMach.getMap(), nyxMach.getMachines()); //have false machines turn true */
 
 
 
