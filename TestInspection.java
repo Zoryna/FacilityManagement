@@ -28,7 +28,6 @@ public class TestInspection
         apolloMach.waterMaking(false);
 
         apolloMach.update();
-        System.out.println("---------------------------");
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
@@ -78,7 +77,6 @@ public class TestInspection
         nyxMach.waterMaking(true);
 
         nyxMach.update(); //updates machines so it's not all true anymore
-        System.out.println("---------------------------");
         nyxMach.getFacilityStatus();
 
         //should only show broken machines

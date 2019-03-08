@@ -26,7 +26,6 @@ public class TestMaintenance
         apolloMach.waterMaking(false);
 
         apolloMach.update();
-        System.out.println("---------------------------");
         apolloMach.getFacilityStatus();
 
         //should only show broken machines
@@ -35,11 +34,11 @@ public class TestMaintenance
         System.out.println("---------------------------");
 
         c.shitIsBroken(apollo);
-        maint.setInspection(ins);
+        //maint.setInspection(ins);
 
-        ins.makeMaintenanceRequest();
-        maint.listMaintenanceRequest(); //list the broken machines needing to be fixed
-        maint.fixFacility(c);
+        //ins.makeMaintenanceRequest();
+        //maint.listMaintenanceRequest(); //list the broken machines needing to be fixed
+        //maint.fixFacility(c);
 
 
 
