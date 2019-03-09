@@ -37,6 +37,7 @@ public class TestFinance {
 
         tc.setHours(5);
         fin.calcMaintCostFacility(ins.checkMachines(apolloMach.getMap()), tc.getHours());
+        //fin.calcDowntimeFacility(5, tc.getHours());
 
 
         System.out.println("---------------------------");
@@ -66,6 +67,7 @@ public class TestFinance {
 
         tc.setHours(3);
         fin.calcMaintCostFacility(ins.checkMachines(nyxMach.getMap()), tc.getHours());
+        //fin.calcDowntimeFacility(2, tc.getHours());
 
 
 

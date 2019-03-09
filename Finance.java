@@ -1,7 +1,6 @@
 public class Finance
 {
-
-    public double calcUsage(int workingMachines, int hours) //cost of using Facility
+    public void calcUsage(int workingMachines, int hours) //cost of using Facility
     {
         //will get value from checkMachines in Inspection
         //checMachines returns the number of broken machines
@@ -18,11 +17,9 @@ public class Finance
         ratePerHour = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour of the Facilty
         double usageCost = ratePerHour * dHours;
         System.out.println("It costs " + usageCost + " to use this faciltiy for " + hours + " hour(s)");
-
-        return usageCost;
     }
 
-    public double calcMaintCostFacility(int amountBroken, int hours) //cost of maintenance
+    public void calcMaintCostFacility(int amountBroken, int hours) //cost of maintenance
     {
         //convert to doubles to not lose precision
         double dAmountBroken = amountBroken;
@@ -34,18 +31,23 @@ public class Finance
 
         double maintCost = dAmountBroken * withHours;
         System.out.println("It costs $" + maintCost + " because there are " + dAmountBroken + " broken machines");
-
-        return maintCost;
     }
 
-    /*public double calcDowntimeFacility() //how long facility has been broken
+    /*public void calcDowntimeFacility(int usedHours, int maintHours) //calculates how long facility has been broken
     {
+        //day is 24 hours, 1-12 is 1am-12pm, and 13-24 is 1pm-12am
 
+        //working hours would be between 9-17
+        int startTime = 9;
+        int endTime = 17;
+        int totalHours = startTime + usedHours + maintHours;
+        int amountDownTime = 24 - usedHours;
 
-
-
-
-
-        return calcDowntimeFacility;
+        if (totalHours > endTime){
+            System.out.println("The machines have run for " + totalHours + " and has reached its limit");
+            System.out.println("It's downtime is " + amountDownTime);
+        }
+        else
+            System.out.println("asdf");
     } */
 }
