@@ -6,7 +6,6 @@ public class TestFinance {
         Randomizer r = new Randomizer();
 
         Inspection ins = new Inspection();
-        Maintenance maint = new Maintenance();
 
         Facility apollo = new Facility();
         Machines apolloMach = new Machines(apollo);
@@ -61,7 +60,7 @@ public class TestFinance {
         }
 
         System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
-        fin.calcDowntimeFacility(apolloMach, apolloBroken);
+        fin.calcDowntimeFacility(apolloBroken);
 
 
 
@@ -113,6 +112,6 @@ public class TestFinance {
         }
 
         System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
-        fin.calcDowntimeFacility(nyxMach, nyxBroken);
+        fin.calcDowntimeFacility(nyxBroken);
     }
 }

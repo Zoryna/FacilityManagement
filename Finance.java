@@ -4,7 +4,6 @@ public class Finance
     private double maintHourlyCost; //randomly chosen cost, may change later
 
     //setters
-
     public void setRatePerHour (double ratePerHour) {this.ratePerHour = ratePerHour;}
 
     public void setMaintHourlyCost (double maintHourlyCost) {this.maintHourlyCost = maintHourlyCost;}
@@ -39,7 +38,7 @@ public class Finance
         System.out.println("It costs $" + maintCost + " because there are " + amountBroken + " broken machines");
     }
 
-    public void calcDowntimeFacility(Machines m, double amountBroken) //calculates how long facility has been broken
+    public void calcDowntimeFacility(double amountBroken) //calculates how long facility has been broken
     {
         //if breaks, would stay broken at least 2 hours
         double maxHours = 24;
