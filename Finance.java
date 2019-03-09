@@ -1,28 +1,53 @@
-/*
-
-*/
 public class Finance
 {
-    int interval, ratePerHour, usageRate, maintenanceCost, calcDowntimeFacility,
-    calcMaintCostFacility;
+    //public double ratePerHour, maintenanceCost, downtimeCost;
 
-    public int calcUsageRate()
+    public double calcUsage(int workingMachines, int hours) //cost of using Facility
     {
-        return calcUsageRate;
+        //will get value from checkMachines in Inspection
+        //checMachines returns the number of broken machines
+        workingMachines = 6 - workingMachines;
+
+        //convert to doubles to not lose precision
+        double dWorkMachines = workingMachines;
+        double dHours = hours;
+
+        double ratePerHour = 3.05; //watt cost per hour
+        double usageCost = ratePerHour * dHours;
+        double percentageWorking = (dWorkMachines * 100)/6;
+
+        System.out.println(percentageWorking + "% of the Facility is working");
+
+        usageCost = (percentageWorking * 0.1)/ratePerHour;
+
+        System.out.println("It costs " + usageCost + " to use this faciltiy for " + hours + " hour(s)");
+
+        return usageCost;
     }
 
-    public int maintenanceCost()
+    public double calcMaintCostFacility(int amountBroken, int hours) //cost of maintenance
     {
-        return maintenanceCost;
+        double dAmountBroken = amountBroken;
+        double dHours = hours;
+
+        double hourlyCost = 50;
+        double withHours = dHours * hourlyCost;
+        System.out.println("It costs $" + withHours + " for " + hours + " because it is $" + hourlyCost + " per hour");
+
+        double maintCost = amountBroken * withHours;
+        System.out.println("It costs $" + maintCost + " because there are " + dAmountBroken + " broken machines");
+
+        return maintCost;
     }
 
-    public int calcMaintCostFacility()
+    /*public double calcDowntimeFacility() //how long facility has been broken
     {
-        return calcMaintCostFacility;
-    }
 
-    public int calcDowntimeFacility()
-    {
+
+
+
+
+
         return calcDowntimeFacility;
-    }
+    } */
 }

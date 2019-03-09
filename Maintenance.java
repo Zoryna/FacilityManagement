@@ -38,9 +38,9 @@ public class Maintenance  {
 
   public Facility fixFacility(){ //changes the faciity state to resting
 
-    if (ins.getFacility().getState().toString().equals("BROKEN"))
+    if ((ins.getFacility().getState().toString().equals("BROKEN")) && ins.makeMaintenanceRequest() == true)
     {
-      System.out.println("The current state is " + ins.getFacility().getState() + " it will to change to RESTING");
+      System.out.println("The current state is " + ins.getFacility().getState() + " it will change to RESTING");
       c.assignToUse(ins.getFacility());
       System.out.println("The state is now " + ins.getFacility().getState());
       return ins.getFacility();

@@ -1,8 +1,5 @@
 public class Management
 {
-    //List usage
-    //List facilities
-
     public List actualUsage()
     {
 
@@ -11,15 +8,5 @@ public class Management
     public int problemRateForFaciltiy()
     {
 
-    }
-
-    public void requestAvailableCapacity()
-    {
-
-    }
-
-    public List listFacilities()
-    {
-        
     }
 }

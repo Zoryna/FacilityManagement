@@ -44,7 +44,7 @@ public class TestMaintenance
         maint.fixFacility(); //changes facility state to resting
 
 
-        /*System.out.println("---------------------------");
+        System.out.println("---------------------------");
         System.out.println("---------------------------");
         nyx.setName("Nyx");
         ins.setFacility(nyx);
@@ -74,6 +74,6 @@ public class TestMaintenance
         maint.listMaintenanceRequest(ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
         maint.fixMachines(nyxMach.getMap()); //have false machines turn true
-        maint.fixFacility(); //changes facility state to resting */
+        maint.fixFacility(); //changes facility state to resting
     }
 }
