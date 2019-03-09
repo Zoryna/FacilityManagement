@@ -15,8 +15,8 @@ public class Finance
         double percentageWorking = (dWorkMachines * 100)/6; //calculates the percentage of facility working
         System.out.println(percentageWorking + "% of the Facility is working");
 
-        double usageCost = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour
-        usageCost = ratePerHour * dHours;
+        ratePerHour = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour of the Facilty
+        double usageCost = ratePerHour * dHours;
         System.out.println("It costs " + usageCost + " to use this faciltiy for " + hours + " hour(s)");
 
         return usageCost;
@@ -30,7 +30,7 @@ public class Finance
 
         double hourlyCost = 50;
         double withHours = dHours * hourlyCost;
-        System.out.println("It costs $" + withHours + " for maintenance for " + hours + " hours because it is $" + hourlyCost + " per hour");
+        System.out.println("It costs $" + withHours + " for maintenance for " + hours + " hour(s) because it is $" + hourlyCost + " per hour");
 
         double maintCost = dAmountBroken * withHours;
         System.out.println("It costs $" + maintCost + " because there are " + dAmountBroken + " broken machines");
