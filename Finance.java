@@ -33,21 +33,13 @@ public class Finance
         System.out.println("It costs $" + maintCost + " because there are " + dAmountBroken + " broken machines");
     }
 
-    /*public void calcDowntimeFacility(int usedHours, int maintHours) //calculates how long facility has been broken
+    public void calcDowntimeFacility(Machines m, int amountBroken) //calculates how long facility has been broken
     {
-        //day is 24 hours, 1-12 is 1am-12pm, and 13-24 is 1pm-12am
+        //if breaks, would stay broken at least 2 hours
+        int maxHours = 24;
+        int timeBroken = 2 * amountBroken;
+        int totalTimeBroken = 24 - timeBroken;
 
-        //working hours would be between 9-17
-        int startTime = 9;
-        int endTime = 17;
-        int totalHours = startTime + usedHours + maintHours;
-        int amountDownTime = 24 - usedHours;
-
-        if (totalHours > endTime){
-            System.out.println("The machines have run for " + totalHours + " and has reached its limit");
-            System.out.println("It's downtime is " + amountDownTime);
-        }
-        else
-            System.out.println("asdf");
-    } */
+        System.out.println("This facility has been broken for " + totalTimeBroken + " hours");
+    }
 }

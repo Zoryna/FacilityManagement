@@ -3,6 +3,7 @@ public class TestFinance {
 
         TimeController tc = new TimeController();
         Finance fin = new Finance();
+        Randomizer r = new Randomizer();
 
         Inspection ins = new Inspection();
         Maintenance maint = new Maintenance();
@@ -24,7 +25,7 @@ public class TestFinance {
         apolloMach.innerAirlocks(true);
         apolloMach.externalAirlocks(true);
         apolloMach.comms(true);
-        apolloMach.waterMaking(true);
+        apolloMach.waterMaking(false);
 
         apolloMach.update();
         apolloMach.getFacilityStatus();
@@ -34,10 +35,30 @@ public class TestFinance {
 
         tc.setHours(8);
         fin.calcUsage(ins.checkMachines(apolloMach.getMap()), tc.getHours());
+        System.out.println("---------------------------");
 
         tc.setHours(5);
         fin.calcMaintCostFacility(ins.checkMachines(apolloMach.getMap()), tc.getHours());
-        //fin.calcDowntimeFacility(5, tc.getHours());
+        System.out.println("---------------------------");
+
+        System.out.println("Calculating downtime");
+        int numberOfTests = 3;
+        double percentageBeingTested = 0.05;
+
+        int apolloBroken = 0;
+
+        for (int i = 0; i < numberOfTests; i++){
+            r.setRandom();
+            if (r.getRandom() < percentageBeingTested)
+                System.out.println(r.getRandom() + ": TRUE");
+            else {
+                System.out.println(r.getRandom() + ": FALSE");
+                apolloBroken++;
+            }
+        }
+
+        fin.calcDowntimeFacility(apolloMach, apolloBroken);
+
 
 
         System.out.println("---------------------------");
@@ -64,27 +85,27 @@ public class TestFinance {
 
         tc.setHours(6);
         fin.calcUsage(ins.checkMachines(nyxMach.getMap()), tc.getHours());
+        System.out.println("---------------------------");
 
         tc.setHours(3);
         fin.calcMaintCostFacility(ins.checkMachines(nyxMach.getMap()), tc.getHours());
-        //fin.calcDowntimeFacility(2, tc.getHours());
 
+        System.out.println("---------------------------");
 
+        System.out.println("Calculating downtime");
 
+        int nyxBroken = 0;
 
+        for (int i = 0; i < numberOfTests; i++){
+            r.setRandom();
+            if (r.getRandom() < percentageBeingTested)
+                System.out.println(r.getRandom() + ": TRUE");
+            else {
+                System.out.println(r.getRandom() + ": FALSE");
+                nyxBroken++;
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        fin.calcDowntimeFacility(nyxMach, nyxBroken);
     }
 }
