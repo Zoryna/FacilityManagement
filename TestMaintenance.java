@@ -22,11 +22,11 @@ public class TestMaintenance
         System.out.println("---------------------------");
 
         apolloMach.oxygenator(true);
-        apolloMach.nuclearReactor(false);
-        apolloMach.innerAirlocks(true);
+        apolloMach.nuclearReactor(true);
+        apolloMach.innerAirlocks(false);
         apolloMach.externalAirlocks(true);
-        apolloMach.comms(false);
-        apolloMach.waterMaking(false);
+        apolloMach.comms(true);
+        apolloMach.waterMaking(true);
 
         apolloMach.update();
         apolloMach.getFacilityStatus();
@@ -39,12 +39,11 @@ public class TestMaintenance
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
-        apolloMach.update();
         maint.fixMachines(apolloMach.getMap()); //have false machines turn true
         maint.fixFacility(); //changes facility state to resting
 
 
-        System.out.println("---------------------------");
+        /*System.out.println("---------------------------");
         System.out.println("---------------------------");
         nyx.setName("Nyx");
         ins.setFacility(nyx);
@@ -73,8 +72,7 @@ public class TestMaintenance
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(nyxMach.getMap(), nyxMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
-        nyxMach.update();
         maint.fixMachines(nyxMach.getMap()); //have false machines turn true
-        maint.fixFacility(); //changes facility state to resting
+        maint.fixFacility(); //changes facility state to resting */
     }
 }

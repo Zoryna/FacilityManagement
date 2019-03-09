@@ -9,7 +9,6 @@ public class Maintenance  {
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
 
-
   //getter
   public Inspection getInspection() {return ins;}
 
@@ -24,28 +23,13 @@ public class Maintenance  {
 
   public void fixMachines(Map<String, Boolean> map){ //changes broken machines to true
 
-    //updates the array
-    System.out.println("The machines are now all working");
-
     //updates the map
-    if(map.get("Oxygenator") == false)
-      mach.oxygenator(true);
-    if(map.get("Nuclear Reactor") == false)
-      mach.nuclearReactor(true);
-    if(map.get("Inner Airlocks") == false)
-      mach.innerAirlocks(true);
-    if(map.get("External Airlocks") == false)
-      mach.externalAirlocks(true);
-    if(map.get("Comms") == false)
-      mach.comms(true);
-    if(map.get("WaterMaking") == false)
-      mach.waterMaking(true);
+    map.replaceAll((key, value) -> true);
 
-
-    mach.update();
     for (Map.Entry<String, Boolean> i: map.entrySet()){
       System.out.println(i.getKey() + ": " + i.getValue());
     }
+    System.out.println("The machines are now all working");
   }
 
   public Facility fixFacility(){ //changes the faciity state to resting
