@@ -1,12 +1,12 @@
 public class Management
 {
-    public void actualUsage()
+    public void actualUsage(double workingMachines) //actual percentage of use
     {
+        workingMachines = 6 - workingMachines;
 
-
-
-
-
+        double percentageWorking = (workingMachines * 100)/6; //calculates the percentage of facility working
+        System.out.println("The facility is %" + percentageWorking + " working");
+        System.out.println(workingMachines + " machines are actually being used");
     }
 
     public void problemRateFacility(double amountTests, double amountFail) //percentage of the tests that failed

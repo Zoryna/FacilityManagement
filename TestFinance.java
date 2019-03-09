@@ -78,7 +78,7 @@ public class TestFinance {
         nyxMach.innerAirlocks(true);
         nyxMach.externalAirlocks(false);
         nyxMach.comms(false);
-        nyxMach.waterMaking(false);
+        nyxMach.waterMaking(true);
 
         nyxMach.update();
         nyxMach.getFacilityStatus();

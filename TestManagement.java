@@ -53,10 +53,12 @@ public class TestManagement {
 
         ma.problemRateFacility(numberOfTests, apolloBroken);
 
+        System.out.println("---------------------------");
+        ma.actualUsage(ins.checkMachines(apolloMach.getMap()));
 
 
 
-        /*System.out.println("---------------------------");
+        System.out.println("---------------------------");
         System.out.println("---------------------------");
 
         nyx.setName("Nyx");
@@ -66,30 +68,21 @@ public class TestManagement {
         nyxMach.startMachines(); //all machines start as true
 
         nyxMach.oxygenator(true);
-        nyxMach.nuclearReactor(true);
+        nyxMach.nuclearReactor(false);
         nyxMach.innerAirlocks(true);
-        nyxMach.externalAirlocks(false);
-        nyxMach.comms(false);
+        nyxMach.externalAirlocks(true);
+        nyxMach.comms(true);
         nyxMach.waterMaking(false);
 
         nyxMach.update();
         nyxMach.getFacilityStatus();
 
         System.out.println("---------------------------");
-        System.out.println("Testing Finance");
+        System.out.println("Testing Management");
 
-        tc.setHours(6);
-        fin.setRatePerHour(3.05); //3.05 is watt cost per hour
-        fin.calcUsage(ins.checkMachines(nyxMach.getMap()), tc.getHours());
-        System.out.println("---------------------------");
-
-        tc.setHours(3);
-        fin.setMaintHourlyCost(50); //arbitrary number
-        fin.calcMaintCostFacility(ins.checkMachines(nyxMach.getMap()), tc.getHours());
+        ma.requestAvailableCapacity(ins.checkMachines(apolloMach.getMap()));
 
         System.out.println("---------------------------");
-
-        System.out.println("Calculating downtime");
 
         int nyxBroken = 0;
 
@@ -103,34 +96,9 @@ public class TestManagement {
             }
         }
 
-        System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
-        fin.calcDowntimeFacility(nyxMach, nyxBroken); */
+        ma.problemRateFacility(numberOfTests, nyxBroken);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("---------------------------");
+        ma.actualUsage(ins.checkMachines(nyxMach.getMap()));
     }
 }
