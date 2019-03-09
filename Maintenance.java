@@ -9,8 +9,12 @@ public class Maintenance  {
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
 
+  public void setControl(Control c) {this.c = c;}
+
   //getter
   public Inspection getInspection() {return ins;}
+
+  public Control getControl() {return c;}
 
 
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
@@ -37,7 +41,7 @@ public class Maintenance  {
     if (ins.getFacility().getState().toString().equals("BROKEN"))
     {
       System.out.println("The current state is " + ins.getFacility().getState() + " it will to change to RESTING");
-      c.vacateFacility(ins.getFacility());
+      c.assignToUse(ins.getFacility());
       System.out.println("The state is now " + ins.getFacility().getState());
       return ins.getFacility();
     }

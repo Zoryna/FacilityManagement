@@ -21,12 +21,12 @@ public class TestMaintenance
 
         System.out.println("---------------------------");
 
-        apolloMach.oxygenator(true);
+        apolloMach.oxygenator(false);
         apolloMach.nuclearReactor(true);
         apolloMach.innerAirlocks(false);
         apolloMach.externalAirlocks(true);
         apolloMach.comms(true);
-        apolloMach.waterMaking(true);
+        apolloMach.waterMaking(false);
 
         apolloMach.update();
         apolloMach.getFacilityStatus();
@@ -36,6 +36,7 @@ public class TestMaintenance
         c.shitIsBroken(apollo);
         ins.makeMaintenanceRequest();
         maint.setInspection(ins);
+        maint.setControl(c);
 
         maint.listMaintenanceRequest(ins.returnBrokenMachines(apolloMach.getMap(), apolloMach.getMachines())); //lists the broken machines needing to be fixed
         System.out.println("---------------------------");
