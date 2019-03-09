@@ -34,10 +34,13 @@ public class TestFinance {
         System.out.println("Testing Finance");
 
         tc.setHours(8);
+        fin.setRatePerHour(3.05); //3.05 is watt cost per hour
+
         fin.calcUsage(ins.checkMachines(apolloMach.getMap()), tc.getHours());
         System.out.println("---------------------------");
 
         tc.setHours(5);
+        fin.setMaintHourlyCost(50); //arbitrary number
         fin.calcMaintCostFacility(ins.checkMachines(apolloMach.getMap()), tc.getHours());
         System.out.println("---------------------------");
 
@@ -57,6 +60,7 @@ public class TestFinance {
             }
         }
 
+        System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
         fin.calcDowntimeFacility(apolloMach, apolloBroken);
 
 
@@ -84,10 +88,12 @@ public class TestFinance {
         System.out.println("Testing Finance");
 
         tc.setHours(6);
+        fin.setRatePerHour(3.05); //3.05 is watt cost per hour
         fin.calcUsage(ins.checkMachines(nyxMach.getMap()), tc.getHours());
         System.out.println("---------------------------");
 
         tc.setHours(3);
+        fin.setMaintHourlyCost(50); //arbitrary number
         fin.calcMaintCostFacility(ins.checkMachines(nyxMach.getMap()), tc.getHours());
 
         System.out.println("---------------------------");
@@ -106,6 +112,7 @@ public class TestFinance {
             }
         }
 
+        System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
         fin.calcDowntimeFacility(nyxMach, nyxBroken);
     }
 }

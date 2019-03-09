@@ -1,44 +1,50 @@
 public class Finance
 {
-    public void calcUsage(int workingMachines, int hours) //cost of using Facility
+    private double ratePerHour; //3.05 is watt cost per hour
+    private double maintHourlyCost; //randomly chosen cost, may change later
+
+    //setters
+
+    public void setRatePerHour (double ratePerHour) {this.ratePerHour = ratePerHour;}
+
+    public void setMaintHourlyCost (double maintHourlyCost) {this.maintHourlyCost = maintHourlyCost;}
+
+    //getters
+    public double getRatePerHour () {return ratePerHour;}
+
+    public double getMaintHourlyCost () {return maintHourlyCost;}
+
+
+    public void calcUsage(double workingMachines, double hours) //cost of using Facility
     {
         //will get value from checkMachines in Inspection
         //checMachines returns the number of broken machines
         workingMachines = 6 - workingMachines;
 
-        //convert to doubles to not lose precision
-        double dWorkMachines = workingMachines;
-        double dHours = hours;
-        double ratePerHour = 3.05; //watt cost per hour
-
-        double percentageWorking = (dWorkMachines * 100)/6; //calculates the percentage of facility working
+        double percentageWorking = (workingMachines * 100)/6; //calculates the percentage of facility working
         System.out.println(percentageWorking + "% of the Facility is working");
 
         ratePerHour = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour of the Facilty
-        double usageCost = ratePerHour * dHours;
+        double usageCost = ratePerHour * hours;
         System.out.println("It costs " + usageCost + " to use this faciltiy for " + hours + " hour(s)");
     }
 
-    public void calcMaintCostFacility(int amountBroken, int hours) //cost of maintenance
+    public void calcMaintCostFacility(double amountBroken, double hours) //cost of maintenance
     {
-        //convert to doubles to not lose precision
-        double dAmountBroken = amountBroken;
-        double dHours = hours;
 
-        double hourlyCost = 50;
-        double withHours = dHours * hourlyCost;
-        System.out.println("It costs $" + withHours + " for maintenance for " + hours + " hour(s) because it is $" + hourlyCost + " per hour");
+        double withHours = hours * maintHourlyCost;
+        System.out.println("It costs $" + withHours + " for maintenance for " + hours + " hour(s) because it is $" + maintHourlyCost + " per hour");
 
-        double maintCost = dAmountBroken * withHours;
-        System.out.println("It costs $" + maintCost + " because there are " + dAmountBroken + " broken machines");
+        double maintCost = amountBroken * withHours;
+        System.out.println("It costs $" + maintCost + " because there are " + amountBroken + " broken machines");
     }
 
-    public void calcDowntimeFacility(Machines m, int amountBroken) //calculates how long facility has been broken
+    public void calcDowntimeFacility(Machines m, double amountBroken) //calculates how long facility has been broken
     {
         //if breaks, would stay broken at least 2 hours
-        int maxHours = 24;
-        int timeBroken = 2 * amountBroken;
-        int totalTimeBroken = 24 - timeBroken;
+        double maxHours = 24;
+        double timeBroken = 2 * amountBroken;
+        double totalTimeBroken = 24 - timeBroken;
 
         System.out.println("This facility has been broken for " + totalTimeBroken + " hours");
     }
