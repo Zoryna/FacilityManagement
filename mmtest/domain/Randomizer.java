@@ -2,7 +2,7 @@
     This class is for simulation of things breaking or not.
 */
 
-package marsmission.domain;
+package mmtest.domain;
 
 import java.util.Random;
 

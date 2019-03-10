@@ -4,7 +4,7 @@
     guide for it.
 */
 
-package marsmission.domain;
+package mmtest.domain;
 
 public interface FacilityAI {
     public void AI(TimeController tc, Control c); // How/When/Which decisions are made

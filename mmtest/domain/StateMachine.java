@@ -1,4 +1,4 @@
-package marsmission.domain;
+package mmtest.domain;
 
 public class StateMachine {
 
