@@ -115,18 +115,19 @@ public class Driver {
         m.setInspection(in);
         m.setControl(c);
         Finance fin = new Finance();
-        fin.setMaintHourlyCost(50);
+        fin.setMaintHourlyCost(50); //cost of maintenance per hour
 
         m.listMaintenanceRequest(in.returnBrokenMachines(erebosMach.getMap(), erebosMach.getMachines()));
         System.out.println("\n");
-        fin.calcMaintCostFacility(5, 2);
+        fin.calcMaintCostFacility(5, 2); //calculates the cost of maintenance
         m.fixMachines(erebosMach.getMap());
-        fin.calcDowntimeFacility(2);
+        fin.setRatePerHour(3.05); //cost of watt per hour
+        fin.calcDowntimeFacility(2); //calculates how long the facility has been broken
 
         // Time to set baby Erebos back
         System.out.println("\n");
         m.fixFacility();
-        m.calcUsage(in.checkMachines(erebosMach.getMap()), 4);
+        fin.calcUsage(in.checkMachines(erebosMach.getMap()), 4); //calculates cost of using facility
 
         // Finally, let's put it back to work
 
