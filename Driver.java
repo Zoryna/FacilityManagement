@@ -11,17 +11,26 @@ public class Driver {
         Facility erebos = new Facility();
         Facility athena = new Facility();
         Facility artemis = new Facility();
-        Facility[] ar = new Facility[5];
+
         apollo.setName("Apollo");
         nyx.setName("Nyx");
         erebos.setName("Erebos");
         athena.setName("Athena");
         artemis.setName("Artemis");
-        ar[0] = apollo;
-        ar[1] = nyx;
-        ar[2] = erebos;
-        ar[3] = athena;
-        ar[4] = artemis;
+
+        //giving each Facility their machines
+        Machines apolloMach = new Machines(apollo);
+        Machines nyxMach = new Machines(nyx);
+        Machines erebosMach = new Machines(erebos);
+        Machines athenaMach = new Machines(athena);
+        Machines artemisMach = new Machines(artemis);
+
+        Machines[] ar = new Machines[5];
+        ar[0] = apolloMach;
+        ar[1] = nyxMach;
+        ar[2] = erebosMach;
+        ar[3] = athenaMach;
+        ar[4] = artemisMach;
 
         // Staging Time of the Day
         TimeController tc = new TimeController();
@@ -73,7 +82,8 @@ public class Driver {
         }
 
         // Let's break Erebos and move the hours a little up
-        erebos.breakMachines();
+        erebosMach.breakMachines();
+        in.setFacility(erebos);
         System.out.println("How many machines are broken in Erebos?" + " " + in.checkMachines(ar[2].getMap()) + " machines are broken. Oh noes, how sad. Cry me a river.");
         System.out.println("\n");
 
@@ -94,24 +104,24 @@ public class Driver {
         }
 
         // Now let's fix Erebos up, first, it needs maintenance
-        in.makeMaintenanceRequest(erebos);
+        in.makeMaintenanceRequest();
         System.out.println("\n");
         System.out.println("Erebos is at: " + erebos.getState());
 
         // Time to use Maintenance
         Maintenance m = new Maintenance();
-        m.listMaintenanceRequest(erebos, in, erebos.getMachines());
+        m.listMaintenanceRequest(in.returnBrokenMachines(erebosMach.getMap(), erebosMach.getMachines()));
         System.out.println("\n");
-        m.fixMachines(erebos, erebos.getMap(), in);
+        m.fixMachines(erebosMach.getMap());
 
         // Time to set baby Erebos back
         System.out.println("\n");
-        m.fixFacility(erebos, c);
+        m.fixFacility();
 
         // Finally, let's put it back to work
 
         /* If it's under working hours, and no machines are broken, go to work, baby */
-        if (tc.getHours() > 8 && tc.getHours() < 18 && in.checkMachines(erebos.getMap()) == 0){
+        if (tc.getHours() > 8 && tc.getHours() < 18 && in.checkMachines(erebosMach.getMap()) == 0){
             c.assignToUse(erebos);
         }
 
