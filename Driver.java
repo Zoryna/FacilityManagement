@@ -61,13 +61,15 @@ public class Driver {
 
         // Let's go for a day where everything worked just fine.
         // Let's call FacilityBehavior to go about our day
-        FacilityBehavior fb = new FacilityBehavior();
+
+        /*FacilityBehavior fb = new FacilityBehavior();
+
         System.out.println("Time is now 7 pm.");
         tc.setHours(19);
         for (int i = 0; i < ar.length; i++){
             fb.setFacilityBehavior(ar[i]);
             System.out.println(ar[i].getName() + " is " + ar[i].getState());
-        }
+        } */
 
         // Let's start another day, and now let's break something
         System.out.print("\n");
@@ -83,8 +85,8 @@ public class Driver {
 
         // Let's break Erebos and move the hours a little up
         erebosMach.breakMachines();
-        in.setFacility(erebos);
-        System.out.println("How many machines are broken in Erebos?" + " " + in.checkMachines(ar[2].getMap()) + " machines are broken. Oh noes, how sad. Cry me a river.");
+        in.setFacility(erebosMach);
+        System.out.println("Erebos just broke. How many machines are broken in Erebos?" + " " + in.checkMachines(ar[2].getMap()) + " machines are broken. Oh noes, how sad. Cry me a river.");
         System.out.println("\n");
 
 
@@ -97,7 +99,7 @@ public class Driver {
         */
 
         tc.setHours(9);
-        c.shitIsBroken(erebos);
+        c.shitIsBroken(erebosMach);
         System.out.println("This is the state of affairs at " + tc.getHours() + " am.");
         for (int i = 0; i < ar.length; i++){
             System.out.println(ar[i].getName() + " is " + ar[i].getState());
@@ -106,20 +108,25 @@ public class Driver {
         // Now let's fix Erebos up, first, it needs maintenance
         in.makeMaintenanceRequest();
         System.out.println("\n");
-        System.out.println("Erebos is at: " + erebos.getState());
+        System.out.println("Erebos is at: " + erebosMach.getState());
 
         // Time to use Maintenance
         Maintenance m = new Maintenance();
         m.setInspection(in);
         m.setControl(c);
+        Finance fin = new Finance();
+        fin.setMaintHourlyCost(50);
 
         m.listMaintenanceRequest(in.returnBrokenMachines(erebosMach.getMap(), erebosMach.getMachines()));
         System.out.println("\n");
+        fin.calcMaintCostFacility(5, 2);
         m.fixMachines(erebosMach.getMap());
+        fin.calcDowntimeFacility(2);
 
         // Time to set baby Erebos back
         System.out.println("\n");
         m.fixFacility();
+        m.calcUsage(in.checkMachines(erebosMach.getMap()), 4);
 
         // Finally, let's put it back to work
 
@@ -136,6 +143,5 @@ public class Driver {
             ar[i].getFacilityStatus();
             System.out.print("\n");
         }
-
     }
 }

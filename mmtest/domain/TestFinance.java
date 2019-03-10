@@ -5,7 +5,6 @@ public class TestFinance {
 
         TimeController tc = new TimeController();
         Finance fin = new Finance();
-        Randomizer r = new Randomizer();
 
         Inspection ins = new Inspection();
 
