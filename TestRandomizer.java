@@ -1,7 +1,9 @@
+import java.util.Random;
+
 public class TestRandomizer {
     public static void main(String[] args) {
         Randomizer r = new Randomizer();
-        int numberOfTests = 6;
+        int numberOfTests = 300;
         double percentageBeingTested = 0.05;
         r.setRandom();
         System.out.println("Double in Randomizer is: " + r.getRandom());

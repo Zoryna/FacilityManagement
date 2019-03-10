@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class TestManagement {
     public static void main (String[] args) {
         TimeController tc = new TimeController();

@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class TestFinance {
     public static void main(String[] args) {
 
@@ -46,6 +48,7 @@ public class TestFinance {
         System.out.println("Calculating downtime");
         int numberOfTests = 3;
         double percentageBeingTested = 0.05;
+
 
         int apolloBroken = 0;
 
