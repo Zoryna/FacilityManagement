@@ -1,3 +1,5 @@
+import marsmission.domain.*;
+
 public class TestInspection
 {
     public static void main (String[] args)
