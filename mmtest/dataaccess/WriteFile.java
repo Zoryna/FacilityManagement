@@ -1,5 +1,5 @@
-package marsmission.dataaccess;
-import marsmission.domain.*;
+package mmtest.dataaccess;
+import mmtest.domain.*;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.PrintWriter;

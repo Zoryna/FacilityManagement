@@ -1,4 +1,4 @@
-package marsmission.domain;
+package mmtest.domain;
 import java.util.Random;
 
 public class TestRandomizer {

@@ -1,5 +1,5 @@
-package marsmission.domain;
-import marsmission.domain.Facility;
+package mmtest.domain;
+import mmtest.domain.Facility;
 
 public class TestMachines {
     public static void main(String[] args){

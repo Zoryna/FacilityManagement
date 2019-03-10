@@ -1,4 +1,4 @@
-package marsmission.dataaccess;
+package mmtest.dataaccess;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;

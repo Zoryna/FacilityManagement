@@ -1,7 +1,7 @@
-package marsmission.domain;
+package mmtest.domain;
 import java.io.*;
 import java.util.*;
-import marsmission.dataaccess.WriteFile;
+import mmtest.dataaccess.WriteFile;
 
 public class TestWriteFile {
     public static void main(String[] args){

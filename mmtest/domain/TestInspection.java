@@ -1,4 +1,4 @@
-import marsmission.domain.*;
+import mmtest.domain.*;
 
 public class TestInspection
 {

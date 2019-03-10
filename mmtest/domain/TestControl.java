@@ -1,4 +1,4 @@
-package marsmission.domain;
+package mmtest.domain;
 
 public class TestControl{
     public static void main(String[] args){

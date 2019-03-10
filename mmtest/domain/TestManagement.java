@@ -1,4 +1,4 @@
-import marsmission.domain.*;
+import mmtest.domain.*;
 
 public class TestManagement {
     public static void main (String[] args) {

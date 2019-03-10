@@ -1,5 +1,5 @@
-package marsmission.domain;
-import marsmission.dataaccess.ReadFile;
+package mmtest.domain;
+import mmtest.dataaccess.ReadFile;
 
 public class TestReadFile {
     public static void main(String[] args){

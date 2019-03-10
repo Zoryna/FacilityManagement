@@ -1,4 +1,4 @@
-package marsmission.domain;
+package mmtest.domain;
 import java.util.*;
 
 public class Facility extends StateMachine implements SuperFacility {

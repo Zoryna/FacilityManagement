@@ -1,4 +1,4 @@
-package marsmission.domain;
+package mmtest.domain;
 
 public class FacilityBehavior extends StateMachine implements FacilityAI {
 
