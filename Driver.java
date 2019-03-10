@@ -144,5 +144,14 @@ public class Driver {
             ar[i].getFacilityStatus();
             System.out.print("\n");
         }
+
+        //testing Management
+        System.out.println("Let's pick Erebos for management");
+        Management ma = new Management();
+
+        ma.actualUsage(in.checkMachines(erebosMach.getMap())); //actual percentage of use
+        ma.requestAvailableCapacity(in.checkMachines(erebosMach.getMap())); //the remaining percentage of the facility
+        ma.problemRateFacility(3, 2); ////percentage of the tests that failed
+
     }
 }
