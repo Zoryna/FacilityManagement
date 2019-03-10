@@ -12,18 +12,18 @@ public class Driver {
         Facility athena = new Facility();
         Facility artemis = new Facility();
 
-        apollo.setName("Apollo");
-        nyx.setName("Nyx");
-        erebos.setName("Erebos");
-        athena.setName("Athena");
-        artemis.setName("Artemis");
-
         //giving each Facility their machines
         Machines apolloMach = new Machines(apollo);
         Machines nyxMach = new Machines(nyx);
         Machines erebosMach = new Machines(erebos);
         Machines athenaMach = new Machines(athena);
         Machines artemisMach = new Machines(artemis);
+
+        apolloMach.setName("Apollo");
+        nyxMach.setName("Nyx");
+        erebosMach.setName("Erebos");
+        athenaMach.setName("Athena");
+        artemisMach.setName("Artemis");
 
         Machines[] ar = new Machines[5];
         ar[0] = apolloMach;
