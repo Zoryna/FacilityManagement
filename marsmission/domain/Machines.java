@@ -7,7 +7,7 @@ public class Machines extends Facility {
 
     private Facility fac;
     private boolean oxygenator, nuclearReactor, innerAirlocks, externalAirlocks,
-            comms, waterMaking;
+    comms, waterMaking;
     private final int numberOfMachines = 6;
     private boolean[] machines = new boolean[numberOfMachines];
     private Map<String, Boolean> map = new HashMap<String, Boolean>();

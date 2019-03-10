@@ -10,7 +10,7 @@ public class FacilityBehavior extends StateMachine implements FacilityAI {
 
     public void setFacilityBehavior(Facility fac){
         this.fac = fac;
-        AI(tc, c);
+        // AI(tc, c);
     }
 
     public void AI(TimeController tc, Control c){

@@ -6,7 +6,7 @@ public class FacilityBehavior extends StateMachine implements FacilityAI {
     private Control c;
     private int START = tc.getHours();
     private int REST = tc.getHours();
-    public Facility fac;
+    private Facility fac;
 
     public void setFacilityBehavior(Facility fac){
         this.fac = fac;
