@@ -1,3 +1,4 @@
+package marsmission.domain;
 import java.util.*;
 
 public class Maintenance  {
@@ -51,4 +52,3 @@ public class Maintenance  {
     }
   }
 }
-

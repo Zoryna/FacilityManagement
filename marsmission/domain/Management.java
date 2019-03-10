@@ -1,3 +1,5 @@
+package marsmission.domain;
+
 public class Management
 {
     public void actualUsage(double workingMachines) //actual percentage of use

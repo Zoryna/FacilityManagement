@@ -1,3 +1,4 @@
+package marsmission.domain;
 import java.util.*;
 
 public class Inspection {

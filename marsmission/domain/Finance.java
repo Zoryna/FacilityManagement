@@ -1,3 +1,4 @@
+package marsmission.domain;
 public class Finance
 {
     private double ratePerHour; //3.05 is watt cost per hour
