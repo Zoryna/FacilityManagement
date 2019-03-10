@@ -16,5 +16,22 @@ public class TestMachines {
         mApollo.readMachines();
         System.out.println("\n");
         mNyx.readMachines();
+
+        System.out.println("\n");
+        System.out.println("Facility Status test.");
+
+        mApollo.getFacilityStatus();
+        System.out.println("\n");
+        mNyx.getFacilityStatus();
+
+        mApollo.breakMachines();
+        mNyx.breakMachines();
+
+        System.out.println("\n");
+        System.out.println("Facility Status test.");
+
+        mApollo.getFacilityStatus();
+        System.out.println("\n");
+        mNyx.getFacilityStatus();
     }
 }

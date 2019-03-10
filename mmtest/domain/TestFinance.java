@@ -51,16 +51,6 @@ public class TestFinance {
 
         int apolloBroken = 0;
 
-        for (int i = 0; i < numberOfTests; i++){
-            r.setRandom();
-            if (r.getRandom() < percentageBeingTested)
-                System.out.println(r.getRandom() + ": TRUE");
-            else {
-                System.out.println(r.getRandom() + ": FALSE");
-                apolloBroken++;
-            }
-        }
-
         System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
         fin.calcDowntimeFacility(apolloBroken);
 
@@ -102,16 +92,6 @@ public class TestFinance {
         System.out.println("Calculating downtime");
 
         int nyxBroken = 0;
-
-        for (int i = 0; i < numberOfTests; i++){
-            r.setRandom();
-            if (r.getRandom() < percentageBeingTested)
-                System.out.println(r.getRandom() + ": TRUE");
-            else {
-                System.out.println(r.getRandom() + ": FALSE");
-                nyxBroken++;
-            }
-        }
 
         System.out.println("The facility needs to be less than " + percentageBeingTested + " to pass as working");
         fin.calcDowntimeFacility(nyxBroken);

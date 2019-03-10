@@ -43,16 +43,6 @@ public class TestManagement {
 
         int apolloBroken = 0;
 
-        for (int i = 0; i < numberOfTests; i++){
-            r.setRandom();
-            if (r.getRandom() < percentageBeingTested)
-                System.out.println(r.getRandom() + ": TRUE");
-            else {
-                System.out.println(r.getRandom() + ": FALSE");
-                apolloBroken++;
-            }
-        }
-
         ma.problemRateFacility(numberOfTests, apolloBroken);
 
         System.out.println("---------------------------");
@@ -87,16 +77,6 @@ public class TestManagement {
         System.out.println("---------------------------");
 
         int nyxBroken = 0;
-
-        for (int i = 0; i < numberOfTests; i++){
-            r.setRandom();
-            if (r.getRandom() < percentageBeingTested)
-                System.out.println(r.getRandom() + ": TRUE");
-            else {
-                System.out.println(r.getRandom() + ": FALSE");
-                nyxBroken++;
-            }
-        }
 
         ma.problemRateFacility(numberOfTests, nyxBroken);
 
