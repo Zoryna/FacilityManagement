@@ -110,6 +110,9 @@ public class Driver {
 
         // Time to use Maintenance
         Maintenance m = new Maintenance();
+        m.setInspection(in);
+        m.setControl(c);
+
         m.listMaintenanceRequest(in.returnBrokenMachines(erebosMach.getMap(), erebosMach.getMachines()));
         System.out.println("\n");
         m.fixMachines(erebosMach.getMap());
