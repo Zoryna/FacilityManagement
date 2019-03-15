@@ -5,6 +5,15 @@ import java.util.*;
 public class Driver {
     public static void main(String[] args){
 
+        ApplictionContext context = new ClassPathXmlApplicationCOntext("app-context.xml");
+
+
+
+
+
+
+
+
         // Staging Objects
         Facility apollo = new Facility();
         Facility nyx = new Facility();
