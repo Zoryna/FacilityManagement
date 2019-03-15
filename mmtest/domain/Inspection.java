@@ -20,4 +20,19 @@ public interface Inspection {
     public int checkMachines(Map<String, Boolean> map);
 
     public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines);
+
+    public void setMaintenance(MaintenanceImpl maint);
+
+    public MaintenanceImpl getMaintenance();
+
+
+
+
+
+
+
+
+
+
+
 }
