@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <description>Mars won't colonize by itself</description>
+
+    <context:component-scan base-package="marsmission.domain" />
+
+    <!-- Inject on Machines -->
+    <bean id="facility" class="marsmission.domain.Facility" scope="prototype"/>
+    <bean id="machines" class="marsmission.domain.Machines" scope="prototype"/>
+    <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype"/>
+    <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype"/>
+    <bean id="timecontroller" class="marsmission.domain.TimeController" scope="prototype"/>
+    <bean id="control" class="marsmission.domain.Control" scope="prototype" />
+    <bean id="finance" class="marsmission.domain.Finance" scope="prototype" />
+    <bean id="management" class="marsmission.domain.Management" scope="prototype" />
+
+    

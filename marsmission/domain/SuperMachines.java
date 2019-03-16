@@ -11,7 +11,6 @@ public interface SuperMachines {
     public void comms(boolean comms);
     public void waterMaking(boolean waterMaking);
     public boolean[] getMachines();
-    public void readMachines();
     public void breakMachines();
     public void initializeMap(Map<String, Boolean> map);
     public void startMachines();
