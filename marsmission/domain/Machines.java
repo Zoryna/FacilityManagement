@@ -6,8 +6,8 @@ import java.util.HashMap;
 public class Machines extends Facility implements SuperMachines {
 
     private Facility fac;
-    private boolean oxygenator, innerAirlocks, externalAirlocks,
-    comms, nuclearReactor, waterMaking;
+    private boolean oxygenator, nuclearReactor, innerAirlocks, externalAirlocks,
+    comms, waterMaking;
     private final int numberOfMachines = 6;
     private boolean[] machines = new boolean[numberOfMachines];
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
@@ -50,11 +50,6 @@ public class Machines extends Facility implements SuperMachines {
         return machines;
     }
 
-    public void readMachines(){
-        System.out.println("This is the " + fac.getName() + " facility.");
-        getFacilityStatus();
-    }
-
     // Set machines to false
     public void breakMachines(){
         oxygenator(false);
@@ -70,9 +65,9 @@ public class Machines extends Facility implements SuperMachines {
 
     public void initializeMap(Map<String, Boolean> map){
         this.map.put("Oxygenator", oxygenator);
+        this.map.put("Nuclear Reactor", nuclearReactor);
         this.map.put("Inner Airlocks", innerAirlocks);
         this.map.put("External Airlocks", externalAirlocks);
-        this.map.put("Nuclear Reactor", nuclearReactor);
         this.map.put("Comms", comms);
         this.map.put("WaterMaking", waterMaking);
     }
@@ -87,6 +82,17 @@ public class Machines extends Facility implements SuperMachines {
         comms(true);
         waterMaking(true);
 
+        map.clear();
+        initializeMap(map);
+    }
+
+    public void update(){
+        machines[0] = oxygenator;
+        machines[1] = nuclearReactor;
+        machines[2] = innerAirlocks;
+        machines[3] = externalAirlocks;
+        machines[4] = comms;
+        machines[5] = waterMaking;
         map.clear();
         initializeMap(map);
     }
