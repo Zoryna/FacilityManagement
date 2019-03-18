@@ -1,71 +1,37 @@
 package mmtest.domain;
 import java.util.*;
 
-public class Facility extends StateMachine implements SuperFacility {
-
-    private String name, address, description;
-    private int refNumber, capacity, problemRate;
-    private double cost;
+public interface Facility extends StateMachine implements SuperFacility {
 
     // Setters
-    public void setName(String name){
-        this.name = name;
-    }
+    public void setName(String name);
 
-    public void setAddress(String address){
-        this.address = address;
-    }
+    public void setAddress(String address);
 
-    public void setDescription(String description){
-        this.description = description;
-    }
+    public void setDescription(String description);
 
-    public void setRefNumber(int refNumber){
-        this.refNumber = refNumber;
-    }
+    public void setRefNumber(int refNumber);
 
-    public void setCapacity(int capacity){
-        this.capacity = capacity;
-    }
+    public void setCapacity(int capacity);
 
-    public void setCost(double cost){
-        this.cost = cost;
-    }
+    public void setCost(double cost);
 
-    public void setProblemRate(int problemRate){
-        this.problemRate = problemRate;
-    }
+    public void setProblemRate(int problemRate);
 
     // Getters
-    public String getName(){
-        return name;
-    }
+    public String getName();
 
-    public String getAddress(){
-        return address;
-    }
+    public String getAddress();
 
-    public String getDescription(){
-        return description;
-    }
+    public String getDescription();
 
-    public int getRefNumber(){
-        return refNumber;
-    }
+    public int getRefNumber();
 
-    public int getCapacity(){
-        return capacity;
-    }
+    public int getCapacity();
 
-    public double getCost(){
-        return cost;
-    }
+    public double getCost();
 
-    public int getProblemRate(){
-        return problemRate;
-    }
+    public int getProblemRate();
 
-    public State getState() {
-        return state;
-    }
+    public State getState();
 }

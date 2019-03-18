@@ -1,10 +1,9 @@
 package mmtest.domain;
 import java.util.*;
 
-public interface ControlImpl {
+public interface ControlImpl implements Control {
 
     ControlImpl () {};
-
 
     public void assignToUse(Facility fac){
         setStateWorking(fac);

@@ -2,19 +2,11 @@ package mmtest.domain;
 
 public interface Control extends StateMachine {
 
-    public void assignToUse(Facility fac){
-        setStateWorking(fac);
-    }
+    public void assignToUse(Facility fac);
 
-    public void vacateFacility(Facility fac){
-        setStateResting(fac);
-    }
+    public void vacateFacility(Facility fac);
 
-    public void scheduleMaintenance(Facility fac){
-        setStateMaintenance(fac);
-    }
+    public void scheduleMaintenance(Facility fac);
 
-    public void shitIsBroken(Facility fac){
-        setStateBroken(fac);
-    }
+    public void shitIsBroken(Facility fac);
 }
