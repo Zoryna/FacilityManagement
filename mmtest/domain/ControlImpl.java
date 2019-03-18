@@ -1,6 +1,10 @@
 package mmtest.domain;
+import java.util.*;
 
-public interface Control extends StateMachine {
+public interface ControlImpl {
+
+    ControlImpl () {};
+
 
     public void assignToUse(Facility fac){
         setStateWorking(fac);
@@ -17,4 +21,11 @@ public interface Control extends StateMachine {
     public void shitIsBroken(Facility fac){
         setStateBroken(fac);
     }
+
+
+
+
+
+
+
 }
