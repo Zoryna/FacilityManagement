@@ -1,7 +1,7 @@
 package mmtest.domain;
 import java.util.*;
 
-public interface ControlImpl implements Control {
+public class ControlImpl implements Control {
 
     ControlImpl () {};
 

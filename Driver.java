@@ -14,6 +14,21 @@ public class Driver {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         // Staging Objects
         Facility apollo = new Facility();
         Facility nyx = new Facility();
@@ -78,7 +93,7 @@ public class Driver {
         for (int i = 0; i < ar.length; i++){
             fb.setFacilityBehavior(ar[i]);
             System.out.println(ar[i].getName() + " is " + ar[i].getState());
-        } */
+        }
 
         // Let's start another day, and now let's break something
         System.out.print("\n");
@@ -105,7 +120,7 @@ public class Driver {
             Technically, we wanted this to be automated, without the involvement of the user,
             since Inspection was actually intendend as an Observer.
             We might implement this for Phase 2.
-        */
+
 
         tc.setHours(9);
         c.shitIsBroken(erebosMach);
@@ -140,7 +155,7 @@ public class Driver {
 
         // Finally, let's put it back to work
 
-        /* If it's under working hours, and no machines are broken, go to work, baby */
+        /* If it's under working hours, and no machines are broken, go to work, baby
         if (tc.getHours() > 8 && tc.getHours() < 18 && in.checkMachines(erebosMach.getMap()) == 0){
             c.assignToUse(erebos);
         }
@@ -161,6 +176,6 @@ public class Driver {
         ma.actualUsage(in.checkMachines(erebosMach.getMap())); //actual percentage of use
         ma.requestAvailableCapacity(in.checkMachines(erebosMach.getMap())); //the remaining percentage of the facility
         ma.problemRateFacility(3, 2); ////percentage of the tests that failed
-
+        */
     }
 }

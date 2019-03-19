@@ -12,7 +12,9 @@
     <!-- Inject on Machines -->
     <bean id="facility" class="marsmission.domain.Facility" scope="prototype"/>
     <bean id="machines" class="marsmission.domain.Machines" scope="prototype"/>
-    <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype"/>
+
+    <bean id="superinspection" class="marsmission.domain.SuperInspection" scope="prototype"/>
+
     <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype"/>
     <bean id="timecontroller" class="marsmission.domain.TimeController" scope="prototype"/>
     <bean id="control" class="marsmission.domain.Control" scope="prototype" />
