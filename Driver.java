@@ -5,7 +5,7 @@ import java.util.*;
 public class Driver {
     public static void main(String[] args){
 
-        ApplictionContext context = new ClassPathXmlApplicationCOntext("app-context.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
 
 
 
