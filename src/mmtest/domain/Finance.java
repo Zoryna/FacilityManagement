@@ -5,6 +5,8 @@ public class Finance implements FinanceInterface{
     private double ratePerHour; //3.05 is watt cost per hour
     private double maintHourlyCost; //randomly chosen cost, may change later
 
+    Finance () {}
+
     //setters
     public void setRatePerHour (double ratePerHour) {this.ratePerHour = ratePerHour;}
 

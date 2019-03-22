@@ -5,7 +5,7 @@ public class Inspection implements InspectionInterface {
 
     private static Facility fac;
     private static Machines mach;
-    private MaintenanceImpl maint;
+    private Maintenance maint;
 
     Inspection() {};
 
@@ -86,7 +86,7 @@ public class Inspection implements InspectionInterface {
         return newMap;
     }
 
-    public MaintenanceImpl setMaintenance(MaintenanceImpl maint) {this.maint = maint;};
+    public Maintenance setMaintenance(Maintenance maint) {this.maint = maint;};
 
     public getMaintenance(){return maint;};
 }

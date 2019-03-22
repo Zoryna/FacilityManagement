@@ -5,8 +5,6 @@ import java.util.HashMap;
 
 public interface MachinesInterface extends FacilityInterface {
 
-    public Machines(Facility fac);
-
     public void oxygenator(boolean oxygenator);
 
     public void nuclearReactor(boolean nuclearReactor);

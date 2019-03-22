@@ -2,6 +2,8 @@ package mmtest.domain;
 
 public class Management implements ManagementInterface {
 
+    Management() {}
+
     public void actualUsage(double workingMachines) //actual percentage of use
     {
         workingMachines = 6 - workingMachines;

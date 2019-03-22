@@ -7,7 +7,7 @@ public class Facility implements FacilityInterface {
     private int refNumber, capacity, problemRate;
     private double cost;
 
-    Facility() {};
+    Facility() {}
 
     // Setters
     public void setName(String name){

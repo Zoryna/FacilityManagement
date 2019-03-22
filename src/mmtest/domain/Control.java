@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Control implements ControlInterface {
 
-    ControlImpl () {};
+    Control () {}
 
     public void assignToUse(Facility fac){
         setStateWorking(fac);
