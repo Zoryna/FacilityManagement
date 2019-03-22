@@ -12,11 +12,11 @@ public class Machines extends Facility implements MachinesInterface {
     private boolean[] machines = new boolean[numberOfMachines];
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
 
-    Machines () {}
+    /*Machines () {}
 
     public Machines(Facility fac){
         this.fac = fac;
-    }
+    } */
 
     public void oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
