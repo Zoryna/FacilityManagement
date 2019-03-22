@@ -3,7 +3,7 @@ package mmtest.domain;
 import java.util.Map;
 import java.util.HashMap;
 
-public interface MachinesInterface extends FacilityInterface {
+public interface MachinesInterface {
 
     public void oxygenator(boolean oxygenator);
 

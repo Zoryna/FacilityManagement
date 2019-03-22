@@ -67,8 +67,6 @@ public class Facility extends StateMachine implements FacilityInterface {
         return problemRate;
     }
 
-    public State getState() {
-        return state;
-    }
+    public State getState() {return state;}
 
 }

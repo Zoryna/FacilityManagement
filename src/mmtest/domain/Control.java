@@ -1,7 +1,7 @@
 package mmtest.domain;
 import java.util.*;
 
-public class Control implements ControlInterface {
+public class Control extends StateMachine implements ControlInterface {
 
     Control () {}
 

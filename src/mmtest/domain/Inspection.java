@@ -7,7 +7,7 @@ public class Inspection implements InspectionInterface {
     private static Machines mach;
     private Maintenance maint;
 
-    Inspection() {};
+    Inspection() {}
 
 
     //setters
@@ -85,10 +85,6 @@ public class Inspection implements InspectionInterface {
 
         return newMap;
     }
-
-    public Maintenance setMaintenance(Maintenance maint) {this.maint = maint;}
-
-    public Maintenance getMaintenance(){return maint;}
 }
 
 
