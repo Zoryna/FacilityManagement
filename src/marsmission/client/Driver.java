@@ -1,3 +1,5 @@
+package marsmission.client;
+
 import marsmission.domain.*;
 
 import java.util.*;
