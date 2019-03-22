@@ -1,12 +1,13 @@
-/*import marsmission.domain.*;
-import marsmission.dataaccess.*; */
+import marsmission.domain.*;
+import marsmission.dataaccess.*;
 
 import java.util.*;
 
 public class Driver {
     public static void main(String[] args){
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
+
 
 
 

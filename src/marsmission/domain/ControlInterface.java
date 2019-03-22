@@ -1,7 +1,7 @@
 package marsmission.domain;
 
 
-public interface ControlInterface extends StateMachine {
+public interface ControlInterface {
 
     public void assignToUse(Facility fac);
 

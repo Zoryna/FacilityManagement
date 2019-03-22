@@ -7,6 +7,8 @@ public class Maintenance implements MaintenanceInterface {
   private Inspection ins;
   private Control c;
 
+  Maintenance () {}
+
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
 

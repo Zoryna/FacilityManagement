@@ -4,6 +4,8 @@ public class TimeController {
 
     public static int hours, minutes, seconds;
 
+    TimeController () {}
+
     public void setHours(int hours){
         this.hours = hours;
     }
