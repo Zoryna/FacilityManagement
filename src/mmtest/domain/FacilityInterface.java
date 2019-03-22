@@ -1,7 +1,7 @@
 package mmtest.domain;
 import java.util.*;
 
-public interface FacilityInterface extends StateMachineInterface extends SuperFacility {
+public interface FacilityInterface {
 
     // Setters
     public void setName(String name);

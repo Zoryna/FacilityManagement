@@ -1,4 +1,4 @@
-package marsmission.client;
+import marsmission.domain.*;
 
 import java.util.*;
 
@@ -10,9 +10,9 @@ public class Driver {
 
     ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
 
-
-
-
+    Facility fac = (Facility) context.getBean("facility");
+    fac.setName("Apollo");
+    System.out.println("The name is " + fac.getName());
 
 
 

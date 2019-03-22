@@ -86,9 +86,9 @@ public class Inspection implements InspectionInterface {
         return newMap;
     }
 
-    public Maintenance setMaintenance(Maintenance maint) {this.maint = maint;};
+    public Maintenance setMaintenance(Maintenance maint) {this.maint = maint;}
 
-    public getMaintenance(){return maint;};
+    public Maintenance getMaintenance(){return maint;}
 }
 
 
