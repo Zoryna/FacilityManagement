@@ -17,4 +17,8 @@ public interface MachinesInterface {
     public Map<String, Boolean> getMap();
     public void getFacilityStatus();
     public void getFacilityStatus(Map<String, Boolean> map);
+    public void setControl(Control c);
+    public Control getControl();
+    public void setFacility(Facility fac);
+    public Facility getFacility();
 }

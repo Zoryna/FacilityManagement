@@ -11,10 +11,19 @@ public class Machines extends Facility implements MachinesInterface {
     private final int numberOfMachines = 6;
     private boolean[] machines = new boolean[numberOfMachines];
     private Map<String, Boolean> map = new HashMap<String, Boolean>();
+    private Control c;
 
-    public Machines(Facility fac){
+    /* public Machines(Facility fac){
         this.fac = fac;
-    }
+    } */
+
+    public void setFacility(Facility fac) { this.fac = fac; }
+
+    public Facility getFacility() { return fac; }
+
+    public void setControl(Control c) { this.c = c; }
+
+    public Control getControl() { return c; }
 
     public void oxygenator(boolean oxygenator){
         this.oxygenator = oxygenator;
