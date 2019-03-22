@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class Control implements ControlInterface {
+public class Control extends StateMachine implements ControlInterface {
 
     Control() {}
 

@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class StateMachine implements StateMachine interface{
+public class StateMachine implements StateMachineInterface{
 
     public State state = State.RESTING;
 

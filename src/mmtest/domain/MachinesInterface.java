@@ -24,8 +24,6 @@ public interface MachinesInterface extends FacilityInterface {
 
     public void initializeMap(Map<String, Boolean> map);
 
-    public void readMachines();
-
     public void startMachines();
 
     public void update();

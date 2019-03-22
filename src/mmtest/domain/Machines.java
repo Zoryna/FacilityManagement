@@ -72,11 +72,6 @@ public class Machines implements MachinesInterface {
         this.map.put("WaterMaking", waterMaking);
     }
 
-    public void readMachines(){
-        System.out.println("This is the " + fac.getName() + " facility.");
-        getFacilityStatus();
-    }
-
     public void startMachines(){
         // Set all of the booleans from this Facility to true;
         // This booleans are what we call "the machines from the Facility"

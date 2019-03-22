@@ -24,7 +24,6 @@ public interface MachinesInterface {
 
     public void initializeMap(Map<String, Boolean> map);
 
-    public void readMachines();
 
     public void startMachines();
 
