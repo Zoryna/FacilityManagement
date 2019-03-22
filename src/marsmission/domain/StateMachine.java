@@ -24,11 +24,4 @@ public class StateMachine implements StateMachineInterface{
         fac.state = State.BROKEN;
     }
 
-    public State getState(){
-        return state;
-    }
-
-    public State getState(Facility fac){
-        return state;
-    }
 }

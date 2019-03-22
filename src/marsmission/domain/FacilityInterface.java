@@ -31,6 +31,4 @@ public interface FacilityInterface {
 
     public int getProblemRate();
 
-    public State getState();
-
 }

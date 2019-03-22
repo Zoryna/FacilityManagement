@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2b2bec61-9de9-4be0-8f39-0461f9dc40c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/client/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsmission/domain/ControlInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/ControlInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/Finance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/Finance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/Maintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/Maintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/TimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/TimeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/FacilityInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/FacilityInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/Machines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/Machines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/MachinesInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/MachinesInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/StateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/StateMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,6 +24,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/marsmission/domain/StateMachine.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/marsmission/client/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Facility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Control.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
@@ -30,26 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/marsmission/domain/TimeControllerInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/marsmission/domain/TimeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -88,28 +103,29 @@
         <option value="$PROJECT_DIR$/src/mmtest/domain/Finance.java" />
         <option value="$PROJECT_DIR$/src/mmtest/domain/StateMachineInterface.java" />
         <option value="$PROJECT_DIR$/src/mmtest/domain/FacilityInterface.java" />
-        <option value="$PROJECT_DIR$/src/marsmission/domain/FacilityInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/FinanceInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/InspectionInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/Inspection.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/MaintenanceInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/ManagementInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/Management.java" />
-        <option value="$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/TimeControllerInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/Control.java" />
-        <option value="$PROJECT_DIR$/src/marsmission/domain/StateMachine.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/Facility.java" />
-        <option value="$PROJECT_DIR$/src/marsmission/domain/Machines.java" />
-        <option value="$PROJECT_DIR$/src/marsmission/domain/MachinesInterface.java" />
         <option value="$PROJECT_DIR$/src/mmtest/domain/Machines.java" />
         <option value="$PROJECT_DIR$/src/mmtest/domain/MachinesInterface.java" />
-        <option value="$PROJECT_DIR$/app-context.xml" />
         <option value="$PROJECT_DIR$/Driver.java" />
-        <option value="$PROJECT_DIR$/src/marsmission/domain/ControlInterface.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/Finance.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/Maintenance.java" />
         <option value="$PROJECT_DIR$/src/marsmission/domain/TimeController.java" />
+        <option value="$PROJECT_DIR$/src/marsmission/domain/Machines.java" />
+        <option value="$PROJECT_DIR$/app-context.xml" />
+        <option value="$PROJECT_DIR$/src/marsmission/domain/ControlInterface.java" />
+        <option value="$PROJECT_DIR$/src/marsmission/domain/FacilityInterface.java" />
+        <option value="$PROJECT_DIR$/src/marsmission/domain/MachinesInterface.java" />
+        <option value="$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java" />
+        <option value="$PROJECT_DIR$/src/marsmission/domain/StateMachine.java" />
+        <option value="$PROJECT_DIR$/src/marsmission/client/Driver.java" />
       </list>
     </option>
   </component>
@@ -147,6 +163,13 @@
               <item name="FacilityManagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="marsmission" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FacilityManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FacilityManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="marsmission" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -159,7 +182,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553282752009" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553285155768" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProbablyPorn" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -169,6 +192,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Janeen\Documents\Coding Classes\COMP 373\Project 2\FacilityManagement\src\marsmission\client" />
       <recent name="C:\Users\Janeen\Documents\Coding Classes\COMP 373\Project 2\FacilityManagement\src" />
     </key>
   </component>
@@ -196,12 +220,12 @@
       <updated>1553268351186</updated>
       <workItem from="1553268352961" duration="2212000" />
       <workItem from="1553271885266" duration="2349000" />
-      <workItem from="1553279129938" duration="3616000" />
+      <workItem from="1553279129938" duration="6017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8177000" />
+    <option name="totallyTimeSpent" value="10578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -216,7 +240,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42684564" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -234,7 +258,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33524355" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3381089" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -247,7 +271,7 @@
       <window_info anchor="right" id="Database" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.5395284" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42718446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -265,7 +289,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33524355" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3381089" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -435,33 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/MachinesInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/marsmission/domain/FinanceInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -469,48 +466,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/ControlInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/FacilityInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Control.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Facility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Finance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Machines.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,20 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/StateMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/marsmission/domain/TimeControllerInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -579,8 +524,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/marsmission/domain/TimeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="340">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/FacilityAI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/ControlInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/FacilityInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/MachinesInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Machines.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-979">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/StateMachineInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/StateMachine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/domain/Facility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/marsmission/client/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

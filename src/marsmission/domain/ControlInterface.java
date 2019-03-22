@@ -1,6 +1,5 @@
 package marsmission.domain;
 
-
 public interface ControlInterface {
 
     public void assignToUse(Facility fac);
