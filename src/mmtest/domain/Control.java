@@ -1,12 +1,30 @@
 package mmtest.domain;
+import java.util.*;
 
-public interface Control extends StateMachine {
+public class Control implements ControlInterface {
 
-    public void assignToUse(Facility fac);
+    ControlImpl () {};
 
-    public void vacateFacility(Facility fac);
+    public void assignToUse(Facility fac){
+        setStateWorking(fac);
+    }
 
-    public void scheduleMaintenance(Facility fac);
+    public void vacateFacility(Facility fac){
+        setStateResting(fac);
+    }
 
-    public void shitIsBroken(Facility fac);
+    public void scheduleMaintenance(Facility fac){
+        setStateMaintenance(fac);
+    }
+
+    public void shitIsBroken(Facility fac){
+        setStateBroken(fac);
+    }
+
+
+
+
+
+
+
 }

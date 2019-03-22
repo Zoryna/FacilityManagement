@@ -1,16 +1,34 @@
 package mmtest.domain;
 
-public interface StateMachine {
+public class StateMachine implements StateMachineInterface {
 
-    public void setStateWorking(Facility fac);
+    public State state = State.RESTING;
 
-    public void setStateResting(Facility fac);
+    public enum State {
+        WORKING, RESTING, MAINTENANCE, BROKEN
+    }
 
-    public void setStateMaintenance(Facility fac);
+    public void setStateWorking(Facility fac){
+        fac.state = State.WORKING;
+    }
 
-    public void setStateBroken(Facility fac);
+    public void setStateResting(Facility fac){
+        fac.state = State.RESTING;
+    }
 
-    public State getState();
+    public void setStateMaintenance(Facility fac){
+        fac.state = State.MAINTENANCE;
+    }
 
-    public State getState(Facility fac);
+    public void setStateBroken(Facility fac){
+        fac.state = State.BROKEN;
+    }
+
+    public State getState(){
+        return state;
+    }
+
+    public State getState(Facility fac){
+        return state;
+    }
 }

@@ -1,37 +1,74 @@
 package mmtest.domain;
 import java.util.*;
 
-public interface Facility extends StateMachine implements SuperFacility {
+public class Facility implements FacilityInterface {
+
+    private String name, address, description;
+    private int refNumber, capacity, problemRate;
+    private double cost;
+
+    Facility() {};
 
     // Setters
-    public void setName(String name);
+    public void setName(String name){
+        this.name = name;
+    }
 
-    public void setAddress(String address);
+    public void setAddress(String address){
+        this.address = address;
+    }
 
-    public void setDescription(String description);
+    public void setDescription(String description){
+        this.description = description;
+    }
 
-    public void setRefNumber(int refNumber);
+    public void setRefNumber(int refNumber){
+        this.refNumber = refNumber;
+    }
 
-    public void setCapacity(int capacity);
+    public void setCapacity(int capacity){
+        this.capacity = capacity;
+    }
 
-    public void setCost(double cost);
+    public void setCost(double cost){
+        this.cost = cost;
+    }
 
-    public void setProblemRate(int problemRate);
+    public void setProblemRate(int problemRate){
+        this.problemRate = problemRate;
+    }
 
     // Getters
-    public String getName();
+    public String getName(){
+        return name;
+    }
 
-    public String getAddress();
+    public String getAddress(){
+        return address;
+    }
 
-    public String getDescription();
+    public String getDescription(){
+        return description;
+    }
 
-    public int getRefNumber();
+    public int getRefNumber(){
+        return refNumber;
+    }
 
-    public int getCapacity();
+    public int getCapacity(){
+        return capacity;
+    }
 
-    public double getCost();
+    public double getCost(){
+        return cost;
+    }
 
-    public int getProblemRate();
+    public int getProblemRate(){
+        return problemRate;
+    }
 
-    public State getState();
+    public State getState() {
+        return state;
+    }
+
 }
