@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class TimeController {
+public class TimeController implements TimeControllerInterface {
 
     public static int hours, minutes, seconds;
 

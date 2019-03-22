@@ -1,7 +1,7 @@
 package marsmission.domain;
 import java.util.Map;
 
-public interface SuperFacility {
+public interface FacilityInterface {
     public void setName(String name);
     public void setAddress(String address);
     public void setDescription(String description);

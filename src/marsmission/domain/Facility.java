@@ -1,7 +1,7 @@
 package marsmission.domain;
 import java.util.*;
 
-public class Facility extends StateMachine implements SuperFacility {
+public class Facility extends StateMachine implements FacilityInterface {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;

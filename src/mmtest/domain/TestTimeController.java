@@ -1,4 +1,4 @@
-package mmtest.test;
+package mmtest.domain;
 import marsmission.domain.TimeController;
 
 public class TestTimeController {

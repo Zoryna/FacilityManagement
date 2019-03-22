@@ -23,12 +23,4 @@ public class StateMachine {
     public void setStateBroken(Facility fac){
         fac.state = State.BROKEN;
     }
-
-    public State getState(){
-        return state;
-    }
-
-    public State getState(Facility fac){
-        return state;
-    }
 }

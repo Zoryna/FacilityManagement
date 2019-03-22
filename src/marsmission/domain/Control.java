@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class Control extends StateMachine {
+public class Control extends StateMachine implements ControlInterface {
 
     public void assignToUse(Facility fac){
         setStateWorking(fac);

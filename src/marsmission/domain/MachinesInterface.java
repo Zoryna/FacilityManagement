@@ -3,7 +3,7 @@ package marsmission.domain;
 import java.util.Map;
 import java.util.HashMap;
 
-public interface SuperMachines {
+public interface MachinesInterface {
     public void oxygenator(boolean oxygenator);
     public void nuclearReactor(boolean nuclearReactor);
     public void innerAirlocks(boolean innerAirlocks);

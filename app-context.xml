@@ -19,4 +19,4 @@
     <bean id="finance" class="marsmission.domain.Finance" scope="prototype" />
     <bean id="management" class="marsmission.domain.Management" scope="prototype" />
 
-    
+</beans>
