@@ -1,3 +1,5 @@
+package mmtest.domain;
+
 import mmtest.domain.*;
 
 public class TestMaintenance
