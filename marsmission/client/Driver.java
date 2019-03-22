@@ -1,4 +1,4 @@
-package marsmission.domain.client;
+package marsmission.client;
 
 import marsmission.domain.*;
 import marsmission.dataaccess.*;
