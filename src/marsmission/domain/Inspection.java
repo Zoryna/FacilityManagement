@@ -1,10 +1,12 @@
 package marsmission.domain;
 import java.util.*;
 
-public class Inspection {
+public class Inspection implements InspectionInterface{
 
     private static Facility fac;
     private static Machines mach;
+
+    Inspection() {}
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }

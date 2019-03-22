@@ -1,8 +1,6 @@
-package mmtest.domain;
-import java.util.*;
+package marsmission.domain;
 
-public interface FacilityInterface extends StateMachineInterface extends SuperFacility {
-
+public interface FacilityInterface {
     // Setters
     public void setName(String name);
 
@@ -34,4 +32,5 @@ public interface FacilityInterface extends StateMachineInterface extends SuperFa
     public int getProblemRate();
 
     public State getState();
+
 }

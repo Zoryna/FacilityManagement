@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class Management
+public class Management implements ManagementInterface
 {
     public void actualUsage(double workingMachines) //actual percentage of use
     {

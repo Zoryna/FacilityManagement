@@ -3,7 +3,7 @@ package marsmission.domain;
 import java.util.Map;
 import java.util.HashMap;
 
-public class Machines extends Facility {
+public class Machines implements MachinesInterface {
 
     private Facility fac;
     private boolean oxygenator, nuclearReactor, innerAirlocks, externalAirlocks,
