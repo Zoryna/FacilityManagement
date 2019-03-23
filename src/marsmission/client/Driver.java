@@ -48,9 +48,11 @@ public class Driver {
         Maintenance maint = ins.getMaintenance();
         maint.setInspection(ins);
         maint.setControl(c);
-        //ins.listMaintenanceRequest();
-
-
+        maint.listMaintenanceRequest(m.getMap());
+        System.out.println("\n");
+        System.out.println("Fixing the machines:");
+        maint.fixMachines(m.getMap());
+        maint.fixFacility();
 
     }
 }
