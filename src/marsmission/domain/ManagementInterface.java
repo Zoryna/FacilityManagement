@@ -7,4 +7,8 @@ public interface ManagementInterface {
     public void problemRateFacility(double amountTests, double amountFail);
 
     public void requestAvailableCapacity(double workingMachines);
+
+    public void setFinance(Finance f);
+
+    public Finance getFinance();
 }

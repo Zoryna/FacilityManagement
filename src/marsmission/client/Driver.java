@@ -54,5 +54,24 @@ public class Driver {
         maint.fixMachines(m.getMap());
         maint.fixFacility();
 
+        System.out.println("---------------------------");
+
+        System.out.println("Testing Management");
+        Management man = (Management) context.getBean("management");
+        man.actualUsage(ins.checkMachines(m.getMap()));
+        man.problemRateFacility(6, 1);
+        man.requestAvailableCapacity(ins.checkMachines(m.getMap()));
+
+        System.out.println("---------------------------");
+
+        System.out.println("Calculating the facility's finances");
+        Finance fin = man.getFinance();
+        fin.setRatePerHour(3.05);
+        fin.setMaintHourlyCost(50);
+        fin.calcUsage(ins.checkMachines(m.getMap()), 8);
+        fin.calcMaintCostFacility(ins.checkMachines(m.getMap()), 5);
+        fin.calcDowntimeFacility(6);
+
+
     }
 }

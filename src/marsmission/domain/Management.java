@@ -2,6 +2,13 @@ package marsmission.domain;
 
 public class Management implements ManagementInterface
 {
+    private Finance f;
+
+    public void setFinance(Finance f) {this.f = f;}
+
+    public Finance getFinance() {return f;}
+
+
     public void actualUsage(double workingMachines) //actual percentage of use
     {
         workingMachines = 6 - workingMachines;
