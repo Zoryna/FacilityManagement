@@ -13,9 +13,9 @@ public class TestMachines {
         mApollo.startMachines();
         mNyx.startMachines();
 
-        mApollo.readMachines();
+        //mApollo.readMachines();
         System.out.println("\n");
-        mNyx.readMachines();
+        //mNyx.readMachines();
 
         System.out.println("\n");
         System.out.println("Facility Status test.");
