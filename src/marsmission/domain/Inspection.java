@@ -5,6 +5,7 @@ public class Inspection implements InspectionInterface{
 
     private static Facility fac;
     private static Machines mach;
+    private Maintenance maint;
 
     Inspection() {}
 
@@ -13,10 +14,14 @@ public class Inspection implements InspectionInterface{
 
     public void setMachines(Machines mach) { this.mach = mach;}
 
+    public void setMaintenance(Maintenance maint) {this.maint = maint;}
+
     //getters
     public Facility getFacility() {return fac;}
 
     public Machines getMachines() {return mach;}
+
+    public Maintenance getMaintenance() {return maint;}
 
     public boolean isBroken(){
 

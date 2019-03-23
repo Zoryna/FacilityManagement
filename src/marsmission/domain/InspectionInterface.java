@@ -11,4 +11,8 @@ public interface InspectionInterface {
 
     public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines);
 
+    public void setMaintenance(Maintenance maint);
+
+    public Maintenance getMaintenance();
+
 }
