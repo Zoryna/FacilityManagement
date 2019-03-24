@@ -21,4 +21,5 @@ public interface MachinesInterface {
     public Control getControl();
     public void setFacility(Facility fac);
     public Facility getFacility();
+    public void update();
 }

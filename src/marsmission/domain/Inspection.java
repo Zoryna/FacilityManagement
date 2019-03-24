@@ -1,24 +1,33 @@
 package marsmission.domain;
 import java.util.*;
 
-public class Inspection {
+public class Inspection implements InspectionInterface {
 
     private static Facility fac;
     private static Machines mach;
+    private Maintenance m;
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
 
     public void setMachines(Machines mach) { this.mach = mach;}
 
+    public void setMaintenance(Maintenance m){
+        this.m = m;
+    }
+
     //getters
     public Facility getFacility() {return fac;}
 
     public Machines getMachines() {return mach;}
 
+    public Maintenance getMaintenance(){
+        return m;
+    }
+
     public boolean isBroken(){
 
-        if (fac.getState().toString().equals("BROKEN"))
+        if (mach.getState().toString().equals("BROKEN"))
             return true;
         else
             return false;
@@ -26,7 +35,7 @@ public class Inspection {
 
     public boolean makeMaintenanceRequest(){
 
-        if (fac.getState().toString().equals("BROKEN")){
+        if (mach.getState().toString().equals("BROKEN")){
             System.out.println("This facility needs maintenance"); //for testing
             return true;
         }

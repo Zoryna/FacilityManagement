@@ -1,7 +1,7 @@
 package marsmission.domain;
 import java.util.*;
 
-public class Maintenance  {
+public class Maintenance implements MaintenanceInterface {
 
   private Machines mach;
   private Inspection ins;
