@@ -1,6 +1,6 @@
 *class
 *idea
-*out
-*vs
-*lib
-/bin/
+*/out/
+*/.vs/
+*/lib/
+*/bin/
