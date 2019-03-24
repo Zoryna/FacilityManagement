@@ -1,5 +1,7 @@
 *class
-*idea
-*out
-*vs
 *lib
+*out
+*.vs
+*.idea
+*bin
+*.iml
