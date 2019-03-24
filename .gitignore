@@ -1,8 +1,7 @@
-*class
-*lib
+*.class
+*.idea
 *out
 *.vs
-*.idea
+*lib
 *bin
 *.iml
-*.idea/workspace
