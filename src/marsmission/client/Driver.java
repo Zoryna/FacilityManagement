@@ -51,25 +51,23 @@ public class Driver {
         // Check Apollo
         System.out.println("\n");
         apollo.startMachines();
-        nyx.oxygenator(false);
+        apollo.update();
         System.out.println("Inner state of Apollo's machines");
-        nyx.update();
         apollo.getFacilityStatus();
 
         System.out.println("\n");
-        System.out.println("Apollo's machines just broke");
-        apollo.breakMachines();
-        Control c = apollo.getControl();
-        c.shitIsBroken(apollo);
-        System.out.println("The state is now: " + apollo.getState());
+        System.out.println("Nyx has a machine broken machine");
+        Control c = nyx.getControl();
+        c.shitIsBroken(nyx);
+        System.out.println("The state is now: " + nyx.getState());
 
         System.out.println("---------------------------");
 
         System.out.println("Time to run an inspection");
-        i.setFacility(apollo);
+        i.setFacility(nyx);
         i.isBroken();
         i.makeMaintenanceRequest();
-        i.returnBrokenMachines(apollo.getMap(), apollo.getMachines());
+        i.returnBrokenMachines(nyx.getMap(), nyx.getMachines());
 
         System.out.println("---------------------------");
 
@@ -77,27 +75,27 @@ public class Driver {
         Maintenance maint = i.getMaintenance();
         maint.setInspection(i);
         maint.setControl(c);
-        maint.listMaintenanceRequest(apollo.getMap());
+        maint.listMaintenanceRequest(i.returnBrokenMachines(nyx.getMap(), nyx.getMachines()));
         System.out.println("\n");
         System.out.println("Fixing the machines:");
-        maint.fixMachines(apollo.getMap());
+        maint.fixMachines(nyx.getMap());
         maint.fixFacility();
 
         System.out.println("---------------------------");
 
-        System.out.println("Testing Management");
-        man.actualUsage(i.checkMachines(apollo.getMap()));
+        System.out.println("Testing Management on Nyx");
+        man.actualUsage(i.checkMachines(nyx.getMap()));
         man.problemRateFacility(6, 1);
-        man.requestAvailableCapacity(i.checkMachines(apollo.getMap()));
+        man.requestAvailableCapacity(i.checkMachines(nyx.getMap()));
 
         System.out.println("---------------------------");
 
-        System.out.println("Calculating the facility's finances");
+        System.out.println("Calculating Nyx's finances");
         Finance fin = man.getFinance();
         fin.setRatePerHour(3.05);
         fin.setMaintHourlyCost(50);
-        fin.calcUsage(i.checkMachines(apollo.getMap()), 8);
-        fin.calcMaintCostFacility(i.checkMachines(apollo.getMap()), 5);
+        fin.calcUsage(i.checkMachines(nyx.getMap()), 8);
+        fin.calcMaintCostFacility(i.checkMachines(nyx.getMap()), 5);
         fin.calcDowntimeFacility(6);
 
      }
