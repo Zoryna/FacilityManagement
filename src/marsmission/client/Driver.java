@@ -19,8 +19,11 @@ public class Driver {
         Machines apollo = (Machines) context.getBean("machines");
         Machines nyx = (Machines) context.getBean("machines");
         Inspection i = (Inspection) context.getBean("inspection");
+        Management man = (Management) context.getBean("management");
+
 
         // Maintenance injects Inspection
+        // Finance injects Management
         // Control injects Machines
 
         // Staging the first Facility
@@ -52,6 +55,50 @@ public class Driver {
         System.out.println("Inner state of Apollo's machines");
         nyx.update();
         apollo.getFacilityStatus();
+
+        System.out.println("\n");
+        System.out.println("Apollo's machines just broke");
+        apollo.breakMachines();
+        Control c = apollo.getControl();
+        c.shitIsBroken(apollo);
+        System.out.println("The state is now: " + apollo.getState());
+
+        System.out.println("---------------------------");
+
+        System.out.println("Time to run an inspection");
+        i.setFacility(apollo);
+        i.isBroken();
+        i.makeMaintenanceRequest();
+        i.returnBrokenMachines(apollo.getMap(), apollo.getMachines());
+
+        System.out.println("---------------------------");
+
+        System.out.println("Maintenance will fix any broken machines");
+        Maintenance maint = i.getMaintenance();
+        maint.setInspection(i);
+        maint.setControl(c);
+        maint.listMaintenanceRequest(apollo.getMap());
+        System.out.println("\n");
+        System.out.println("Fixing the machines:");
+        maint.fixMachines(apollo.getMap());
+        maint.fixFacility();
+
+        System.out.println("---------------------------");
+
+        System.out.println("Testing Management");
+        man.actualUsage(i.checkMachines(apollo.getMap()));
+        man.problemRateFacility(6, 1);
+        man.requestAvailableCapacity(i.checkMachines(apollo.getMap()));
+
+        System.out.println("---------------------------");
+
+        System.out.println("Calculating the facility's finances");
+        Finance fin = man.getFinance();
+        fin.setRatePerHour(3.05);
+        fin.setMaintHourlyCost(50);
+        fin.calcUsage(i.checkMachines(apollo.getMap()), 8);
+        fin.calcMaintCostFacility(i.checkMachines(apollo.getMap()), 5);
+        fin.calcDowntimeFacility(6);
 
      }
 }

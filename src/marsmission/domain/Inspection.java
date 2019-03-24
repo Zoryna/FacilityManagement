@@ -27,7 +27,7 @@ public class Inspection implements InspectionInterface {
 
     public boolean isBroken(){
 
-        if (mach.getState().toString().equals("BROKEN"))
+        if (fac.getState().toString().equals("BROKEN"))
             return true;
         else
             return false;
@@ -35,7 +35,7 @@ public class Inspection implements InspectionInterface {
 
     public boolean makeMaintenanceRequest(){
 
-        if (mach.getState().toString().equals("BROKEN")){
+        if (fac.getState().toString().equals("BROKEN")){
             System.out.println("This facility needs maintenance"); //for testing
             return true;
         }
