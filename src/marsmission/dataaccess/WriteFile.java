@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 
-public class WriteFile {
+public class WriteFile implements WriteFileInterface{
 
     private String fileName;
     private Facility fac;

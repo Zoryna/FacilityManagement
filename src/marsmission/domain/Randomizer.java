@@ -6,7 +6,7 @@ package marsmission.domain;
 
 import java.util.Random;
 
-public class Randomizer {
+public class Randomizer implements RandomizerInterface{
     private double d = 0; // Stores the setRandom() so it can be compared without mistakes
     private double percentage = 0.05;
     private Random r;

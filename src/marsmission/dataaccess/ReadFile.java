@@ -3,7 +3,7 @@ import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
-public class ReadFile {
+public class ReadFile implements ReadFileInterface {
 
     public Scanner iStream = null;
     private String fileName;
