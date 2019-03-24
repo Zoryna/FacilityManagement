@@ -8,11 +8,9 @@ import marsmission.dataaccess.*;
 import java.util.*;
 
 // Spring
-
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 public class Driver {
     public static void main(String[] args){
@@ -22,7 +20,7 @@ public class Driver {
         m.setName("Apollo");
         System.out.println("\n");
         System.out.println("**** Injection **** ");
-        m.setStateWorking(m);
+        m.setStateWorking(m); // Looks weird, but it's not about looks, babe
         System.out.println("This facility is called: " + m.getName());
         System.out.println("The state was set to: " + m.getState());
     }
