@@ -1,11 +1,15 @@
 package marsmission.domain;
 import java.util.*;
 
+/* The Subject */
+
 public class Facility extends StateMachine implements FacilityInterface {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
     private double cost;
+    private ArrayList<Inspection> observerList;
+    private Inspection ins;
 
     Facility() {}
 
@@ -70,5 +74,26 @@ public class Facility extends StateMachine implements FacilityInterface {
     public State getState() {
         return state;
     }
+
+    //Observer
+    public void addObserver(Inspection ins) {
+        observerList.add(ins);
+    }
+
+    public void removeObserver(Inspection ins) {
+        observerList.remove(ins);
+    }
+
+    public void notifyObservers(){ //updates
+
+
+
+    }
+
+
+
+
+
+
 
 }

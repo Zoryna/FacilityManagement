@@ -10,12 +10,16 @@ public interface InspectionInterface {
 
     public void setMaintenance(Maintenance maint);
 
+    public void setControl (Control c);
+
     //getters
     public Facility getFacility();
 
     public Machines getMachines();
 
     public Maintenance getMaintenance();
+
+    public Control getControl();
 
     public boolean isBroken();
 
@@ -24,9 +28,4 @@ public interface InspectionInterface {
     public int checkMachines(Map<String, Boolean> map);
 
     public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines);
-
-    public void setMaintenance(Maintenance maint);
-
-    public Maintenance getMaintenance();
-
 }
