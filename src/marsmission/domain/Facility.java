@@ -87,7 +87,6 @@ public class Facility extends StateMachine implements FacilityInterface {
     public void notifyObservers(){ //updates
 
 
-
     }
 
 

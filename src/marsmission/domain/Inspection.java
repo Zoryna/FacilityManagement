@@ -94,4 +94,13 @@ public class Inspection implements InspectionInterface{
 
         return newMap;
     }
+
+    public void update(Facility fac) {
+
+
+
+
+
+
+    }
 }

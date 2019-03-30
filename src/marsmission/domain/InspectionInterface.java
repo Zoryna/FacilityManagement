@@ -28,4 +28,6 @@ public interface InspectionInterface {
     public int checkMachines(Map<String, Boolean> map);
 
     public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines);
+
+    public void update(Facility fac);
 }
