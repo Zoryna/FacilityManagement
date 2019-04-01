@@ -3,7 +3,7 @@ import java.util.*;
 
 /* The Subject */
 
-public class Facility extends StateMachine implements FacilityInterface {
+public class Facility extends StateMachine implements FacilityInterface, Subject {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
@@ -84,15 +84,10 @@ public class Facility extends StateMachine implements FacilityInterface {
         observerList.remove(ins);
     }
 
-    public void notifyObservers(){ //updates
+    public void notifyObservers(){ //tells the Observer the change
 
 
     }
-
-
-
-
-
 
 
 }

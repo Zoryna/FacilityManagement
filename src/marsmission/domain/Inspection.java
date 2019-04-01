@@ -3,7 +3,7 @@ import java.util.*;
 
 /* The Observer */
 
-public class Inspection implements InspectionInterface{
+public class Inspection implements InspectionInterface, Observer{
 
     private static Facility fac;
     private static Machines mach;

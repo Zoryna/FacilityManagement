@@ -30,13 +30,4 @@ public interface FacilityInterface {
     public double getCost();
 
     public int getProblemRate();
-
-    //Inspection is the Observer
-    //Reference to the Observer
-    public void addObserver(Inspection ins);
-
-    public void removeObserver(Inspection ins);
-
-    public void notifyObservers();
-
 }
