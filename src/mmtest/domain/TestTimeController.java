@@ -1,8 +1,6 @@
 package mmtest.domain;
-<<<<<<< HEAD:src/mmtest/domain/TestTimeController.java
-=======
+
 import marsmission.domain.TimeController;
->>>>>>> origin/Hulk:src/mmtest/domain/TestTimeController.java
 
 public class TestTimeController {
     public static void main (String[] args){

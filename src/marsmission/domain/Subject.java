@@ -6,5 +6,5 @@ public interface Subject {
 
     public void removeObserver(Observer o);
 
-    public void notifyObservers(){ //tells the Observer the change
+    public void notifyObservers(); //tells the Observer the change
 }

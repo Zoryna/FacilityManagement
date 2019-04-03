@@ -7,10 +7,8 @@ public class TestFinance {
 
         TimeController tc = new TimeController();
         Finance fin = new Finance();
-<<<<<<< HEAD
-=======
+
         Randomizer r = new Randomizer();
->>>>>>> origin/Hulk
 
         Inspection ins = new Inspection();
 
