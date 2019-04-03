@@ -12,6 +12,10 @@ public class Oxygenator implements MachinesInterface {
         System.out.println("Oxygenator");
     }
 
+    public void setStatus(boolean s){
+        this.status = s;
+    }
+
     public boolean status(){
         return status;
     }

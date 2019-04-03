@@ -33,7 +33,12 @@ public class Driver {
         System.out.println("This facility is called: " + nyx.getName());
         System.out.println("The state was set to: " + nyx.getState());
 
-
+        System.out.println("\n");
+        System.out.println("**** INJECTION ****");
+        apollo.getMachines().setStatus(false);
+        nyx.getMachines().setStatus(true);
+        System.out.println("Apollo oxygenator is: " + apollo.getMachines().status());
+        System.out.println("Nyx oxygenator is: " + nyx.getMachines().status());
 
      }
 }

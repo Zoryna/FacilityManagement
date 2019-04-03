@@ -1,5 +1,4 @@
 package marsmission.domain;
-import mmtest.domain.Machines;
 
 import java.util.*;
 
@@ -7,7 +6,7 @@ public class Facility extends StateMachine implements FacilityInterface {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
-    private MachinesInterface m;
+    private Oxygenator o;
     private double cost;
 
     // Setters
@@ -39,7 +38,7 @@ public class Facility extends StateMachine implements FacilityInterface {
         this.problemRate = problemRate;
     }
 
-    public void setMachines(MachinesInterface m){ this.m = m; }
+    public void setMachines(Oxygenator o){ this.o = o; }
 
     // Getters
     public String getName(){
@@ -74,5 +73,5 @@ public class Facility extends StateMachine implements FacilityInterface {
         return state;
     }
 
-    public MachinesInterface getMachines(){ return m; }
+    public Oxygenator getMachines(){ return o; }
 }
