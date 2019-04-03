@@ -4,13 +4,13 @@ import java.util.*;
 public class Inspection implements InspectionInterface {
 
     private static Facility fac;
-    private static Machines mach;
+    private static MachinesInterface mach;
     private Maintenance m;
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
 
-    public void setMachines(Machines mach) { this.mach = mach;}
+    public void setMachines(MachinesInterface mach) { this.mach = mach;}
 
     public void setMaintenance(Maintenance m){
         this.m = m;
@@ -19,7 +19,7 @@ public class Inspection implements InspectionInterface {
     //getters
     public Facility getFacility() {return fac;}
 
-    public Machines getMachines() {return mach;}
+    public MachinesInterface getMachines() {return mach;}
 
     public Maintenance getMaintenance(){
         return m;
@@ -27,7 +27,7 @@ public class Inspection implements InspectionInterface {
 
     public boolean isBroken(){
 
-        if (mach.getState().toString().equals("BROKEN"))
+        if (fac.getState().toString().equals("BROKEN"))
             return true;
         else
             return false;
@@ -35,7 +35,7 @@ public class Inspection implements InspectionInterface {
 
     public boolean makeMaintenanceRequest(){
 
-        if (mach.getState().toString().equals("BROKEN")){
+        if (fac.getState().toString().equals("BROKEN")){
             System.out.println("This facility needs maintenance"); //for testing
             return true;
         }

@@ -16,4 +16,6 @@ public interface FacilityInterface {
     public int getCapacity();
     public double getCost();
     public int getProblemRate();
+    public MachinesInterface getMachines();
+    public void setMachines(MachinesInterface m);
 }

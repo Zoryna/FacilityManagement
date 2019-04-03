@@ -10,7 +10,7 @@ public class WriteFile {
     private String fileName;
     private Facility fac;
     private Map<String, Boolean> map;
-    private Machines m;
+    private MachinesInterface m;
     PrintWriter oStream = null;
 
     public WriteFile(Facility fac, Map<String,Boolean> map){
@@ -64,13 +64,6 @@ public class WriteFile {
         int problemRate = fac.getProblemRate();
         oStream.println(i + ": " + problemRate + ".");
         i++;
-
-        for (Map.Entry<String, Boolean> j: m.getMap().entrySet()){
-            String s = j.getKey();
-            boolean b = j.getValue();
-            oStream.println(i + ": " + s + " = " + b + ". ");
-            i++;
-        }
 
         switch(fac.getState()){
             case RESTING:

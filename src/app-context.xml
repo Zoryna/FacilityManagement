@@ -12,8 +12,9 @@
     <bean id="control" class="marsmission.domain.Control" scope="prototype"/>
     <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype"/>
     <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
-    <bean id="machines" class="marsmission.domain.Machines" scope="prototype">
-        <property name="control" ref="control"></property>
+    <bean id="machines" class="marsmission.domain.Oxygenator"/>
+    <bean id="facility" class="marsmission.domain.Facility" scope="prototype">
+        <property name="machines" ref="machines"></property>
     </bean>
 
     <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype">
