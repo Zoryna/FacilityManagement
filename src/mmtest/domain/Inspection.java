@@ -1,6 +1,7 @@
 package mmtest.domain;
 import java.util.*;
 
+<<<<<<< HEAD:src/mmtest/domain/Inspection.java
 public class Inspection implements InspectionInterface {
 
     private static Facility fac;
@@ -20,6 +21,22 @@ public class Inspection implements InspectionInterface {
 
     public Machines getMachines() {return mach;}
 
+=======
+public class Inspection {
+
+    private static Facility fac;
+    private static Machines mach;
+
+    //setters
+    public void setFacility(Facility fac) { this.fac = fac; }
+
+    public void setMachines(Machines mach) { this.mach = mach;}
+
+    //getters
+    public Facility getFacility() {return fac;}
+
+    public Machines getMachines() {return mach;}
+>>>>>>> origin/Hulk:src/mmtest/domain/Inspection.java
 
     public boolean isBroken(){
 

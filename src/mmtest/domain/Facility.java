@@ -1,14 +1,21 @@
 package mmtest.domain;
 import java.util.*;
 
+<<<<<<< HEAD
 public class Facility extends StateMachine implements FacilityInterface {
+=======
+public class Facility extends StateMachine implements SuperFacility {
+>>>>>>> origin/Hulk
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
     private double cost;
 
+<<<<<<< HEAD
     Facility() {}
 
+=======
+>>>>>>> origin/Hulk
     // Setters
     public void setName(String name){
         this.name = name;
@@ -67,6 +74,13 @@ public class Facility extends StateMachine implements FacilityInterface {
         return problemRate;
     }
 
+<<<<<<< HEAD
     public State getState() {return state;}
 
 }
+=======
+    public State getState() {
+        return state;
+    }
+}
+>>>>>>> origin/Hulk

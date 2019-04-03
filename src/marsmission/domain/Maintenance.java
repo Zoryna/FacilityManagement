@@ -3,12 +3,19 @@ import java.util.*;
 
 public class Maintenance implements MaintenanceInterface {
 
+<<<<<<< HEAD
   private Machines mach;
   private Inspection ins;
   private Control c;
 
   Maintenance () {}
 
+=======
+  private MachinesInterface mach;
+  private Inspection ins;
+  private Control c;
+
+>>>>>>> origin/Hulk
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
 

@@ -1,4 +1,5 @@
 package mmtest.domain;
+<<<<<<< HEAD
 
 public class Finance implements FinanceInterface{
 
@@ -7,6 +8,13 @@ public class Finance implements FinanceInterface{
 
     Finance () {}
 
+=======
+public class Finance
+{
+    private double ratePerHour; //3.05 is watt cost per hour
+    private double maintHourlyCost; //randomly chosen cost, may change later
+
+>>>>>>> origin/Hulk
     //setters
     public void setRatePerHour (double ratePerHour) {this.ratePerHour = ratePerHour;}
 
@@ -29,7 +37,11 @@ public class Finance implements FinanceInterface{
 
         ratePerHour = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour of the Facilty
         double usageCost = ratePerHour * hours;
+<<<<<<< HEAD
         System.out.println("It costs $" + usageCost + " to use this faciltiy for " + hours + " hour(s)");
+=======
+        System.out.println("It costs " + usageCost + " to use this faciltiy for " + hours + " hour(s)");
+>>>>>>> origin/Hulk
     }
 
     public void calcMaintCostFacility(double amountBroken, double hours) //cost of maintenance
@@ -51,4 +63,8 @@ public class Finance implements FinanceInterface{
 
         System.out.println("This facility has been broken for " + totalTimeBroken + " hours");
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/Hulk

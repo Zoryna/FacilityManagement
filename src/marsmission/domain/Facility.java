@@ -1,17 +1,13 @@
 package marsmission.domain;
+
 import java.util.*;
 
-/* The Subject */
-
-public class Facility extends StateMachine implements FacilityInterface, Subject {
+public class Facility extends StateMachine implements FacilityInterface {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
+    private Oxygenator o;
     private double cost;
-    private ArrayList<Inspection> observerList;
-    private Observer o;
-
-    Facility() {}
 
     // Setters
     public void setName(String name){
@@ -41,6 +37,8 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
     public void setProblemRate(int problemRate){
         this.problemRate = problemRate;
     }
+
+    public void setMachines(Oxygenator o){ this.o = o; }
 
     // Getters
     public String getName(){
@@ -75,19 +73,6 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
         return state;
     }
 
-    //Observer
-    public void addObserver(Observer o) {
-        observerList.add(o);
-    }
-
-    public void removeObserver(Observer o) {
-        observerList.remove(o);
-    }
-
-    public void notifyObservers(){ //tells the Observer the change
-
-
-    }
-
-
+    public Oxygenator getMachines(){ return o; }
 }
+

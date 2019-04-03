@@ -1,6 +1,6 @@
-package marsmission.domain;
+package mmtest.domain;
 
-public class StateMachine implements StateMachineInterface{
+public class StateMachine {
 
     public State state = State.RESTING;
 
@@ -24,4 +24,11 @@ public class StateMachine implements StateMachineInterface{
         fac.state = State.BROKEN;
     }
 
+    public State getState(){
+        return state;
+    }
+
+    public State getState(Facility fac){
+        return state;
+    }
 }
