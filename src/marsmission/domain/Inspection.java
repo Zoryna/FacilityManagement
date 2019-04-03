@@ -1,58 +1,29 @@
 package marsmission.domain;
 import java.util.*;
 
-<<<<<<< HEAD
-/* The Observer */
-
-public class Inspection implements InspectionInterface, Observer{
-
-    private static Facility fac;
-    private static Machines mach;
-    private Maintenance maint;
-    private Control c;
-
-    Inspection() {}
-=======
 public class Inspection implements InspectionInterface {
 
     private static Facility fac;
     private static MachinesInterface mach;
     private Maintenance m;
->>>>>>> origin/Hulk
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
 
-<<<<<<< HEAD
-    public void setMachines(Machines mach) { this.mach = mach;}
-
-    public void setMaintenance(Maintenance maint) {this.maint = maint;}
-
-    public void setControl(Control c) {this.c = c;}
-=======
     public void setMachines(MachinesInterface mach) { this.mach = mach;}
 
     public void setMaintenance(Maintenance m){
         this.m = m;
     }
->>>>>>> origin/Hulk
 
     //getters
     public Facility getFacility() {return fac;}
 
-<<<<<<< HEAD
-    public Machines getMachines() {return mach;}
-
-    public Maintenance getMaintenance() {return maint;}
-
-    public Control getControl() {return c;}
-=======
     public MachinesInterface getMachines() {return mach;}
 
     public Maintenance getMaintenance(){
         return m;
     }
->>>>>>> origin/Hulk
 
     public boolean isBroken(){
 
@@ -118,16 +89,4 @@ public class Inspection implements InspectionInterface {
 
         return newMap;
     }
-<<<<<<< HEAD
-
-    public void update(Facility fac) {
-
-
-
-
-
-
-    }
-=======
->>>>>>> origin/Hulk
 }

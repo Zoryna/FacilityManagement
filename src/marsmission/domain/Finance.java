@@ -26,7 +26,7 @@ public class Finance implements FinanceInterface
 
         ratePerHour = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour of the Facilty
         double usageCost = ratePerHour * hours;
-        System.out.println("It costs $" + usageCost + " to use this faciltiy for " + hours + " hour(s)");
+        System.out.println("It costs $" + usageCost + " to use this facility for " + hours + " hour(s)");
     }
 
     public void calcMaintCostFacility(double amountBroken, double hours) //cost of maintenance
