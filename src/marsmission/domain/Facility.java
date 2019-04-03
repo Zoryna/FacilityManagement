@@ -9,7 +9,7 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
     private int refNumber, capacity, problemRate;
     private double cost;
     private ArrayList<Inspection> observerList;
-    private Inspection ins;
+    private Observer o;
 
     Facility() {}
 
@@ -76,12 +76,12 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
     }
 
     //Observer
-    public void addObserver(Inspection ins) {
-        observerList.add(ins);
+    public void addObserver(Observer o) {
+        observerList.add(o);
     }
 
-    public void removeObserver(Inspection ins) {
-        observerList.remove(ins);
+    public void removeObserver(Observer o) {
+        observerList.remove(o);
     }
 
     public void notifyObservers(){ //tells the Observer the change

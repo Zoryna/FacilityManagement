@@ -2,9 +2,9 @@ package marsmission.domain;
 
 public interface Subject {
 
-    public void addObserver(Inspection ins);
+    public void addObserver(Observer o);
 
-    public void removeObserver(Inspection ins);
+    public void removeObserver(Observer o);
 
     public void notifyObservers(){ //tells the Observer the change
 }
