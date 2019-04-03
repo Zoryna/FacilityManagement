@@ -17,8 +17,6 @@ public class Driver {
         ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
         System.out.println("***************** Woot, off to Mars, babe! ******************");
         Facility apollo = (Facility) context.getBean("facility");
-        Facility nyx = (Facility) context.getBean("facility");
-        Inspection i = (Inspection) context.getBean("inspection");
 
         apollo.setName("Apollo");
         System.out.println("\n");
@@ -26,19 +24,12 @@ public class Driver {
         System.out.println("This facility is called: " + apollo.getName());
         System.out.println("The state was set to: " + apollo.getState());
 
-        // Staging the second Facility
-        nyx.setName("Nyx");
-        System.out.println("\n");
-        nyx.setStateWorking(nyx);
-        System.out.println("This facility is called: " + nyx.getName());
-        System.out.println("The state was set to: " + nyx.getState());
-
         System.out.println("\n");
         System.out.println("**** INJECTION ****");
-        apollo.getMachines().setStatus(false);
-        nyx.getMachines().setStatus(true);
-        System.out.println("Apollo oxygenator is: " + apollo.getMachines().status());
-        System.out.println("Nyx oxygenator is: " + nyx.getMachines().status());
+        apollo.getMachines().setStatus(true);
+        apollo.getMachines().setFacility(apollo);
+        System.out.println("This Machine belongs to: " + apollo.getMachines().getFacility().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
+        System.out.println("Apollo's oxygenator is: " + apollo.getMachines().status());
 
      }
 }
