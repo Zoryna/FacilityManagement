@@ -41,23 +41,23 @@ public class Inspection implements InspectionInterface, Observer {
         }
     }
 
-    public int checkMachines(ArrayList<Object> machinesList){ //counts how many machines are broken
+    public int checkMachines(ArrayList<MachinesInterface> machinesList){ //counts how many machines are broken
 
         int issues = 0;
         for (int i = 0; i < machinesList.size();i++) {
-            if(machinesList.get(i).equals(false))
+            if(machinesList.get(i).status() == false)
                 issues++;
         }
         return issues;
     }
 
-    public ArrayList returnBrokenMachines(ArrayList<Object> machinesList){
+    public ArrayList returnBrokenMachines(ArrayList<MachinesInterface> machinesList){
 
-        ArrayList<Object> brokenMachines = new ArrayList<Object>();
+        ArrayList<MachinesInterface> brokenMachines = new ArrayList<MachinesInterface>();
 
         for (int i = 0; i < machinesList.size();i++) {
-            if(machinesList.get(i).equals(false))
-                brokenMachines.add(i);
+            if(machinesList.get(i).status() == false)
+                brokenMachines.add(machinesList.get(i));
         }
 
         return brokenMachines;

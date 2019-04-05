@@ -8,7 +8,7 @@ public interface InspectionInterface {
     public MachinesInterface getMachines();
     public boolean isBroken();
     public boolean makeMaintenanceRequest();
-    public int checkMachines(ArrayList<Object> machinesList);
-    public Map<String, Boolean> returnBrokenMachines(ArrayList<Object> machinesList);
+    public int checkMachines(ArrayList<MachinesInterface> machinesList);
+    public ArrayList returnBrokenMachines(ArrayList<MachinesInterface> machinesList);
     public void setMaintenance(Maintenance maint);
 }
