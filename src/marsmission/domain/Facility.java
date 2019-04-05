@@ -2,7 +2,7 @@ package marsmission.domain;
 
 import java.util.*;
 
-public class Facility extends StateMachine implements FacilityInterface {
+public class Facility extends StateMachine implements FacilityInterface, Observable {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
@@ -13,6 +13,24 @@ public class Facility extends StateMachine implements FacilityInterface {
     private Comms c;
     private WaterExtraction w;
     private double cost;
+    private Observer observer;
+    private boolean changed;
+
+    // Observable Interface
+    public void addObserver(Observer o) { observer = o; }
+
+    public boolean hasChanged() { return changed; }
+
+    public void deleteObserver(Observer o) { observer = null; }
+
+    public void notify(Observer o){
+        if (changed){
+            o.update(this);
+            setChanged();
+        }
+    }
+
+    public void setChanged() { changed = !changed; }
 
     // Setters
     public void setName(String name){
