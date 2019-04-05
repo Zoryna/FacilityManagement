@@ -20,7 +20,13 @@
     <bean id="waterExtraction" class="marsmission.domain.WaterExtraction"/>
 
     <bean id="facility" class="marsmission.domain.Facility">
-        <property name="machines" ref="oxygenator"></property>
+        <property name="oxygenator" ref="oxygenator"></property>
+        <property name="innerAirlocks" ref="innerAirlock"></property>
+        <property name="externalAirlocks" ref="externalAirlock"></property>
+        <property name="nuclearReactor" ref="nuclearReactor"></property>
+        <property name="comms" ref="comms"></property>
+        <property name="waterExtraction" ref="waterExtraction"></property>
+
     </bean>
 
     <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype">

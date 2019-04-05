@@ -26,10 +26,19 @@ public class Driver {
 
         System.out.println("\n");
         System.out.println("**** INJECTION ****");
-        apollo.getMachines().setStatus(true);
-        apollo.getMachines().setFacility(apollo);
-        System.out.println("This Machine belongs to: " + apollo.getMachines().getFacility().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
-        System.out.println("Apollo's oxygenator is: " + apollo.getMachines().status());
-
-     }
+        apollo.getOxygenator().setStatus(false);
+        apollo.getInnerAirlocks().setStatus(true);
+        apollo.getExternalAirlocks().setStatus(true);
+        apollo.getNuclearReactor().setStatus(false);
+        apollo.getComms().setStatus(true);
+        apollo.getWaterExtraction().setStatus(true);
+        apollo.getOxygenator().setFacility(apollo);
+        System.out.println("This Machinery belongs to: " + apollo.getOxygenator().getFacility().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
+        System.out.println("Apollo's Oxygenator is: " + apollo.getOxygenator().status());
+        System.out.println("Apollo's Inner Airlock is: " + apollo.getInnerAirlocks().status());
+        System.out.println("Apollo's External Airlock is: " + apollo.getExternalAirlocks().status());
+        System.out.println("Apollo's Nuclear Reactor is: " + apollo.getNuclearReactor().status());
+        System.out.println("Apollo's Comms is: " + apollo.getComms().status());
+        System.out.println("Apollo's WaterExtraction is: " + apollo.getWaterExtraction().status());
+    }
 }
