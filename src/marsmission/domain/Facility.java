@@ -74,19 +74,12 @@ public class Facility extends StateMachine implements Observable {
 
     // Setters & Injections
     public void setChanged() { changed = !changed; }
-
     public void setOxygenator(Oxygenator o) { this.o = o; }
-
     public void setInnerAirlocks(InnerAirlocks i) { this.i = i; }
-
     public void setExternalAirlocks(ExternalAirlocks e) { this.e = e; }
-
     public void setNuclearReactor(NuclearReactor n) { this.n = n; }
-
     public void setComms(Comms c) { this.c = c; }
-
     public void setWaterExtraction(WaterExtraction w) { this.w = w; }
-
     public void setFacilityInformation(FacilityInformation fi) { this.fi = fi; }
 
     // Getters
@@ -94,16 +87,10 @@ public class Facility extends StateMachine implements Observable {
 
     // Injections
     public Oxygenator getOxygenator() { return o; }
-
     public InnerAirlocks getInnerAirlocks() { return i; }
-
     public ExternalAirlocks getExternalAirlocks() { return e; }
-
     public NuclearReactor getNuclearReactor() { return n; }
-
     public Comms getComms() { return c; }
-
     public WaterExtraction getWaterExtraction() { return w; }
-
     public FacilityInformation getFacilityInformation() { return fi; }
 }

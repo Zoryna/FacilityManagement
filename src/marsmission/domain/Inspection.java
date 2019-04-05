@@ -2,10 +2,11 @@ package marsmission.domain;
 import java.util.*;
 import java.lang.Object;
 
-public class Inspection implements InspectionInterface {
+public class Inspection implements InspectionInterface, Observer {
 
     private static Facility fac;
     private Maintenance m;
+    public void update(Object arg) {}
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
@@ -45,6 +46,14 @@ public class Inspection implements InspectionInterface {
         }
     }
 
-    public void checkMachines(){}
-    public void returnBrokenMachines(){}
+    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map){
+        Map<String, Boolean> iMap = new HashMap<String, Boolean>();
+
+        for(Map.Entry<String, Boolean> i: map.entrySet()){
+            if (!i.getValue()){
+                iMap.put(i.getKey(), i.getValue());
+            }
+        }
+        return iMap;
+    }
 }
