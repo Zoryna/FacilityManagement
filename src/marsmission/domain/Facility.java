@@ -2,11 +2,10 @@ package marsmission.domain;
 
 import java.util.*;
 
-public class Facility extends StateMachine implements FacilityInterface, Observable {
+public class Facility extends StateMachine implements Observable {
 
-    private String name, address, description;
-    private int refNumber, capacity, problemRate;
     private Oxygenator o;
+    private FacilityInformation fi;
     private InnerAirlocks i;
     private ExternalAirlocks e;
     private NuclearReactor n;
@@ -15,53 +14,65 @@ public class Facility extends StateMachine implements FacilityInterface, Observa
     private double cost;
     private Observer observer;
     private boolean changed;
+    private Map<String, Boolean> map = new HashMap<String, Boolean>();
 
     // Observable Interface
-    public void addObserver(Observer o) { observer = o; }
-
+    public void addObserver(Observer o) {
+        if (o == null) {
+            throw new NullPointerException();
+        } else if (observer == null) {
+            observer = o;
+        }
+    }
     public boolean hasChanged() { return changed; }
-
     public void deleteObserver(Observer o) { observer = null; }
-
-    public void notify(Observer o){
-        if (changed){
+    public boolean checkObserver() {
+        if (observer == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public void notify(Observer o) {
+        if (changed) {
             o.update(this);
             setChanged();
         }
     }
 
-    public void setChanged() { changed = !changed; }
+    // Map Helpers
+    public void initializeMap(){
+        map.put("Oxygenator", o.status());
+        map.put("Nuclear Reactor", n.status());
+        map.put("Inner Airlocks", i.status());
+        map.put("External Airlocks", e.status());
+        map.put("Comms", c.status());
+        map.put("Water Extraction", w.status());
+    }
+
+    public void startMachines(){
+        o.setStatus(true);
+        n.setStatus(true);
+        i.setStatus(true);
+        e.setStatus(true);
+        c.setStatus(true);
+        w.setStatus(true);
+    }
+
+    public Map<String, Boolean> getMap(){
+        return map;
+    }
+
+    public void getFacilityStatus(){ // The status of the map in this object
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
+    }
 
     // Setters
-    public void setName(String name){
-        this.name = name;
-    }
+    public void setChanged() { changed = !changed; }
 
-    public void setAddress(String address){
-        this.address = address;
-    }
-
-    public void setDescription(String description){
-        this.description = description;
-    }
-
-    public void setRefNumber(int refNumber){
-        this.refNumber = refNumber;
-    }
-
-    public void setCapacity(int capacity){
-        this.capacity = capacity;
-    }
-
-    public void setCost(double cost){
-        this.cost = cost;
-    }
-
-    public void setProblemRate(int problemRate){
-        this.problemRate = problemRate;
-    }
-
-    public void setOxygenator(Oxygenator o){ this.o = o; }
+    public void setOxygenator(Oxygenator o) { this.o = o; }
 
     public void setInnerAirlocks(InnerAirlocks i) { this.i = i; }
 
@@ -73,38 +84,10 @@ public class Facility extends StateMachine implements FacilityInterface, Observa
 
     public void setWaterExtraction(WaterExtraction w) { this.w = w; }
 
+    public void setFacilityInformation(FacilityInformation fi) { this.fi = fi; }
+
     // Getters
-    public String getName(){
-        return name;
-    }
-
-    public String getAddress(){
-        return address;
-    }
-
-    public String getDescription(){
-        return description;
-    }
-
-    public int getRefNumber(){
-        return refNumber;
-    }
-
-    public int getCapacity(){
-        return capacity;
-    }
-
-    public double getCost(){
-        return cost;
-    }
-
-    public int getProblemRate(){
-        return problemRate;
-    }
-
-    public State getState() {
-        return state;
-    }
+    public State getState() { return state; }
 
     public Oxygenator getOxygenator() { return o; }
 
@@ -117,4 +100,6 @@ public class Facility extends StateMachine implements FacilityInterface, Observa
     public Comms getComms() { return c; }
 
     public WaterExtraction getWaterExtraction() { return w; }
+
+    public FacilityInformation getFacilityInformation() { return fi; }
 }

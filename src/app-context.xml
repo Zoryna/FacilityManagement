@@ -18,6 +18,7 @@
     <bean id="nuclearReactor" class="marsmission.domain.NuclearReactor" scope="prototype"/>
     <bean id="comms" class="marsmission.domain.Comms" scope="prototype"/>
     <bean id="waterExtraction" class="marsmission.domain.WaterExtraction" scope="prototype"/>
+    <bean id="facilityInformation" class="marsmission.domain.FacilityInformation" scope="prototype"/>
 
     <bean id="facility" class="marsmission.domain.Facility" scope="prototype">
         <property name="oxygenator" ref="oxygenator"></property>
@@ -26,7 +27,7 @@
         <property name="nuclearReactor" ref="nuclearReactor"></property>
         <property name="comms" ref="comms"></property>
         <property name="waterExtraction" ref="waterExtraction"></property>
-
+        <property name="facilityInformation" ref="facilityInformation"></property>
     </bean>
 
     <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype">

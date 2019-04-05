@@ -5,6 +5,7 @@ import marsmission.domain.*;
 import marsmission.dataaccess.*;
 
 // Java
+import java.awt.*;
 import java.util.*;
 
 // Spring
@@ -17,17 +18,22 @@ public class Driver {
         ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
         System.out.println("***************** Woot, off to Mars, babe! ******************");
         Facility apollo = (Facility) context.getBean("facility");
+        FacilityInformation fi = (FacilityInformation) context.getBean("facilityInformation");
+        Inspection i = (Inspection) context.getBean("inspection");
         Finance f = (Finance) context.getBean("finance");
         Control c = (Control) context.getBean("control");
 
-        apollo.setName("Apollo");
         System.out.println("\n");
         apollo.setStateWorking(apollo); // Looks weird, but it's not about looks, babe
-        System.out.println("This facility is called: " + apollo.getName());
+
+        System.out.println("**** INJECTION ****");
+        apollo.getFacilityInformation().setName("Apollo");
+        apollo.getFacilityInformation().setName("Nyx");
+        System.out.println("This facility is called: " + apollo.getFacilityInformation().getName());
         System.out.println("The state was set to: " + apollo.getState());
 
         System.out.println("\n");
-        System.out.println("**** INJECTION ****");
+
         apollo.getOxygenator().setStatus(true);
         apollo.getInnerAirlocks().setStatus(true);
         apollo.getExternalAirlocks().setStatus(true);
@@ -35,7 +41,7 @@ public class Driver {
         apollo.getComms().setStatus(true);
         apollo.getWaterExtraction().setStatus(true);
         apollo.getOxygenator().setFacility(apollo);
-        System.out.println("This Machinery belongs to: " + apollo.getOxygenator().getFacility().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
+        System.out.println("This Machinery belongs to: " + apollo.getFacilityInformation().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
         System.out.println("Apollo's Oxygenator is: " + apollo.getOxygenator().status());
         System.out.println("Apollo's Inner Airlock is: " + apollo.getInnerAirlocks().status());
         System.out.println("Apollo's External Airlock is: " + apollo.getExternalAirlocks().status());
@@ -54,10 +60,15 @@ public class Driver {
         System.out.println("Apollo's oxygenator is: " + apollo.getOxygenator().status());
         System.out.println("Has the state changed? " + apollo.hasChanged());
 
-        // Finance check
+        // Observers check
+        System.out.println("checkObserver() returns true if Observer was properly added: " + apollo.checkObserver());
         apollo.notify(f);
         f.update(apollo);
-
+        apollo.deleteObserver(f);
+        System.out.println("Checking if Observer was dettached, should return false: " + apollo.checkObserver());
+        apollo.initializeMap();
+        apollo.startMachines();
+        i.getFacilityStatus(apollo.getMap());
 
     }
 }
