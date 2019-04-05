@@ -2,121 +2,108 @@ package marsmission.domain;
 
 import java.util.*;
 
-public class Facility extends StateMachine implements FacilityInterface, Subject {
+public class Facility extends StateMachine implements Observable {
 
-    private String name, address, description;
-    private int refNumber, capacity, problemRate;
     private Oxygenator o;
+    private FacilityInformation fi;
+    private InnerAirlocks i;
+    private ExternalAirlocks e;
     private NuclearReactor n;
-    private InnerAirlocks inn;
-    private ExternalAirlocks ex;
-    private Comms com;
+    private Comms c;
     private WaterExtraction w;
     private double cost;
-    private Observer obs;
-    private ArrayList<Observer> observerList;
+    private Observer observer;
+    private boolean changed;
+    private Map<String, Boolean> map = new HashMap<String, Boolean>();
 
-    // Setters
-    public void setName(String name){
-        this.name = name;
+    // Observable Interface
+    public void addObserver(Observer o) {
+        if (o == null) {
+            throw new NullPointerException();
+        } else if (observer == null) {
+            observer = o;
+        }
     }
-
-    public void setAddress(String address){
-        this.address = address;
+    public boolean hasChanged() { return changed; }
+    public void deleteObserver(Observer o) { observer = null; }
+    public boolean checkObserver() {
+        if (observer == null) {
+            return false;
+        } else {
+            return true;
+        }
     }
-
-    public void setDescription(String description){
-        this.description = description;
-    }
-
-    public void setRefNumber(int refNumber){
-        this.refNumber = refNumber;
-    }
-
-    public void setCapacity(int capacity){
-        this.capacity = capacity;
-    }
-
-    public void setCost(double cost){
-        this.cost = cost;
-    }
-
-    public void setProblemRate(int problemRate){
-        this.problemRate = problemRate;
-    }
-
-    public void setOxygenator(Oxygenator o){ this.o = o; }
-
-    public void setNuclearReactor(NuclearReactor n) {this.n = n;}
-
-    public void setInnerAirlocks(InnerAirlocks inn) {this.inn = inn;}
-
-    public void setExternalAirlocks(ExternalAirlocks ex) {this.ex = ex;}
-
-    public void setComms(Comms com) {this.com = com;}
-
-    public void setWaterExtraction(WaterExtraction w) {this.w = w;}
-
-    // Getters
-    public String getName(){
-        return name;
-    }
-
-    public String getAddress(){
-        return address;
-    }
-
-    public String getDescription(){
-        return description;
-    }
-
-    public int getRefNumber(){
-        return refNumber;
-    }
-
-    public int getCapacity(){
-        return capacity;
-    }
-
-    public double getCost(){
-        return cost;
-    }
-
-    public int getProblemRate(){
-        return problemRate;
-    }
-
-    public State getState() {
-        return state;
-    }
-
-    public Oxygenator getOxygenator(){ return o; }
-
-    public NuclearReactor getNuclearReactor() {return n;}
-
-    public InnerAirlocks getInnerAirlocks() {return inn;}
-
-    public ExternalAirlocks getExternalAirlocks() {return ex;}
-
-    public Comms getComms() {return com;}
-
-    public WaterExtraction getWaterExtraction() {return w;}
-
-    //gets reference to Observer
-    public void addObserver(Observer obs) {
-        observerList.add(obs);
-    }
-
-    public void removeObserver(Observer obs) {
-        for (int i = 0; i < observerList.size(); i++) {
-            if (observerList.get(i).equals(obs))
-                observerList.remove(obs);
+    public void notify(Observer o) {
+        if (changed) {
+            o.update(this);
+            setChanged();
         }
     }
 
-    /*public void notifyObservers() {
+    // Map Helpers
+    public void startUpdateMap(){
+        map.put("Oxygenator", o.status());
+        map.put("Nuclear Reactor", n.status());
+        map.put("Inner Airlocks", i.status());
+        map.put("External Airlocks", e.status());
+        map.put("Comms", c.status());
+        map.put("Water Extraction", w.status());
+    }
 
+    public void startMachines(){
+        o.setStatus(true);
+        n.setStatus(true);
+        i.setStatus(true);
+        e.setStatus(true);
+        c.setStatus(true);
+        w.setStatus(true);
 
-    } */
+        map.clear();
+        startUpdateMap();
+    }
+
+    public Map<String, Boolean> getMap(){
+        return map;
+    }
+
+    public void getFacilityStatus(){ // The status of the map in this object
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
+    }
+
+    // Setters & Injections
+    public void setChanged() { changed = !changed; }
+
+    public void setOxygenator(Oxygenator o) { this.o = o; }
+
+    public void setInnerAirlocks(InnerAirlocks i) { this.i = i; }
+
+    public void setExternalAirlocks(ExternalAirlocks e) { this.e = e; }
+
+    public void setNuclearReactor(NuclearReactor n) { this.n = n; }
+
+    public void setComms(Comms c) { this.c = c; }
+
+    public void setWaterExtraction(WaterExtraction w) { this.w = w; }
+
+    public void setFacilityInformation(FacilityInformation fi) { this.fi = fi; }
+
+    // Getters
+    public State getState() { return state; }
+
+    // Injections
+    public Oxygenator getOxygenator() { return o; }
+
+    public InnerAirlocks getInnerAirlocks() { return i; }
+
+    public ExternalAirlocks getExternalAirlocks() { return e; }
+
+    public NuclearReactor getNuclearReactor() { return n; }
+
+    public Comms getComms() { return c; }
+
+    public WaterExtraction getWaterExtraction() { return w; }
+
+    public FacilityInformation getFacilityInformation() { return fi; }
 }
-

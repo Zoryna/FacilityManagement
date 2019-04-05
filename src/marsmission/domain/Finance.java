@@ -1,5 +1,5 @@
 package marsmission.domain;
-public class Finance implements FinanceInterface
+public class Finance implements FinanceInterface, Observer
 {
     private double ratePerHour; //3.05 is watt cost per hour
     private double maintHourlyCost; //randomly chosen cost, may change later
@@ -14,6 +14,10 @@ public class Finance implements FinanceInterface
 
     public double getMaintHourlyCost () {return maintHourlyCost;}
 
+
+    public void update(Observable o, Object arg){}
+
+    public void update(Object arg) {}
 
     public void calcUsage(double workingMachines, double hours) //cost of using Facility
     {

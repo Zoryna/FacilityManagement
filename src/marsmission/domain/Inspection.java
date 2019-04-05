@@ -4,13 +4,10 @@ import java.util.*;
 public class Inspection implements InspectionInterface, Observer {
 
     private static Facility fac;
-    private static MachinesInterface mach;
     private Maintenance m;
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
-
-    public void setMachines(MachinesInterface mach) { this.mach = mach;}
 
     public void setMaintenance(Maintenance m){
         this.m = m;
@@ -19,7 +16,13 @@ public class Inspection implements InspectionInterface, Observer {
     //getters
     public Facility getFacility() {return fac;}
 
-    public MachinesInterface getMachines() {return mach;}
+    public Maintenance getMaintenance(){
+        return m;
+    }
+
+    public void update(Observable o, Object arg){}
+
+    public void update(Object arg) {}
 
     public boolean isBroken(){
 
@@ -27,6 +30,12 @@ public class Inspection implements InspectionInterface, Observer {
             return true;
         else
             return false;
+    }
+
+    public void getFacilityStatus(Map<String, Boolean> map){ // The status of any Facility map
+        for (Map.Entry<String, Boolean> i: map.entrySet()){
+            System.out.println(i.getKey() + ": " + i.getValue());
+        }
     }
 
     public boolean makeMaintenanceRequest(){
@@ -39,32 +48,50 @@ public class Inspection implements InspectionInterface, Observer {
             System.out.println("This facility does not need maintenance"); //for testing
             return false;
         }
+
     }
 
-    public int checkMachines(ArrayList<MachinesInterface> machinesList){ //counts how many machines are broken
+    public int checkMachines(Map<String, Boolean> map){
 
         int issues = 0;
-        for (int i = 0; i < machinesList.size();i++) {
-            if(machinesList.get(i).status() == false)
-                issues++;
-        }
+        if(map.get("Oxygenator") == false)
+            issues++;
+        if(map.get("Nuclear Reactor") == false)
+            issues++;
+        if(map.get("Inner Airlocks") == false)
+            issues++;
+        if(map.get("External Airlocks") == false)
+            issues++;
+        if(map.get("Comms") == false)
+            issues++;
+        if(map.get("WaterMaking") == false)
+            issues++;
         return issues;
     }
 
-    public ArrayList returnBrokenMachines(ArrayList<MachinesInterface> machinesList){
+    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines){
 
-        ArrayList<MachinesInterface> brokenMachines = new ArrayList<MachinesInterface>();
+        Map<String, Boolean> newMap = new HashMap<String, Boolean>();
 
-        for (int i = 0; i < machinesList.size(); i++) {
-            if(machinesList.get(i).status() == false)
-                brokenMachines.add(machinesList.get(i));
+        //state of machines put into an array
+        if (map.get("Oxygenator") == false)
+            newMap.put("Oxygenator", machines[0]);
+        if (map.get("Nuclear Reactor") == false)
+            newMap.put("Nuclear Reactor", machines[1]);
+        if (map.get("Inner Airlocks") == false)
+            newMap.put("Inner Airlocks", machines[2]);
+        if (map.get("External Airlocks") == false)
+            newMap.put("External Airlocks", machines[3]);
+        if (map.get("Comms") == false)
+            newMap.put("Comms", machines[4]);
+        if (map.get("WaterMaking") == false)
+            newMap.put("WaterMaking", machines[5]);
+
+        //for testing
+        for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
+            System.out.println(i.getKey());
         }
 
-        return brokenMachines;
+        return newMap;
     }
-
-    /*public void update() {
-
-
-    } */
 }
