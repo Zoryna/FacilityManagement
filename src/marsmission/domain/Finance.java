@@ -14,10 +14,9 @@ public class Finance implements FinanceInterface, Observer
 
     public double getMaintHourlyCost () {return maintHourlyCost;}
 
-
-    public void update(Observable o, Object arg){}
-
-    public void update(Object arg) {}
+    public void update() {
+        System.out.println("There was a change in Facility.");
+    }
 
     public void calcUsage(double workingMachines, double hours) //cost of using Facility
     {

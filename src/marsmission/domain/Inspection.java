@@ -20,9 +20,9 @@ public class Inspection implements InspectionInterface, Observer {
         return m;
     }
 
-    public void update(Observable o, Object arg){}
-
-    public void update(Object arg) {}
+    public void update() {
+        System.out.println("Something is up with Facility.");
+    }
 
     public boolean isBroken(){
 
@@ -57,7 +57,7 @@ public class Inspection implements InspectionInterface, Observer {
         for(Map.Entry<String, Boolean> i: map.entrySet()){
             if (!i.getValue()){
                 iMap.put(i.getKey(), i.getValue());
-                System.out.println(i.getKey());
+                //System.out.println(i.getKey());
             }
         }
 
