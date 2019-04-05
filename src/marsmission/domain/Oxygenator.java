@@ -1,15 +1,16 @@
 package marsmission.domain;
 
 public class Oxygenator implements MachinesInterface {
-
     private Facility fac;
     private boolean status;
+    private final String machine = "oxygenator";
+
     public void setFacility(Facility fac) { this.fac = fac; }
 
     public Facility getFacility() { return fac; }
 
     public void machine(){
-        System.out.println("Oxygenator");
+        System.out.println(machine);
     }
 
     public void setStatus(boolean s){
@@ -18,5 +19,9 @@ public class Oxygenator implements MachinesInterface {
 
     public boolean status(){
         return status;
+    }
+
+    public String getMachine(){
+        return machine;
     }
 }

@@ -11,7 +11,7 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
     private InnerAirlocks inn;
     private ExternalAirlocks ex;
     private Comms com;
-    private WaterMaking w;
+    private WaterExtraction w;
     private double cost;
     private Observer obs;
     private ArrayList<Observer> observerList;
@@ -45,7 +45,17 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
         this.problemRate = problemRate;
     }
 
-    public void setMachines(Oxygenator o){ this.o = o; }
+    public void setOxygenator(Oxygenator o){ this.o = o; }
+
+    public void setNuclearReactor(NuclearReactor n;) {this.n = n;}
+
+    public void setInnerAirlocks(InnerAirlocks inn) {this.inn = inn;}
+
+    public void setExternalAirlocks(ExternalAirlocks ex) {this.ex = ex;}
+
+    public void setComms(Comms com) {this.com = com;}
+
+    public void setWaterExtraction(WaterExtraction w) {this.w = w;}
 
     // Getters
     public String getName(){
@@ -90,7 +100,7 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
 
     public Comms getComms() {return com;}
 
-    public WaterMaking getWaterMaking() {return w;}
+    public WaterExtraction getWaterMaking() {return w;}
 
     //gets reference to Observer
     public void addObserver(Observer obs) {
@@ -104,9 +114,9 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
         }
     }
 
-    /*public void notifyObservers() {
+    public void notifyObservers() {
 
 
-    } */
+    }
 }
 

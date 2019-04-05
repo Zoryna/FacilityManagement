@@ -55,7 +55,7 @@ public class Inspection implements InspectionInterface, Observer {
 
         ArrayList<MachinesInterface> brokenMachines = new ArrayList<MachinesInterface>();
 
-        for (int i = 0; i < machinesList.size();i++) {
+        for (int i = 0; i < machinesList.size(); i++) {
             if(machinesList.get(i).status() == false)
                 brokenMachines.add(machinesList.get(i));
         }
@@ -63,7 +63,8 @@ public class Inspection implements InspectionInterface, Observer {
         return brokenMachines;
     }
 
-    /*public void update() {
+    public void update() {
 
-    } */
+
+    }
 }

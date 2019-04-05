@@ -9,6 +9,12 @@ public interface FacilityInterface {
     public void setCapacity(int capacity);
     public void setCost(double cost);
     public void setProblemRate(int problemRate);
+    public void setOxygenator(Oxygenator o);
+    public void setNuclearReactor(NuclearReactor n);
+    public void setInnerAirlocks(InnerAirlocks inn);
+    public void setExternalAirlocks(ExternalAirlocks ex);
+    public void setComms(Comms com);
+    public void setWaterExtraction(WaterExtraction w);
     public String getName();
     public String getAddress();
     public String getDescription();
@@ -16,6 +22,11 @@ public interface FacilityInterface {
     public int getCapacity();
     public double getCost();
     public int getProblemRate();
-    public Oxygenator getMachines();
-    public void setMachines(Oxygenator o);
+    public Oxygenator getOxygenator();
+    public NuclearReactor getNuclearReactor();
+    public InnerAirlocks getInnerAirlocks();
+    public ExternalAirlocks getExternalAirlocks();
+    public Comms getComms();
+    public WaterExtraction getWaterMaking();
+
 }
