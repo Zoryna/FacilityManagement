@@ -66,8 +66,9 @@ public class Driver {
         f.update(apollo);
         apollo.deleteObserver(f);
         System.out.println("Checking if Observer was dettached, should return false: " + apollo.checkObserver());
-        apollo.initializeMap();
         apollo.startMachines();
+        apollo.getOxygenator().setStatus(false);
+        apollo.startUpdateMap();
         i.getFacilityStatus(apollo.getMap());
 
     }

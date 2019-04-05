@@ -41,7 +41,7 @@ public class Facility extends StateMachine implements Observable {
     }
 
     // Map Helpers
-    public void initializeMap(){
+    public void startUpdateMap(){
         map.put("Oxygenator", o.status());
         map.put("Nuclear Reactor", n.status());
         map.put("Inner Airlocks", i.status());
@@ -57,6 +57,9 @@ public class Facility extends StateMachine implements Observable {
         e.setStatus(true);
         c.setStatus(true);
         w.setStatus(true);
+
+        map.clear();
+        startUpdateMap();
     }
 
     public Map<String, Boolean> getMap(){
@@ -69,7 +72,7 @@ public class Facility extends StateMachine implements Observable {
         }
     }
 
-    // Setters
+    // Setters & Injections
     public void setChanged() { changed = !changed; }
 
     public void setOxygenator(Oxygenator o) { this.o = o; }
@@ -89,6 +92,7 @@ public class Facility extends StateMachine implements Observable {
     // Getters
     public State getState() { return state; }
 
+    // Injections
     public Oxygenator getOxygenator() { return o; }
 
     public InnerAirlocks getInnerAirlocks() { return i; }
