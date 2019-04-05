@@ -1,7 +1,6 @@
 package marsmission.domain;
 
-public class Oxygenator implements MachinesInterface {
-
+public class WaterExtraction implements MachinesInterface {
     private Facility fac;
     private boolean status;
     private final String machine = "oxygenator";

@@ -1,10 +1,9 @@
 package marsmission.domain;
 
-public class Oxygenator implements MachinesInterface {
-
+public class ExternalAirlocks implements MachinesInterface {
     private Facility fac;
     private boolean status;
-    private final String machine = "oxygenator";
+    private final String machine = "External Airlocks";
 
     public void setFacility(Facility fac) { this.fac = fac; }
 

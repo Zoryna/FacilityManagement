@@ -8,4 +8,5 @@ public interface MachinesInterface {
     public void setFacility(Facility fac); // Sets a Facility to a Machine
     public void machine(); // This is what the specific implementation of a machine should do (aka oxygenator, etc)
     public boolean status(); // Is the machine working?
+    public String getMachine();
 }
