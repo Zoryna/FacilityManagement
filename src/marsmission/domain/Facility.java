@@ -35,7 +35,7 @@ public class Facility extends StateMachine implements Observable {
     }
     public void notify(Observer o) {
         if (changed) {
-            o.update(this);
+            o.update();
             setChanged();
         }
     }

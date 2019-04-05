@@ -63,7 +63,7 @@ public class Driver {
         // Observers check
         System.out.println("checkObserver() returns true if Observer was properly added: " + apollo.checkObserver());
         apollo.notify(f);
-        f.update(apollo);
+        f.update();
         apollo.deleteObserver(f);
         System.out.println("Checking if Observer was dettached, should return false: " + apollo.checkObserver());
         apollo.startMachines();

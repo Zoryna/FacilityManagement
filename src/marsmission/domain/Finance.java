@@ -15,5 +15,7 @@ public class Finance implements FinanceInterface, Observer {
     public void maintenanceCost() {}
     public void downtime() {}
     public void facilityCost() {}
-    public void update(Object arg) {}
+    public void update() {
+        System.out.println("There was a change in Facility.");
+    }
 }

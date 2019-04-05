@@ -6,7 +6,9 @@ public class Inspection implements InspectionInterface, Observer {
 
     private static Facility fac;
     private Maintenance m;
-    public void update(Object arg) {}
+    public void update() {
+        System.out.println("Something is up with Facility.");
+    }
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
@@ -46,7 +48,7 @@ public class Inspection implements InspectionInterface, Observer {
         }
     }
 
-    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map){
+    public Map<String, Boolean> returnBorkenMachines(Map<String, Boolean> map){
         Map<String, Boolean> iMap = new HashMap<String, Boolean>();
 
         for(Map.Entry<String, Boolean> i: map.entrySet()){
