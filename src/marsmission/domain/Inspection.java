@@ -63,8 +63,8 @@ public class Inspection implements InspectionInterface, Observer {
         return brokenMachines;
     }
 
-    public void update() {
+    /*public void update() {
 
 
-    }
+    } */
 }

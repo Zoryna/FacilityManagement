@@ -5,22 +5,28 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-
     <description>Mars won't colonize by itself</description>
 
     <context:component-scan base-package="marsmission.domain" />
 
-<description>Mars won't colonize by itself</description>
-
-<context:component-scan base-package="marsmission.domain" />
-
     <bean id="control" class="marsmission.domain.Control" scope="prototype"/>
     <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype"/>
     <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
-    <bean id="machines" class="marsmission.domain.Oxygenator"/>
+    <bean id="oxygenator" class="marsmission.domain.Oxygenator"/>
+    <bean id="innerAirlock" class="marsmission.domain.InnerAirlocks"/>
+    <bean id="externalAirlock" class="marsmission.domain.ExternalAirlocks"/>
+    <bean id="nuclearReactor" class="marsmission.domain.NuclearReactor"/>
+    <bean id="comms" class="marsmission.domain.Comms"/>
+    <bean id="waterExtraction" class="marsmission.domain.WaterExtraction"/>
 
     <bean id="facility" class="marsmission.domain.Facility">
-        <property name="machines" ref="machines"></property>
+        <property name="oxygenator" ref="oxygenator"></property>
+        <property name="innerAirlocks" ref="innerAirlock"></property>
+        <property name="externalAirlocks" ref="externalAirlock"></property>
+        <property name="nuclearReactor" ref="nuclearReactor"></property>
+        <property name="comms" ref="comms"></property>
+        <property name="waterExtraction" ref="waterExtraction"></property>
+
     </bean>
 
     <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype">
@@ -31,4 +37,3 @@
         <property name="finance" ref="finance"></property>
     </bean>
 </beans>
-

@@ -27,6 +27,6 @@ public interface FacilityInterface {
     public InnerAirlocks getInnerAirlocks();
     public ExternalAirlocks getExternalAirlocks();
     public Comms getComms();
-    public WaterExtraction getWaterMaking();
+    public WaterExtraction getWaterExtraction();
 
 }

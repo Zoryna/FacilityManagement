@@ -47,7 +47,7 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
 
     public void setOxygenator(Oxygenator o){ this.o = o; }
 
-    public void setNuclearReactor(NuclearReactor n;) {this.n = n;}
+    public void setNuclearReactor(NuclearReactor n) {this.n = n;}
 
     public void setInnerAirlocks(InnerAirlocks inn) {this.inn = inn;}
 
@@ -100,7 +100,7 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
 
     public Comms getComms() {return com;}
 
-    public WaterExtraction getWaterMaking() {return w;}
+    public WaterExtraction getWaterExtraction() {return w;}
 
     //gets reference to Observer
     public void addObserver(Observer obs) {
@@ -114,9 +114,9 @@ public class Facility extends StateMachine implements FacilityInterface, Subject
         }
     }
 
-    public void notifyObservers() {
+    /*public void notifyObservers() {
 
 
-    }
+    } */
 }
 
