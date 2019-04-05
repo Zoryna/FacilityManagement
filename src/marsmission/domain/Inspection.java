@@ -51,24 +51,6 @@ public class Inspection implements InspectionInterface, Observer {
 
     }
 
-    public int checkMachines(Map<String, Boolean> map){
-
-        int issues = 0;
-        if(map.get("Oxygenator") == false)
-            issues++;
-        if(map.get("Nuclear Reactor") == false)
-            issues++;
-        if(map.get("Inner Airlocks") == false)
-            issues++;
-        if(map.get("External Airlocks") == false)
-            issues++;
-        if(map.get("Comms") == false)
-            issues++;
-        if(map.get("WaterMaking") == false)
-            issues++;
-        return issues;
-    }
-
     public Map<String, Boolean> returnBorkenMachines(Map<String, Boolean> map){
         Map<String, Boolean> iMap = new HashMap<String, Boolean>();
 

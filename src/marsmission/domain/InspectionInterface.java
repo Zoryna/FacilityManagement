@@ -7,6 +7,5 @@ public interface InspectionInterface {
     public Maintenance getMaintenance();
     public boolean isBroken();
     public boolean makeMaintenanceRequest();
-    public int checkMachines(Map<String, Boolean> map);
     public Map<String, Boolean> returnBorkenMachines(Map<String, Boolean> map);
 }
