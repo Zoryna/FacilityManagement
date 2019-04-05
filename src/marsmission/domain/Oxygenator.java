@@ -19,17 +19,4 @@ public class Oxygenator implements MachinesInterface {
     public boolean status(){
         return status;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

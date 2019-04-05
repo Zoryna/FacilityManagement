@@ -1,7 +1,7 @@
 package marsmission.domain;
 import java.util.*;
 
-public class Inspection implements InspectionInterface {
+public class Inspection implements InspectionInterface, Observer {
 
     private static Facility fac;
     private static MachinesInterface mach;
@@ -21,10 +21,6 @@ public class Inspection implements InspectionInterface {
 
     public MachinesInterface getMachines() {return mach;}
 
-    public Maintenance getMaintenance(){
-        return m;
-    }
-
     public boolean isBroken(){
 
         if (fac.getState().toString().equals("BROKEN"))
@@ -43,50 +39,31 @@ public class Inspection implements InspectionInterface {
             System.out.println("This facility does not need maintenance"); //for testing
             return false;
         }
-
     }
 
-    public int checkMachines(Map<String, Boolean> map){
+    public int checkMachines(ArrayList<Object> machinesList){ //counts how many machines are broken
 
         int issues = 0;
-        if(map.get("Oxygenator") == false)
-            issues++;
-        if(map.get("Nuclear Reactor") == false)
-            issues++;
-        if(map.get("Inner Airlocks") == false)
-            issues++;
-        if(map.get("External Airlocks") == false)
-            issues++;
-        if(map.get("Comms") == false)
-            issues++;
-        if(map.get("WaterMaking") == false)
-            issues++;
+        for (int i = 0; i < machinesList.size();i++) {
+            if(machinesList.get(i).equals(false))
+                issues++;
+        }
         return issues;
     }
 
-    public Map<String, Boolean> returnBrokenMachines(Map<String, Boolean> map, boolean[] machines){
+    public ArrayList returnBrokenMachines(ArrayList<Object> machinesList){
 
-        Map<String, Boolean> newMap = new HashMap<String, Boolean>();
+        ArrayList<Object> brokenMachines = new ArrayList<Object>();
 
-        //state of machines put into an array
-        if (map.get("Oxygenator") == false)
-            newMap.put("Oxygenator", machines[0]);
-        if (map.get("Nuclear Reactor") == false)
-            newMap.put("Nuclear Reactor", machines[1]);
-        if (map.get("Inner Airlocks") == false)
-            newMap.put("Inner Airlocks", machines[2]);
-        if (map.get("External Airlocks") == false)
-            newMap.put("External Airlocks", machines[3]);
-        if (map.get("Comms") == false)
-            newMap.put("Comms", machines[4]);
-        if (map.get("WaterMaking") == false)
-            newMap.put("WaterMaking", machines[5]);
-
-        //for testing
-        for (Map.Entry<String, Boolean> i : newMap.entrySet()) {
-            System.out.println(i.getKey());
+        for (int i = 0; i < machinesList.size();i++) {
+            if(machinesList.get(i).equals(false))
+                brokenMachines.add(i);
         }
 
-        return newMap;
+        return brokenMachines;
     }
+
+    /*public void update() {
+
+    } */
 }

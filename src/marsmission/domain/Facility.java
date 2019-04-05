@@ -2,12 +2,19 @@ package marsmission.domain;
 
 import java.util.*;
 
-public class Facility extends StateMachine implements FacilityInterface {
+public class Facility extends StateMachine implements FacilityInterface, Subject {
 
     private String name, address, description;
     private int refNumber, capacity, problemRate;
     private Oxygenator o;
+    private NuclearReactor n;
+    private InnerAirlocks inn;
+    private ExternalAirlocks ex;
+    private Comms com;
+    private WaterMaking w;
     private double cost;
+    private Observer obs;
+    private ArrayList<Observer> observerList;
 
     // Setters
     public void setName(String name){
@@ -73,6 +80,33 @@ public class Facility extends StateMachine implements FacilityInterface {
         return state;
     }
 
-    public Oxygenator getMachines(){ return o; }
+    public Oxygenator getOxygenator(){ return o; }
+
+    public NuclearReactor getNuclearReactor() {return n;}
+
+    public InnerAirlocks getInnerAirlocks() {return inn;}
+
+    public ExternalAirlocks getExternalAirlocks() {return ex;}
+
+    public Comms getComms() {return com;}
+
+    public WaterMaking getWaterMaking() {return w;}
+
+    //gets reference to Observer
+    public void addObserver(Observer obs) {
+        observerList.add(obs);
+    }
+
+    public void removeObserver(Observer obs) {
+        for (int i = 0; i < observerList.size(); i++) {
+            if (observerList.get(i).equals(obs))
+                observerList.remove(obs);
+        }
+    }
+
+    /*public void notifyObservers() {
+
+
+    } */
 }
 
