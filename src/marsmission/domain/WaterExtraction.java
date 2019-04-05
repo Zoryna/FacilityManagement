@@ -3,7 +3,7 @@ package marsmission.domain;
 public class WaterExtraction implements MachinesInterface {
     private Facility fac;
     private boolean status;
-    private final String machine = "oxygenator";
+    private final String machine = "Water Extraction";
 
     public void setFacility(Facility fac) { this.fac = fac; }
 

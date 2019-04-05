@@ -16,6 +16,7 @@
     <bean id="innerAirlock" class="marsmission.domain.InnerAirlocks"/>
     <bean id="externalAirlock" class="marsmission.domain.ExternalAirlocks"/>
     <bean id="nuclearReactor" class="marsmission.domain.NuclearReactor"/>
+    <bean id="comms" class="marsmission.domain.Comms"/>
     <bean id="waterExtraction" class="marsmission.domain.WaterExtraction"/>
 
     <bean id="facility" class="marsmission.domain.Facility">
