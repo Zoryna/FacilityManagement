@@ -5,5 +5,5 @@ public interface Observable {
     public boolean hasChanged(); // Tests if this object has changed.
     public void deleteObserver(Observer o); // Deletes an observer from the set of observers of this object.
     public void notify(Observer o); // If this object has changed, as indicated by the hasChanged method, then notify all of its observers and then call the clearChanged method to indicate that this object has no longer changed.
-    // public void setChanged(); // Marks this Observable object as having been changed; the hasChanged method will now return true.
+    public void setChanged(); // Marks this Observable object as having been changed; the hasChanged method will now return true.
 }

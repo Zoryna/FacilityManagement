@@ -12,12 +12,6 @@ public class Maintenance implements MaintenanceInterface {
 
   public void setControl(Control c) {this.c = c;}
 
-  //getter
-  public Inspection getInspection() {return ins;}
-
-  public Control getControl() {return c;}
-
-
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
 
     System.out.println("Here are the machines that will be fixed");
