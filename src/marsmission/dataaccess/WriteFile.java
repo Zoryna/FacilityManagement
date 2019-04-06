@@ -9,11 +9,14 @@ public class WriteFile implements WriteFileInterface{
 
     private String fileName;
     private Facility fac;
+    private FacilityInformation fi;
     private Map<String, Boolean> map;
-    private Machines m;
+    private MachinesInterface m;
     PrintWriter oStream = null;
 
-    public WriteFile(Facility fac, Map<String,Boolean> map){
+
+    public WriteFile(Facility fac, FacilityInformation fi, Map<String,Boolean> map){
+        this.fi = fi;
         this.fac = fac;
         this.map = map;
     }
@@ -43,34 +46,27 @@ public class WriteFile implements WriteFileInterface{
         */
 
         int i = 0;
-        String name = fac.getName();
+        String name = fi.getName();
         oStream.println(i + ": " + name + ".");
         i++;
-        int refNumber = fac.getRefNumber();
+        int refNumber = fi.getRefNumber();
         oStream.println(i + ": " + refNumber + ".");
         i++;
-        String address = fac.getAddress();
+        String address = fi.getAddress();
         oStream.println(i + ": " + address + ".");
         i++;
-        String description = fac.getDescription();
+        String description = fi.getDescription();
         oStream.println(i + ": " + description + ".");
         i++;
-        int capacity = fac.getCapacity();
+        int capacity = fi.getCapacity();
         oStream.println(i + ": " + capacity + ".");
         i++;
-        double cost = fac.getCost();
+        double cost = fi.getCost();
         oStream.println(i + ": " + cost + ".");
         i++;
-        int problemRate = fac.getProblemRate();
+        int problemRate = fi.getProblemRate();
         oStream.println(i + ": " + problemRate + ".");
         i++;
-
-        for (Map.Entry<String, Boolean> j: m.getMap().entrySet()){
-            String s = j.getKey();
-            boolean b = j.getValue();
-            oStream.println(i + ": " + s + " = " + b + ". ");
-            i++;
-        }
 
         switch(fac.getState()){
             case RESTING:

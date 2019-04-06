@@ -1,5 +1,5 @@
 package marsmission.domain;
-public class Finance implements FinanceInterface
+public class Finance implements FinanceInterface, Observer
 {
     private double ratePerHour; //3.05 is watt cost per hour
     private double maintHourlyCost; //randomly chosen cost, may change later
@@ -14,6 +14,9 @@ public class Finance implements FinanceInterface
 
     public double getMaintHourlyCost () {return maintHourlyCost;}
 
+    public void update() {
+        System.out.println("There was a change in Facility.");
+    }
 
     public void calcUsage(double workingMachines, double hours) //cost of using Facility
     {
@@ -26,7 +29,7 @@ public class Finance implements FinanceInterface
 
         ratePerHour = (percentageWorking * 0.1)/ratePerHour; //calculate the wattage for one hour of the Facilty
         double usageCost = ratePerHour * hours;
-        System.out.println("It costs " + usageCost + " to use this faciltiy for " + hours + " hour(s)");
+        System.out.println("It costs $" + usageCost + " to use this facility for " + hours + " hour(s)");
     }
 
     public void calcMaintCostFacility(double amountBroken, double hours) //cost of maintenance

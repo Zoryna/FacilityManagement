@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Maintenance implements MaintenanceInterface {
 
-  private Machines mach;
+  private MachinesInterface mach;
   private Inspection ins;
   private Control c;
 
