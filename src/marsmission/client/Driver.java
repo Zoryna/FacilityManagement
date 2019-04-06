@@ -20,7 +20,7 @@ public class Driver {
         Facility apollo = (Facility) context.getBean("facility");
         FacilityInformation fi = (FacilityInformation) context.getBean("facilityInformation");
         Inspection i = (Inspection) context.getBean("inspection");
-        Finance f = (Finance) context.getBean("finance");
+        Management man = (Management) context.getBean("management");
         Control c = (Control) context.getBean("control");
 
         System.out.println("\n");
@@ -28,20 +28,21 @@ public class Driver {
 
         System.out.println("**** INJECTION ****");
         apollo.getFacilityInformation().setName("Apollo");
-        apollo.getFacilityInformation().setName("Nyx");
         System.out.println("This facility is called: " + apollo.getFacilityInformation().getName());
         System.out.println("The state was set to: " + apollo.getState());
 
         System.out.println("\n");
 
-        apollo.getOxygenator().setStatus(true);
+        apollo.startMachines();
+        apollo.getOxygenator().setStatus(false);
         apollo.getInnerAirlocks().setStatus(true);
         apollo.getExternalAirlocks().setStatus(true);
         apollo.getNuclearReactor().setStatus(true);
         apollo.getComms().setStatus(true);
         apollo.getWaterExtraction().setStatus(true);
         apollo.getOxygenator().setFacility(apollo);
-        System.out.println("This Machinery belongs to: " + apollo.getFacilityInformation().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
+        apollo.startUpdateMap();
+        //System.out.println("This Machinery belongs to: " + apollo.getFacilityInformation().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
         System.out.println("Apollo's Oxygenator is: " + apollo.getOxygenator().status());
         System.out.println("Apollo's Inner Airlock is: " + apollo.getInnerAirlocks().status());
         System.out.println("Apollo's External Airlock is: " + apollo.getExternalAirlocks().status());
@@ -49,27 +50,60 @@ public class Driver {
         System.out.println("Apollo's Comms is: " + apollo.getComms().status());
         System.out.println("Apollo's WaterExtraction is: " + apollo.getWaterExtraction().status());
 
-        // State Change
         System.out.println("\n");
-        apollo.addObserver(f);
-        System.out.println("Has the state changed in Facility? " + apollo.hasChanged());
-        apollo.getOxygenator().setStatus(false);
+        //System.out.println("Testing Inspection");
+        apollo.addObserver(i);
+        i.setFacility(apollo);
+        i.returnBorkenMachines(apollo.getMap());
+        i.update();
         c.setStateBroken(apollo);
-        apollo.setChanged();
-        System.out.println("Apollo is now: " + apollo.getState());
-        System.out.println("Apollo's oxygenator is: " + apollo.getOxygenator().status());
-        System.out.println("Has the state changed? " + apollo.hasChanged());
 
-        // Observers check
-        System.out.println("checkObserver() returns true if Observer was properly added: " + apollo.checkObserver());
-        apollo.notify(f); // Liskov Substitution Principle, we fancy
+        apollo.hasChanged();
+        apollo.setChanged();
+        apollo.notify(i);
+
+        System.out.println("Testing Maintenance");
+        Maintenance maint = i.getMaintenance();
+        maint.setInspection(i);
+        maint.setControl(c);
+        maint.listMaintenanceRequest(i.returnBorkenMachines(apollo.getMap()));
+        System.out.println("\n");
+        System.out.println("Fixing the machines:");
+        maint.fixMachines(apollo.getMap());
+        maint.fixFacility();
+
+
+        System.out.println("\n");
+        System.out.println("Testing Management on Apollo");
+        man.actualUsage(1);
+        man.problemRateFacility(6, 1);
+        man.requestAvailableCapacity(1);
+
+        System.out.println("\n");
+
+        System.out.println("Calculating Apollo's finances");
+        Finance f = man.getFinance();
+        apollo.addObserver(f);
+        f.setRatePerHour(3.05);
+        f.setMaintHourlyCost(50);
+        f.calcUsage(1, 8);
+        f.calcMaintCostFacility(1, 5);
+        f.calcDowntimeFacility(6);
         f.update();
+
+        apollo.hasChanged();
+        apollo.setChanged();
+        apollo.notify(f);
+
+        System.out.println("\n");
+        System.out.println("Removing the Observers");
+        apollo.deleteObserver(i);
         apollo.deleteObserver(f);
-        System.out.println("Checking if Observer was dettached, should return false: " + apollo.checkObserver());
-        apollo.startMachines();
-        apollo.getOxygenator().setStatus(false);
-        apollo.startUpdateMap();
-        i.getFacilityStatus(apollo.getMap());
+
+        if (apollo.checkObserver() == false)
+            System.out.println("The Observers have been removed");
+        else
+            System.out.println("The Observers have not been removed");
 
     }
 }
