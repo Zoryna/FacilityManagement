@@ -79,7 +79,7 @@ public class Driver {
         man.problemRateFacility(6, 1);
         man.requestAvailableCapacity(1);
 
-        System.out.println("---------------------------");
+        System.out.println("\n");
 
         System.out.println("Calculating Apollo's finances");
         Finance f = man.getFinance();
@@ -94,5 +94,16 @@ public class Driver {
         apollo.hasChanged();
         apollo.setChanged();
         apollo.notify(f);
+
+        System.out.println("\n");
+        System.out.println("Removing the Observers");
+        apollo.deleteObserver(i);
+        apollo.deleteObserver(f);
+
+        if (apollo.checkObserver() == false)
+            System.out.println("The Observers have been removed");
+        else
+            System.out.println("The Observers have not been removed");
+
     }
 }
