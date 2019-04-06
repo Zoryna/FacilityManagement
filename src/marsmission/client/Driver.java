@@ -62,7 +62,7 @@ public class Driver {
 
         // Observers check
         System.out.println("checkObserver() returns true if Observer was properly added: " + apollo.checkObserver());
-        apollo.notify(f);
+        apollo.notify(f); // Liskov Substitution Principle, we fancy
         f.update();
         apollo.deleteObserver(f);
         System.out.println("Checking if Observer was dettached, should return false: " + apollo.checkObserver());
