@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Maintenance implements MaintenanceInterface {
 
-  private MachinesInterface mach;
   private Inspection ins;
   private Control c;
 
@@ -11,6 +10,10 @@ public class Maintenance implements MaintenanceInterface {
   public void setInspection(Inspection ins) { this.ins = ins; }
 
   public void setControl(Control c) {this.c = c;}
+
+  //getter
+
+  public Inspection getInspection() {return ins;}
 
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
 

@@ -4,21 +4,12 @@ import java.util.*;
 public class Inspection implements InspectionInterface, Observer {
 
     private static Facility fac;
-    private Maintenance m;
 
     //setters
     public void setFacility(Facility fac) { this.fac = fac; }
 
-    public void setMaintenance(Maintenance m){
-        this.m = m;
-    }
-
     //getters
     public Facility getFacility() {return fac;}
-
-    public Maintenance getMaintenance(){
-        return m;
-    }
 
     public void update() {
         System.out.println("Something is up with Facility.");
