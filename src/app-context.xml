@@ -17,6 +17,7 @@
     <bean id="comms" class="marsmission.domain.Comms" scope="prototype"/>
     <bean id="waterExtraction" class="marsmission.domain.WaterExtraction" scope="prototype"/>
     <bean id="facilityInformation" class="marsmission.domain.FacilityInformation" scope="prototype"/>
+    <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
 
     <bean id="facility" class="marsmission.domain.Facility" scope="prototype">
         <property name="oxygenator" ref="oxygenator"></property>
@@ -41,12 +42,4 @@
         <property name="finance" ref="finance"></property>
     </bean>
 
-    <bean id="finance" class="marsmission.domain.Finance" scope="prototype">
-        <property name="ratePerHour">
-            <value>0</value>
-        </property>
-        <property name="maintHourlyCost">
-            <value>0</value>
-        </property>
-    </bean>
 </beans>
