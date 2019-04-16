@@ -19,7 +19,7 @@ public class Driver {
         System.out.println("***************** Woot, off to Mars, babe! ******************");
         Facility apollo = (Facility) context.getBean("facility");
         FacilityInformation fi = (FacilityInformation) context.getBean("facilityInformation");
-        Inspection i = (Inspection) context.getBean("inspection");
+        Maintenance maint = (Maintenance) context.getBean("maintenance");
         Management man = (Management) context.getBean("management");
         Control c = (Control) context.getBean("control");
 
@@ -42,7 +42,6 @@ public class Driver {
         apollo.getWaterExtraction().setStatus(true);
         apollo.getOxygenator().setFacility(apollo);
         apollo.startUpdateMap();
-        //System.out.println("This Machinery belongs to: " + apollo.getFacilityInformation().getName()); // Apollo is set through injection and then name is checked through injection, take that, Inception!
         System.out.println("Apollo's Oxygenator is: " + apollo.getOxygenator().status());
         System.out.println("Apollo's Inner Airlock is: " + apollo.getInnerAirlocks().status());
         System.out.println("Apollo's External Airlock is: " + apollo.getExternalAirlocks().status());
@@ -51,7 +50,8 @@ public class Driver {
         System.out.println("Apollo's WaterExtraction is: " + apollo.getWaterExtraction().status());
 
         System.out.println("\n");
-        //System.out.println("Testing Inspection");
+
+        Inspection i = maint.getInspection();
         apollo.addObserver(i);
         i.setFacility(apollo);
         i.returnBorkenMachines(apollo.getMap());
@@ -63,11 +63,11 @@ public class Driver {
         apollo.notify(i);
 
         System.out.println("Testing Maintenance");
-        Maintenance maint = i.getMaintenance();
         maint.setInspection(i);
         maint.setControl(c);
         maint.listMaintenanceRequest(i.returnBorkenMachines(apollo.getMap()));
         System.out.println("\n");
+
         System.out.println("Fixing the machines:");
         maint.fixMachines(apollo.getMap());
         maint.fixFacility();

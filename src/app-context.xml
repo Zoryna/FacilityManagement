@@ -10,8 +10,6 @@
     <context:component-scan base-package="marsmission.domain" />
 
     <bean id="control" class="marsmission.domain.Control" scope="prototype"/>
-    <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype"/>
-    <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
     <bean id="oxygenator" class="marsmission.domain.Oxygenator" scope="prototype"/>
     <bean id="innerAirlock" class="marsmission.domain.InnerAirlocks" scope="prototype"/>
     <bean id="externalAirlock" class="marsmission.domain.ExternalAirlocks" scope="prototype"/>
@@ -19,6 +17,7 @@
     <bean id="comms" class="marsmission.domain.Comms" scope="prototype"/>
     <bean id="waterExtraction" class="marsmission.domain.WaterExtraction" scope="prototype"/>
     <bean id="facilityInformation" class="marsmission.domain.FacilityInformation" scope="prototype"/>
+    <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
 
     <bean id="facility" class="marsmission.domain.Facility" scope="prototype">
         <property name="oxygenator" ref="oxygenator"></property>
@@ -30,11 +29,17 @@
         <property name="facilityInformation" ref="facilityInformation"></property>
     </bean>
 
+    <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype">
+        <property name="control" ref="control"></property>
+        <property name="inspection" ref="inspection"></property>
+    </bean>
+
     <bean id="inspection" class="marsmission.domain.Inspection" scope="prototype">
-        <property name="maintenance" ref="maintenance"></property>
+        <property name="facility" ref="facility"></property>
     </bean>
 
     <bean id="management" class="marsmission.domain.Management" scope="prototype">
         <property name="finance" ref="finance"></property>
     </bean>
+
 </beans>
