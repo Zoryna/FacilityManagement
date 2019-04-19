@@ -20,13 +20,6 @@ public class Driver {
         Facility apollo = (Facility) context.getBean("facility");
         VisitorImpl v = (VisitorImpl) context.getBean("visitorImpl");
 
-        Comms c = (Comms) context.getBean("comms");
-        ExternalAirlocks e = (ExternalAirlocks) context.getBean("externalAirlock");
-        NuclearReactor n = (NuclearReactor) context.getBean("nuclearReactor");
-        WaterExtraction w = (WaterExtraction) context.getBean("waterExtraction");
-        Oxygenator o = (Oxygenator) context.getBean("oxygenator");
-        InnerAirlocks i = (InnerAirlocks) context.getBean("innerAirlock");
-
         System.out.println("\n");
         apollo.setStateWorking(apollo); // Looks weird, but it's not about looks, babe
 
@@ -44,7 +37,6 @@ public class Driver {
         apollo.getNuclearReactor().setStatus(true);
         apollo.getComms().setStatus(false);
         apollo.getWaterExtraction().setStatus(true);
-        apollo.getOxygenator().setFacility(apollo);
         apollo.startUpdateMap();
         System.out.println("Apollo's Oxygenator is: " + apollo.getOxygenator().status());
         System.out.println("Apollo's Inner Airlock is: " + apollo.getInnerAirlocks().status());
@@ -56,26 +48,12 @@ public class Driver {
         System.out.println("\n");
         System.out.println("Testing Visitor");
 
-        c.accept(v);
-        e.accept(v);
-        n.accept(v);
-        w.accept(v);
-        o.accept(v);
-        i.accept(v);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        apollo.getComms().accept(v);
+        apollo.getExternalAirlocks().accept(v);
+        apollo.getNuclearReactor().accept(v);
+        apollo.getWaterExtraction().accept(v);
+        apollo.getOxygenator().accept(v);
+        apollo.getInnerAirlocks().accept(v);
 
 
     }

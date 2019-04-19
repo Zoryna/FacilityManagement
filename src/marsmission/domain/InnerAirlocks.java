@@ -4,7 +4,7 @@ public class InnerAirlocks implements MachinesInterface, Element {
 
     private Facility fac;
     private boolean status;
-    private final String machine = "innerAirlock";
+    private final String machine = "InnerAirlock";
 
     public void setFacility(Facility fac) { this.fac = fac; }
 
