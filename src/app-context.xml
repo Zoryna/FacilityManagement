@@ -22,6 +22,7 @@
     <bean id="stateMaintenance" class="marsmission.domain.StateMaintenance" scope="prototype"/>
     <bean id="stateWorking" class="marsmission.domain.StateWorking" scope="prototype"/>
     <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
+    <bean id="visitorImpl" class="marsmission.domain.VisitorImpl" scope="prototype"/>
 
     <bean id="facilityBehavior" class="marsmission.domain.FacilityBehavior" scope="prototype">
         <property name="statesFaçade" ref="statesFaçade"></property>
