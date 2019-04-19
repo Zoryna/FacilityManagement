@@ -17,7 +17,15 @@
     <bean id="comms" class="marsmission.domain.Comms" scope="prototype"/>
     <bean id="waterExtraction" class="marsmission.domain.WaterExtraction" scope="prototype"/>
     <bean id="facilityInformation" class="marsmission.domain.FacilityInformation" scope="prototype"/>
+    <bean id="stateBroken" class="marsmission.domain.StateBroken" scope="prototype"/>
+    <bean id="stateResting" class="marsmission.domain.StateResting" scope="prototype"/>
+    <bean id="stateMaintenance" class="marsmission.domain.StateMaintenance" scope="prototype"/>
+    <bean id="stateWorking" class="marsmission.domain.StateWorking" scope="prototype"/>
     <bean id="finance" class="marsmission.domain.Finance" scope="prototype"/>
+
+    <bean id="facilityBehavior" class="marsmission.domain.FacilityBehavior" scope="prototype">
+        <property name="statesFaçade" ref="statesFaçade"></property>
+    </bean>
 
     <bean id="facility" class="marsmission.domain.Facility" scope="prototype">
         <property name="oxygenator" ref="oxygenator"></property>
@@ -30,7 +38,7 @@
     </bean>
 
     <bean id="maintenance" class="marsmission.domain.Maintenance" scope="prototype">
-        <property name="control" ref="control"></property>
+        <property name="statesFaçade" ref="control"></property>
         <property name="inspection" ref="inspection"></property>
     </bean>
 
@@ -42,4 +50,10 @@
         <property name="finance" ref="finance"></property>
     </bean>
 
+    <bean id="statesFaçade" class="marsmission.domain.StatesFaçade" scope="prototype">
+        <property name="stateWorking" ref="stateWorking"></property>
+        <property name="stateResting" ref="stateResting"></property>
+        <property name="stateBroken"  ref="stateBroken"></property>
+        <property name="stateMaintenance" ref="stateMaintenance"></property>
+    </bean>
 </beans>

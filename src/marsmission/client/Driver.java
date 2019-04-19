@@ -21,7 +21,7 @@ public class Driver {
         FacilityInformation fi = (FacilityInformation) context.getBean("facilityInformation");
         Maintenance maint = (Maintenance) context.getBean("maintenance");
         Management man = (Management) context.getBean("management");
-        Control c = (Control) context.getBean("control");
+        StatesFaçade sf = (StatesFaçade) context.getBean("statesFaçade");
 
         System.out.println("\n");
         apollo.setStateWorking(apollo); // Looks weird, but it's not about looks, babe
@@ -56,7 +56,7 @@ public class Driver {
         i.setFacility(apollo);
         i.returnBorkenMachines(apollo.getMap());
         i.update();
-        c.setStateBroken(apollo);
+        sf.getStateBroken().setStateBroken(apollo);
 
         apollo.hasChanged();
         apollo.setChanged();
@@ -64,7 +64,7 @@ public class Driver {
 
         System.out.println("Testing Maintenance");
         maint.setInspection(i);
-        maint.setControl(c);
+        maint.setStatesFaçade(sf);
         maint.listMaintenanceRequest(i.returnBorkenMachines(apollo.getMap()));
         System.out.println("\n");
 
