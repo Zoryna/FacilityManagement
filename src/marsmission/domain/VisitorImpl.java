@@ -39,7 +39,7 @@ public class VisitorImpl implements Visitor{
 
     public void visit(InnerAirlocks i) {
         if (i.status() == true)
-            System.out.println(i.getMachine() + "is working. Its status is " + i.status());
+            System.out.println(i.getMachine() + " is working. Its status is " + i.status());
         else
             System.out.println(i.getMachine() + " needs to be fixed. Its status is " + i.status());
     }
