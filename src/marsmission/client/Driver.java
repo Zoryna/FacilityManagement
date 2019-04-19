@@ -19,7 +19,7 @@ public class Driver {
         System.out.println("***************** Woot, off to Mars, babe! ******************");
         Facility apollo = (Facility) context.getBean("facility");
         FacilityInformation fi = (FacilityInformation) context.getBean("facilityInformation");
-        Inspection i = (Inspection) context.getBean("inspection");
+        Maintenance maint = (Maintenance) context.getBean("maintenance");
         Management man = (Management) context.getBean("management");
         StatesFaçade sf = (StatesFaçade) context.getBean("statesFaçade");
 
@@ -51,6 +51,7 @@ public class Driver {
 
         System.out.println("\n");
 
+        Inspection i = maint.getInspection();
         apollo.addObserver(i);
         i.setFacility(apollo);
         i.returnBorkenMachines(apollo.getMap());
@@ -62,7 +63,6 @@ public class Driver {
         apollo.notify(i);
 
         System.out.println("Testing Maintenance");
-        Maintenance maint = i.getMaintenance();
         maint.setInspection(i);
         maint.setStatesFaçade(sf);
         maint.listMaintenanceRequest(i.returnBorkenMachines(apollo.getMap()));

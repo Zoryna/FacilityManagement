@@ -36,6 +36,8 @@ public class FacilityInformation extends Facility implements FacilityInterface {
         this.problemRate = problemRate;
     }
 
+    public Facility getFacility(){return f;}
+
     public String getName(){
         return name;
     }

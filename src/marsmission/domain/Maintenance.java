@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Maintenance implements MaintenanceInterface {
 
-  private MachinesInterface mach;
   private Inspection ins;
   private StatesFaçade sf;
 
@@ -16,7 +15,6 @@ public class Maintenance implements MaintenanceInterface {
   public Inspection getInspection() {return ins;}
 
   public StatesFaçade getStatesFaçade() { return sf; }
-
 
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
 
