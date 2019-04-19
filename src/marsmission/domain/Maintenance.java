@@ -5,17 +5,17 @@ public class Maintenance implements MaintenanceInterface {
 
   private MachinesInterface mach;
   private Inspection ins;
-  private Control c;
+  private StatesFaçade sf;
 
   //setter
   public void setInspection(Inspection ins) { this.ins = ins; }
 
-  public void setControl(Control c) {this.c = c;}
+  public void setStatesFaçade(StatesFaçade sf) {this.sf = sf;}
 
   //getter
   public Inspection getInspection() {return ins;}
 
-  public Control getControl() {return c;}
+  public StatesFaçade getStatesFaçade() { return sf; }
 
 
   public void listMaintenanceRequest(Map<String, Boolean> map){ //shows what needs to be fixed from inspection
@@ -42,7 +42,7 @@ public class Maintenance implements MaintenanceInterface {
     if ((ins.getFacility().getState().toString().equals("BROKEN")) && ins.makeMaintenanceRequest() == true)
     {
       System.out.println("The current state is " + ins.getFacility().getState() + " it will change to WORKING");
-      c.assignToUse(ins.getFacility());
+      sf.getStateWorking().assignToUse(ins.getFacility());
       System.out.println("The state is now " + ins.getFacility().getState());
       return ins.getFacility();
     }

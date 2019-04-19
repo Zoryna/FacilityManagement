@@ -7,8 +7,9 @@
 package marsmission.domain;
 
 public interface FacilityAI {
-    public void AI(TimeController tc, Control c); // How/When/Which decisions are made
+    public void AI(TimeController tc, StatesFaçade sf); // How/When/Which decisions are made
     public Facility getFacility(); // Return the Facility
+
 
     /*
         If it's >= 8 AM, then send it to Maintenance
