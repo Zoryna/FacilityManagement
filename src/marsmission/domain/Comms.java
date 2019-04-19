@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class Comms implements MachinesInterface{
+public class Comms implements MachinesInterface, Element{
     private Facility fac;
     private boolean status;
     private final String machine = "Comms";
@@ -23,5 +23,9 @@ public class Comms implements MachinesInterface{
 
     public String getMachine(){
         return machine;
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
     }
 }
