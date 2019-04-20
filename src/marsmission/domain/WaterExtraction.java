@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class WaterExtraction implements MachinesInterface{
+public class WaterExtraction implements MachinesInterface, Element {
     private Facility fac;
     private boolean status;
     private final String machine = "Water Extraction";
@@ -23,5 +23,9 @@ public class WaterExtraction implements MachinesInterface{
 
     public String getMachine(){
         return machine;
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
     }
 }

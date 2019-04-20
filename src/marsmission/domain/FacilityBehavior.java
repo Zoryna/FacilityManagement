@@ -3,23 +3,26 @@ package marsmission.domain;
 public class FacilityBehavior extends StateMachine implements FacilityAI {
 
     private TimeController tc;
-    private Control c;
+    private StatesFaçade sf;
     private int START = tc.getHours();
     private int REST = tc.getHours();
     private Facility fac;
 
+    public void setStatesFaçade(StatesFaçade sf) { this.sf = sf; }
+    public StatesFaçade getStatesFaçade() { return sf; }
+
     public void setFacilityBehavior(Facility fac){
         this.fac = fac;
-        AI(tc, c);
+        AI(tc, sf);
     }
 
-    public void AI(TimeController tc, Control c){
+    public void AI(TimeController tc, StatesFaçade sf){
         tc.setHours(START);
         if (tc.getHours() >= START && tc.getHours() < REST && fac.getState() != State.BROKEN){
-            c.assignToUse(fac);
+            sf.getStateWorking().assignToUse(fac);
         }
         else if (tc.getHours() >= REST){
-            c.vacateFacility(fac);
+            sf.getStateResting().vacateFacility(fac);
         }
     }
 
