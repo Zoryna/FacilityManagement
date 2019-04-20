@@ -1,10 +1,10 @@
 package marsmission.domain;
 
-public class Oxygenator implements MachinesInterface {
+public class Oxygenator implements MachinesInterface, Element {
 
     private Facility fac;
     private boolean status;
-    private final String machine = "oxygenator";
+    private final String machine = "Oxygenator";
 
     public void setFacility(Facility fac) { this.fac = fac; }
 
@@ -24,5 +24,9 @@ public class Oxygenator implements MachinesInterface {
 
     public String getMachine(){
         return machine;
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
     }
 }

@@ -24,4 +24,8 @@ public class WaterExtraction implements MachinesInterface {
     public String getMachine(){
         return machine;
     }
+
+    public void accept(Visitor v){
+        v.visit(this);
+    }
 }

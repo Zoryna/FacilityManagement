@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class ExternalAirlocks implements MachinesInterface {
+public class ExternalAirlocks implements MachinesInterface, Element {
     private Facility fac;
     private boolean status;
     private final String machine = "External Airlocks";
@@ -23,5 +23,9 @@ public class ExternalAirlocks implements MachinesInterface {
 
     public String getMachine(){
         return machine;
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
     }
 }

@@ -22,6 +22,7 @@ public class Driver {
         Maintenance maint = (Maintenance) context.getBean("maintenance");
         Management man = (Management) context.getBean("management");
         StatesFaçade sf = (StatesFaçade) context.getBean("statesFaçade");
+        VisitorImpl v = (VisitorImpl) context.getBean("visitorImpl");
 
         System.out.println("\n");
         apollo.setStateWorking(apollo); // Looks weird, but it's not about looks, babe
@@ -40,7 +41,6 @@ public class Driver {
         apollo.getNuclearReactor().setStatus(true);
         apollo.getComms().setStatus(true);
         apollo.getWaterExtraction().setStatus(true);
-        apollo.getOxygenator().setFacility(apollo);
         apollo.startUpdateMap();
         System.out.println("Apollo's Oxygenator is: " + apollo.getOxygenator().status());
         System.out.println("Apollo's Inner Airlock is: " + apollo.getInnerAirlocks().status());
@@ -49,6 +49,14 @@ public class Driver {
         System.out.println("Apollo's Comms is: " + apollo.getComms().status());
         System.out.println("Apollo's WaterExtraction is: " + apollo.getWaterExtraction().status());
 
+        System.out.println("\n");
+        System.out.println("Testing Visitor");
+        apollo.getComms().accept(v);
+        apollo.getExternalAirlocks().accept(v);
+        apollo.getNuclearReactor().accept(v);
+        apollo.getWaterExtraction().accept(v);
+        apollo.getOxygenator().accept(v);
+        apollo.getInnerAirlocks().accept(v);
         System.out.println("\n");
 
         Inspection i = maint.getInspection();

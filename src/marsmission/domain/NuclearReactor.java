@@ -1,6 +1,6 @@
 package marsmission.domain;
 
-public class NuclearReactor implements MachinesInterface {
+public class NuclearReactor implements MachinesInterface, Element {
     private Facility fac;
     private boolean status;
     private final String machine = "Nuclear Reactor";
@@ -23,5 +23,9 @@ public class NuclearReactor implements MachinesInterface {
 
     public String getMachine(){
         return machine;
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
     }
 }

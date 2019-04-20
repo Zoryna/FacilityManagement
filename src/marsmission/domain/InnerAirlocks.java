@@ -1,10 +1,10 @@
 package marsmission.domain;
 
-public class InnerAirlocks implements MachinesInterface {
+public class InnerAirlocks implements MachinesInterface, Element {
 
     private Facility fac;
     private boolean status;
-    private final String machine = "innerAirlock";
+    private final String machine = "InnerAirlock";
 
     public void setFacility(Facility fac) { this.fac = fac; }
 
@@ -24,5 +24,9 @@ public class InnerAirlocks implements MachinesInterface {
 
     public String getMachine(){
         return machine;
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
     }
 }
